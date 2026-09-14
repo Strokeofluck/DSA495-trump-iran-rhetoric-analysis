@@ -47,6 +47,10 @@ So rerunning the Colab reproduces the analysis and base visualization, but it ma
 - Trump's Truth Social posts: a public Hugging Face archive of his original posts (not reblogs), filtered to calendar-year 2026 and posts mentioning Iran.
 - UCDP conflict events: the [Uppsala Conflict Data Program](https://ucdp.uu.se/)'s Georeferenced Event Dataset, filtered to events with US or joint US-Israel involvement in the Iran conflict.
 
+## Methodology references
+
+- [DSA 495 Module 4: Zero-Shot and Few-Shot Classification](references/DSA495_M04_class_reference.md) — class material covering zero-shot and few-shot classification, development vs. held-out evaluation, precision, recall, F1/macro-F1, confusion matrices, and the NLI connection relevant to `facebook/bart-large-mnli`.
+
 ## Part of
 
 [sean-data-portfolio](https://github.com/StrokeOfLuck/sean-data-portfolio) - Sean Ryan's data journalism portfolio.
