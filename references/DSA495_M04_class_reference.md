@@ -13,6 +13,23 @@ The instructor's course materials are publicly available on GitHub:
 
 Use the public source above to retrieve the notebook later rather than storing a duplicate copy in this repository.
 
+## Course data archive in Google Drive
+
+The exact classroom data package used with the notebook is archived in Sean's Google Drive under **Text analysis for Data Science**:
+
+- **Drive folder:** https://drive.google.com/drive/folders/1wdBDFH5hokeUJ_1xvTpiXbVBsvbEujIq
+- **M04 data ZIP:** https://drive.google.com/file/d/19-hWmNJviQEQ3sMHOHKuQUsMdiqc6-y_/view?usp=drivesdk
+- **ZIP filename:** `M04_Classification02-20260914T190252Z-1-001.zip`
+
+The ZIP contains the files needed to reproduce the classroom exercise, including:
+
+- `banking77_m04_examples_16.csv`
+- `banking77_m04_development_72.csv`
+- `banking77_m04_evaluation.csv`
+- the BANKING77 license plus the underlying `train.csv` and `test.csv`
+
+The Google Drive file is private/access-controlled even though this reference note is public.
+
 ## Topics worth revisiting
 
 - Zero-shot classification: category definitions are supplied, but no labeled examples are shown to the model.
