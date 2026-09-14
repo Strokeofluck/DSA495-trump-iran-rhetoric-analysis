@@ -4,6 +4,15 @@ This project has a related course reference from **DSA 495, Module 4: Zero-Shot 
 
 The class activity uses **Flan-T5-base** for zero-shot and few-shot text classification on a four-class subset of BANKING77, then evaluates predictions against held-out reference labels using accuracy, precision, recall, macro-F1, class reports, and confusion matrices. The lesson also notes **natural language inference (NLI) zero-shot classification** as an alternative mechanism and gives `facebook/bart-large-mnli` as an example, which is relevant to the classifier used in this Iran rhetoric project.
 
+## Public course source
+
+The instructor's course materials are publicly available on GitHub:
+
+- **Course repository:** https://github.com/SerenaYKim/DSA495-TextAnalysis
+- **Module 4 notebook:** https://github.com/SerenaYKim/DSA495-TextAnalysis/blob/master/Module04/DSA495_M04_Zero_Shot_Few_Shot_Classification.ipynb
+
+Use the public source above to retrieve the notebook later rather than storing a duplicate copy in this repository.
+
 ## Topics worth revisiting
 
 - Zero-shot classification: category definitions are supplied, but no labeled examples are shown to the model.
@@ -15,12 +24,10 @@ The class activity uses **Flan-T5-base** for zero-shot and few-shot text classif
 
 ## Local course materials
 
-Files from the September 14, 2026 class materials were saved locally as:
+Files from the September 14, 2026 class materials were also saved locally as:
 
 - `DSA495_M04_Zero_Shot_Few_Shot_Classification.ipynb`
 - `M04_Classification02` data package, including BANKING77 examples, development, and evaluation CSVs
-
-These class files are not copied into this public repository; this note is only here so the material can be located and reused as a methodological reference later.
 
 ## Sources named in the class notebook
 
