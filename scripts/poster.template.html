@@ -30,16 +30,25 @@
 <section class="column evaluation" aria-labelledby="evaluation"><div><h2 class="section-title" id="evaluation"><span>03</span> Quality &amp; interpretation</h2><span class="review-status">Preliminary · human evaluation pending</span><p><b>What was checked.</b> All 87 score IDs match the post corpus; all six score columns are finite and within 0–1. Post/event pairs are unique and relative days match saved Eastern Time dates.</p><p><b>What remains untested.</b> No human labels, held-out precision/recall/F1, or evaluated baseline are supplied. Data-integrity checks do not measure rhetorical accuracy.</p><div class="error-example"><p><b>A failure mode to investigate</b></p><p>A post praising the military operation receives a high Ceasefire / Ending score even though the text does not explicitly say the fighting has ended.</p><div class="score"><span>Ceasefire / Ending</span><b>0.802</b></div><div class="bar" aria-hidden="true"><span></span></div><p style="margin-top:8px;margin-bottom:0"><a href="https://trumpstruth.org" id="example-link">Inspect source post ↗</a> · Qualitative inspection, not a gold label.</p></div></div><div class="caution"><h3>Limits &amp; responsible use</h3><p><b>Association only.</b> These selected windows cannot establish causation or predict military action. Same-day dates do not prove that a post preceded an event within that day.</p><p>Overlapping windows reuse posts and create dependence. Missing posts are not zero rhetoric. Linked headlines and media-only posts can distort attribution; truncated text can lose context.</p><p><b>Practical implication.</b> Use the scores to locate language worth inspecting alongside its source. Human validation and a non-event comparison are needed before stronger claims.</p></div></section>
 </div>
 
-<section class="severity-block" id="severity-analysis" aria-labelledby="severity-heading">
-<h2 id="severity-heading">Event severity and rhetoric</h2>
-<p class="severity-intro">Does stronger threatening language precede deadlier event dates? Compare Threat scores before, on, and after the event side by side. Each dot is one eligible event date; all panels share the same axes. The comparison menu also provides the four-frame view.</p>
-<p id="severity-reading" class="severity-reading"></p>
-<div class="severity-controls"><label for="severity-view">Comparison</label><select id="severity-view"><option value="threat" selected>Threat: all three windows</option><option value="frames">All four frames: one window</option></select><span id="single-window-control" hidden><label for="severity-window">Post window</label><select id="severity-window"><option value="-1">Day before</option><option value="0" selected>Event day</option><option value="1">Day after</option></select></span></div>
-<p id="severity-summary" class="severity-summary" aria-live="polite"></p>
-<div id="severity-charts" class="severity-grid"></div>
+<section class="severity-block victory-focus" id="severity-analysis" aria-labelledby="severity-heading">
+<p class="victory-eyebrow">Exploratory result · Event severity &amp; rhetoric</p>
+<h2 id="severity-heading">Higher Victory scores after deadlier event dates</h2>
+<p class="victory-intro">In this sample, posts the next day tended to receive higher Victory scores after dates with more recorded deaths.</p>
+<div class="victory-feature-layout">
+<div class="victory-chart-wrap">
+<div id="severity-charts" class="severity-grid victory-feature-chart" data-feature="victory-after"></div>
+<p id="severity-summary" class="severity-summary"></p>
 <p id="severity-detail" class="severity-detail" aria-live="polite"></p>
-<p class="severity-caption">Summed same-day best fatality estimate (log x-axis) versus mean model score (0–1). Horizontal whiskers show summed UCDP low–high estimates, not confidence intervals. Multi-day totals and windows with no posts are omitted. Spearman ρ describes rank association in this selected sample; it does not establish causation, prediction, or classifier accuracy.</p>
-<p class="pdf-note">The print-ready PDF shows Threat across all three windows, with all eligible dates included.</p>
+</div>
+<aside class="victory-reading" aria-label="How to read the Victory result">
+<div class="victory-metrics"><div><strong id="victory-rho">+0.50</strong><span>Spearman ρ</span></div><div><strong id="victory-n">20</strong><span>event dates</span></div></div>
+<h3>A moderate positive association</h3>
+<p>Higher death counts generally align with higher next-day Victory scores. The points still vary widely: this is a tendency, not a rule.</p>
+<div class="victory-robustness"><b>Beyond the largest event date</b><p>Without February 28 (162 estimated deaths), the association remains positive: <strong id="victory-rho-without">ρ = +0.43 · 19 dates</strong>.</p></div>
+<p class="victory-limit"><b>Worth investigating, not confirmed.</b> This pattern was selected after comparing several frames and windows. Some posts recur across dates, and frame accuracy has not been tested. It does not establish causation or prediction.</p>
+</aside>
+</div>
+<p class="severity-caption">Each dot represents one event date with same-day UCDP fatality records and at least one post the following day. The x-axis uses a log scale; horizontal marks show source low–high death estimates, not confidence intervals. Victory is a mean model score (0–1), not a percentage of posts. Multi-day fatality totals and windows without posts are omitted.</p>
 </section>
 
 <footer class="poster-footer"><p><b>Sources &amp; reproducibility.</b> <a href="https://github.com/Strokeofluck/DSA495-trump-iran-rhetoric-analysis">Project repository, prepared CSVs &amp; notebook</a> · <a href="https://ucdp.uu.se/downloads/">UCDP data access</a> · <a href="https://huggingface.co/facebook/bart-large-mnli">BART-MNLI model</a> · <a href="https://huggingface.co/datasets/Cameronk199/donald-trump-truth-social-posts">Matching public-post archive</a>. The original post-archive snapshot and model revision remain unpinned; workbook release labels are recorded with the evidence. Counts refer to this repository, not the later portfolio dataset. UCDP requires attribution under CC BY 4.0; underlying post rights remain with their owners.</p><p><b>AI-use statement.</b> The repository’s notebook, prepared data, and saved scores preceded this poster task. OpenAI Codex inspected the rubric and code, built this page and reproducible aggregation, and checked joins, dates, counts, and rendered behavior. BART generated the saved analytical scores; it was not rerun for this poster. Sean directed the project. Human review and oral defense remain Sean’s responsibility. See the repository for the fuller history.</p></footer>

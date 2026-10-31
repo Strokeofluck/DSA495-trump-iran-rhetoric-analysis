@@ -11,13 +11,15 @@
   const fmt=n=>Number(n).toFixed(3);
   const chartHost=document.getElementById('severity-charts');
   if(chartHost){
+    const featured=chartHost.dataset.feature==='victory-after';
     const viewSelect=document.getElementById('severity-view');
     const windowSelect=document.getElementById('severity-window');
     const limit=Math.max(200,...Object.values(context.severity).flatMap(s=>s.rows.map(p=>p.high)));
     const xmax=Math.ceil(limit/100)*100;
-    const x=v=>44+Math.log10(Math.max(1,v))/Math.log10(xmax)*260,y=v=>168-v*124;
-    const overall=data.summaries.available.means.Threat;
-    document.getElementById('severity-reading').textContent=`Overall mean Threat score: ${fmt(overall[0])} before → ${fmt(overall[1])} on the event day → ${fmt(overall[2])} after. These all-data averages compare time windows. The scatterplots below ask a different question: whether higher Threat scores accompany higher event-day death counts.`;
+    const left=featured?55:44,right=featured?610:304,bottom=featured?245:168,top=featured?42:44;
+    const x=v=>left+Math.log10(Math.max(1,v))/Math.log10(xmax)*(right-left),y=v=>bottom-v*(bottom-top);
+    const reading=document.getElementById('severity-reading');
+    if(reading)reading.textContent='Compare event-day death estimates with model scores in the selected post window. The poster highlights the exploratory next-day Victory pattern; the full comparisons remain here.';
     const eventsByDate=new Map(context.events.map(event=>[event.date,event]));
     const popup=make('aside','event-popover');
     popup.id='event-popover';popup.hidden=true;popup.setAttribute('role','dialog');popup.setAttribute('aria-modal','false');popup.setAttribute('aria-labelledby','event-popover-title');
@@ -80,10 +82,10 @@
 
     function render(){
       dismiss();
-      const threatView=viewSelect.value==='threat';
-      document.getElementById('single-window-control').hidden=threatView;
+      const threatView=!featured&&viewSelect.value==='threat';
+      if(!featured)document.getElementById('single-window-control').hidden=threatView;
       chartHost.classList.toggle('threat-windows',threatView);
-      const panels=threatView?['-1','0','1'].map(offset=>({offset,frame:'Threat',color:colors[0],title:names[offset]})):
+      const panels=featured?[{offset:'1',frame:'Victory',color:colors[1],title:'Victory language in next-day posts'}]:threatView?['-1','0','1'].map(offset=>({offset,frame:'Threat',color:colors[0],title:names[offset]})):
         frames.slice(0,4).map((frame,i)=>({offset:windowSelect.value,frame,color:colors[i],title:frame}));
       chartHost.replaceChildren();
       const table=document.querySelector('#severity-values tbody');if(table)table.replaceChildren();
@@ -97,26 +99,37 @@
         const fig=make('figure','severity-small');
         const caption=make('figcaption','',panel.title);
         caption.append(make('span','',`ρ = ${rho===null?'n/a':rho.toFixed(2)} · n = ${rows.length}`));fig.append(caption);
-        const plot=svg('svg',{viewBox:'0 0 340 220',role:'group','aria-label':`${panel.frame} versus event-day deaths, ${names[panel.offset]}, ${rows.length} dates; Spearman rho ${rho===null?'unavailable':rho.toFixed(2)}.`});
-        [0,.5,1].forEach(t=>{plot.append(svg('line',{x1:44,x2:304,y1:y(t),y2:y(t),stroke:'#dee2e6'}));plot.append(svg('text',{x:34,y:y(t)+4,'text-anchor':'end'},String(t)))});
-        [1,5,25,100,xmax].filter((v,i,a)=>a.indexOf(v)===i).forEach(t=>plot.append(svg('text',{x:x(t),y:188,'text-anchor':'middle'},String(t))));
-        plot.append(svg('text',{x:44,y:25},threatView?'Mean Threat score':'Mean model score'));
-        plot.append(svg('text',{x:174,y:211,'text-anchor':'middle'},'Event-day deaths · log scale'));
+        const plot=svg('svg',{viewBox:featured?'0 0 640 300':'0 0 340 220',role:'group','aria-label':`${panel.frame} versus event-day deaths, ${names[panel.offset]}, ${rows.length} dates; Spearman rho ${rho===null?'unavailable':rho.toFixed(2)}.`});
+        (featured?[0,.25,.5,.75,1]:[0,.5,1]).forEach(t=>{plot.append(svg('line',{x1:left,x2:right,y1:y(t),y2:y(t),stroke:'#dee2e6'}));plot.append(svg('text',{x:left-12,y:y(t)+4,'text-anchor':'end'},String(t)))});
+        (featured?[1,2,5,10,25,50,100,xmax]:[1,5,25,100,xmax]).filter((v,i,a)=>a.indexOf(v)===i).forEach(t=>plot.append(svg('text',{x:x(t),y:featured?268:188,'text-anchor':'middle'},String(t))));
+        plot.append(svg('text',{x:left,y:featured?23:25},featured?'Mean Victory score · day after':threatView?'Mean Threat score':'Mean model score'));
+        plot.append(svg('text',{x:(left+right)/2,y:featured?294:211,'text-anchor':'middle'},featured?'Estimated deaths on event date · log scale':'Event-day deaths · log scale'));
         rows.forEach(point=>{
           if(point.bounds_valid)plot.append(svg('line',{x1:x(point.low),x2:x(point.high),y1:y(point.means[panel.frame]),y2:y(point.means[panel.frame]),stroke:panel.color,'stroke-width':2,opacity:.6}));
           const description=`${point.date} event; ${names[panel.offset]} posts: ${point.fatalities} event-day deaths (low-high ${point.low}-${point.high}), ${point.count} posts, ${panel.frame} ${fmt(point.means[panel.frame])}`;
-          const dot=svg('circle',{cx:x(point.fatalities),cy:y(point.means[panel.frame]),r:4.5,fill:panel.color,stroke:'#fff','stroke-width':1,tabindex:0,'aria-label':description});
+          const dot=svg('circle',{cx:x(point.fatalities),cy:y(point.means[panel.frame]),r:featured?6:4.5,fill:panel.color,stroke:'#fff','stroke-width':1,tabindex:0,'aria-label':description});
           attachPopup(dot,point,panel);plot.append(dot);
+          if(featured&&point.date===context.largest_date){
+            plot.append(svg('line',{x1:x(point.fatalities)-4,y1:y(point.means[panel.frame])+8,x2:x(point.fatalities)-22,y2:y(point.means[panel.frame])+30,stroke:panel.color}));
+            plot.append(svg('text',{x:x(point.fatalities)-27,y:y(point.means[panel.frame])+40,'text-anchor':'end',class:'featured-point-label'},'Feb 28 · 162 deaths'));
+          }
         });
         fig.append(plot);chartHost.append(fig);
         if(table&&(threatView||panels.indexOf(panel)===0))rows.forEach(p=>{
           const tr=make('tr');[names[panel.offset],p.date,`${p.fatalities} (${p.low}-${p.high})`,p.count,...frames.slice(0,4).map(f=>fmt(p.means[f]))].forEach(t=>tr.append(make('td','',String(t))));table.append(tr);
         });
       });
-      document.getElementById('severity-summary').textContent=(threatView?'Threat across all three windows · ':'')+sampleLabels.join(' · ')+'. Each panel uses the dates with same-day fatality records and posts in that window.';
+      document.getElementById('severity-summary').textContent=featured?'One dot = one event date · Next-day post averages · All 20 eligible dates included':(threatView?'Threat across all three windows · ':'')+sampleLabels.join(' · ')+'. Each panel uses the dates with same-day fatality records and posts in that window.';
+      if(featured){
+        const group=context.severity['1'];
+        const signed=value=>(value>0?'+':'')+value.toFixed(2);
+        document.getElementById('victory-rho').textContent=signed(group.spearman.Victory);
+        document.getElementById('victory-n').textContent=group.n;
+        document.getElementById('victory-rho-without').textContent=`ρ = ${signed(group.without_largest_spearman.Victory)} · ${group.rows.filter(p=>p.date!==context.largest_date).length} dates`;
+      }
     }
-    viewSelect.addEventListener('change',render);windowSelect.addEventListener('change',render);
-    window.addEventListener('beforeprint',()=>{viewSelect.value='threat';render()});
+    if(viewSelect)viewSelect.addEventListener('change',render);if(windowSelect)windowSelect.addEventListener('change',render);
+    window.addEventListener('beforeprint',()=>{if(viewSelect)viewSelect.value='threat';render()});
     render();
   }
 

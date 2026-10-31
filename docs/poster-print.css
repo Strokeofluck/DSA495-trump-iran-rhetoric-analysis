@@ -54,3 +54,24 @@
   .poster-footer{margin-top:16px;padding-top:12px;gap:35px}
   .poster-footer p{font-size:11pt;line-height:1.4}
 }
+
+@media print{
+  .victory-focus .victory-eyebrow{font-size:12pt;margin:0 0 5px}
+  .victory-focus h2{font-size:24pt;max-width:none;margin:0 0 6px}
+  .victory-intro{font-size:15pt;line-height:1.35;margin:6px 0 15px;max-width:none}
+  .victory-feature-layout{grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:38px}
+  .victory-feature-chart{grid-template-columns:1fr}
+  .victory-feature-chart .severity-small figcaption{font-size:16pt;margin-bottom:8px}
+  .victory-feature-chart .severity-small svg{width:100%;height:360pt}
+  .victory-feature-chart .severity-small svg text{font-size:13px}
+  .victory-feature-chart .severity-small svg .featured-point-label{font-size:12px}
+  .victory-chart-wrap .severity-summary{font-size:11pt!important}
+  .victory-reading{padding:20px}
+  .victory-metrics{gap:70px;padding-bottom:13px;margin-bottom:13px}
+  .victory-metrics strong{font-size:38pt}
+  .victory-metrics span{font-size:13pt}
+  .victory-reading h3{font-size:19pt;margin-bottom:8px}
+  .victory-reading p,.victory-robustness{font-size:15pt;line-height:1.35;margin-bottom:12px}
+  .victory-limit{font-size:12pt!important}
+  .victory-focus>.severity-caption{font-size:11pt!important;line-height:1.35!important;margin-top:12px}
+}

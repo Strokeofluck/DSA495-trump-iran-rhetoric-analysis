@@ -16,7 +16,7 @@ Supporting material lives on separate pages, linked here rather than on the post
 The print stylesheet targets a 36 × 24 inch landscape poster; the instructor has
 not specified dimensions or confirmed that a web URL alone is a valid submission.
 The Print poster control opens the verified one-page PDF, including all columns
-and Threat severity plots for all three windows. It does not depend on an in-app browser's print dialog.
+and the featured next-day Victory severity plot. It does not depend on an in-app browser's print dialog.
 
 The typography and palette match Sean's portfolio: locally bundled Source Sans
 Pro, the light Quarto/Cosmo colors, blue links, and the portfolio's six rhetorical
@@ -75,9 +75,13 @@ All eligible dates are included in the charts. Hover over a circle to see its
 event date, locations, same-day source headlines, fatality range, selected post
 window, post count, and frame score. Click/tap pins the pop-up; Enter or Space
 opens it for keyboard users, and Escape dismisses it. The former exclusion
-checkbox has been removed. The three-window Threat view is the default, with
-the four-frame view available through the comparison menu. Largest-date
-sensitivity results remain in the JSON as an audit record, without a page control.
+checkbox has been removed. The poster features one larger next-day Victory
+scatterplot (Spearman ρ = 0.50, 20 dates), with the largest-date check shown in
+text (ρ = 0.43, 19 dates). This is an exploratory association selected after
+multiple frame/window comparisons, not a confirmed or predictive result.
+The evidence page retains the complete four-frame and three-window Threat views,
+defaulting to all four frames the day after. Largest-date sensitivity results
+remain in the JSON as an audit record, without a page control.
 
 The 47-row workbook labels its releases `Jan-Jun 2026 v26.01.26.06` and
 `July 2026 v26.0.7`. Record 625182 has inconsistent supplied bounds
