@@ -1,0 +1,67 @@
+/* Match the portfolio's Quarto/Cosmo typography and light palette.
+   Source Sans Pro is bundled locally under the SIL Open Font License.
+   Frame hues match the portfolio's text-analysis methods page. */
+@font-face{font-family:"Source Sans Pro";font-style:normal;font-weight:300;font-display:swap;src:url("fonts/source-sans-pro-300.ttf") format("truetype")}
+@font-face{font-family:"Source Sans Pro";font-style:normal;font-weight:400;font-display:swap;src:url("fonts/source-sans-pro-400.ttf") format("truetype")}
+@font-face{font-family:"Source Sans Pro";font-style:normal;font-weight:700;font-display:swap;src:url("fonts/source-sans-pro-700.ttf") format("truetype")}
+:root{
+  --paper:#fff;--ground:#fff;--ink:#343a40;--muted:#6c757d;
+  --rule:#dee2e6;--red:#2780e3;--green:#2780e3;--wash:#f2f7fd;--ochre:#7d6594;
+  --portfolio-link:#2761e3;
+  --portfolio-font:"Source Sans Pro",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+body{font:400 1.05rem/1.55 var(--portfolio-font)}
+button,select{font-family:var(--portfolio-font)}
+a{color:var(--portfolio-link)}
+a:hover{color:#1f4eb6}
+h1,h2,h3,h4{font-family:var(--portfolio-font);letter-spacing:normal}
+.toolbar{background:#f8f9fa;color:#555657;border-bottom:1px solid var(--rule);font-size:16px}
+.toolbar .brand{font-size:18px;letter-spacing:0;text-transform:none;font-weight:400}
+.toolbar a{color:#555657;text-decoration:none}
+.toolbar a:hover{color:var(--portfolio-link);text-decoration:underline}
+.toolbar button{background:#fff;color:var(--portfolio-link);border-color:#2780e3;border-radius:4px;font-size:14px}
+.toolbar button:hover{background:#2780e3;color:#fff}
+.paper{border-color:var(--rule);box-shadow:none;border-radius:4px}
+.masthead{border-bottom:1px solid var(--rule)}
+.masthead h1{font-family:var(--portfolio-font);font-weight:700;line-height:1.12;letter-spacing:normal}
+.eyebrow{color:var(--muted);font-weight:400;font-size:14px;letter-spacing:0;text-transform:none}
+.dek{font-weight:300;color:#495057}
+.byline b{font-weight:700}
+.stat strong{font-family:var(--portfolio-font);font-weight:400}
+.stat span{color:var(--muted)}
+.takeaway{background:#f2f7fd;border-left-color:#2780e3;border-radius:4px}
+.takeaway .label{color:#2761e3;font-size:13px;font-weight:700;letter-spacing:0;text-transform:none}
+.takeaway h2{font-family:var(--portfolio-font);font-weight:700;letter-spacing:0}
+.section-title{font-size:17px;font-weight:700;letter-spacing:0;text-transform:none;border-bottom:1px solid var(--rule);padding-bottom:8px}
+.section-title span{color:var(--muted);font-weight:400;font-size:13px}
+.column h3{font-weight:700}
+.flow li:before{background:#2780e3}
+.figure-tag{font-size:11px;text-transform:none;letter-spacing:0}
+.segmented{border-color:#2780e3;border-radius:4px;overflow:hidden}
+.segmented button{color:#2761e3;font-size:12px;font-weight:400}
+.segmented button[aria-pressed=true]{color:#fff;background:#2780e3}
+.segmented button:hover{background:#e9f2fc;color:#1f4eb6}
+.segmented button[aria-pressed=true]:hover{background:#216dc1;color:#fff}
+.mini figcaption{font-size:14px;font-weight:700}
+.interpretation{background:#f8f9fa;border-color:var(--rule);border-radius:4px}
+.caution{border-top:1px solid var(--rule)}
+.caution b{color:var(--ink)}
+.review-status{color:#674b16;background:#fff8e7;border-color:#e4ca8b;border-radius:4px}
+.error-example{background:#f8f9fa;border:1px solid var(--rule);border-radius:8px}
+.error-example .bar{background:#e9ecef;border-radius:99px;overflow:hidden}
+.error-example .bar span{background:#7d6594}
+.support h2{font-family:var(--portfolio-font);font-weight:700;letter-spacing:0}
+.support-head{border-bottom:1px solid var(--rule)}
+thead{background:#f8f9fa}
+td.blank{color:#6c757d;background:#f8f9fa}
+td.present{background:#edf4fc}
+td.complete{background:#dceafb}
+details{border-color:var(--rule)}
+.download-row a{border-color:#ced4da;border-radius:4px}
+.download-row a:hover{background:#f2f7fd;border-color:#2780e3}
+.review-block{background:#f8f9fa;border-left-color:#2780e3;border-radius:4px}
+code{font-family:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;color:#ad1457;background:#f8f9fa;padding:.1em .2em;border-radius:3px}
+@media screen and (min-width:701px){.column p,.column li{font-size:14px}.column .flow span{font-size:13px}.poster-footer p{font-size:11px}.support p,.support li{font-size:16px}}
+@media(max-width:700px){.toolbar .brand{font-size:14px}.toolbar nav{font-size:13px}.toolbar button{font-size:12px}.masthead h1{font-size:38px}.eyebrow{font-size:13px}.takeaway .label{font-size:12px}.section-title{font-size:18px}}
+@media screen and (max-width:480px){.small-charts{grid-template-columns:1fr;gap:18px}.mini figcaption{font-size:16px}}
+@media print{body{font-family:var(--portfolio-font)}.paper{border-radius:0}.masthead h1,.stat strong,.takeaway h2,.support h2{font-family:var(--portfolio-font)}.section-title{font-size:22pt}.section-title span{font-size:16pt}.eyebrow{font-size:17pt}.takeaway .label{font-size:17pt}.mini figcaption{font-size:18pt}.figure-tag{font-size:14pt}.toolbar{display:none}}

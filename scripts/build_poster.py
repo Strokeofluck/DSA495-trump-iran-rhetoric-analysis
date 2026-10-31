@@ -69,6 +69,7 @@ def main():
         'limitations': ['Saved model scores, not a fresh inference run.', 'No human-labeled evaluation supplied.', 'Non-independent overlapping windows.', 'Source snapshot and model revision are not pinned.'],
     }
     DOCS.mkdir(exist_ok=True)
+    (DOCS/'portfolio.css').write_text((ROOT/'scripts/portfolio.css').read_text(encoding='utf-8'), encoding='utf-8')
     (DOCS/'evidence.json').write_text(json.dumps(evidence, ensure_ascii=False, indent=2)+'\n', encoding='utf-8')
     with (DOCS/'frame-means.csv').open('w', newline='', encoding='utf-8') as handle:
         writer=csv.writer(handle)

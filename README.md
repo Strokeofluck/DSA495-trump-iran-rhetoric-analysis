@@ -9,6 +9,11 @@ isolates the three-column poster and resets the comparison to the same 14 dates.
 The print stylesheet targets a 36 × 24 inch landscape poster; the instructor has
 not specified dimensions or confirmed that a web URL alone is a valid submission.
 
+The typography and palette match Sean's portfolio: locally bundled Source Sans
+Pro, the light Quarto/Cosmo colors, blue links, and the portfolio's six rhetorical
+frame colors. Edit `scripts/portfolio.css` and rebuild to update this styling.
+Font licensing is included in `docs/fonts/OFL.txt`.
+
 ### Start here and reproduce the poster
 
 1. Clone this repository and open a terminal in it.
