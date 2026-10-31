@@ -44,11 +44,10 @@ def main():
         assert (date.fromisoformat(row['post_date_et']) - date.fromisoformat(row['event_date'])).days == window
         groups[(row['event_date'], window)].append(row)
     dates = sorted({r['event_date'] for r in rows})
-    complete = [d for d in dates if all((d, w) in groups for w in WINDOWS)]
     event_means = {k: {f: mean(scores[r['truth_id']][f] for r in rs) for f in FRAMES} for k, rs in groups.items()}
     summaries = {}
-    for mode in ['matched', 'available']:
-        selected = complete if mode == 'matched' else dates
+    for mode in ['available']:
+        selected = dates
         summaries[mode] = {
             'dates': len(selected),
             'coverage': [sum((d, w) in groups for d in selected) for w in WINDOWS],
@@ -82,7 +81,7 @@ def main():
     inline = json.dumps(evidence, ensure_ascii=False).replace('<','\\u003c')
     assert template.count('__EVIDENCE_JSON__') == 1
     (DOCS/'index.html').write_text(template.replace('__EVIDENCE_JSON__', inline), encoding='utf-8')
-    print(json.dumps({'snapshot':evidence['snapshot'], 'matched':summaries['matched'], 'available':summaries['available'], 'checks':'ID joins, finite score range, unique pairs, consistent text, and ET date offsets passed'}, indent=2))
+    print(json.dumps({'snapshot':evidence['snapshot'], 'available':summaries['available'], 'checks':'ID joins, finite score range, unique pairs, consistent text, and ET date offsets passed'}, indent=2))
 
 if __name__ == '__main__':
     main()

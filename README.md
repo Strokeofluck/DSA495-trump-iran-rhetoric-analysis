@@ -2,10 +2,9 @@
 
 **[Read the interactive research poster](https://strokeofluck.github.io/DSA495-trump-iran-rhetoric-analysis/)**
 
-The poster uses the committed 87-post / 26-date dataset. It includes a matched-date
-sensitivity comparison, exact downloadable values, source-linked model examples,
+The poster uses the committed 87-post / 26-date dataset. It includes all available posts, exact downloadable values, source-linked model examples,
 limitations, an AI-use statement, and oral-presentation notes. Its print button
-isolates the three-column poster and resets the comparison to the same 14 dates.
+isolates the three-column poster using the same all-data results shown on screen.
 The print stylesheet targets a 36 × 24 inch landscape poster; the instructor has
 not specified dimensions or confirmed that a web URL alone is a valid submission.
 
@@ -21,8 +20,8 @@ Font licensing is included in `docs/fonts/OFL.txt`.
    No third-party packages, network calls, or model downloads are required.
 3. Run `python -m http.server 8000 --directory docs` and open
    `http://localhost:8000/` in a browser.
-4. Compare **Same 14 dates** with **All available dates**, inspect the source
-   examples and coverage table, and download `frame-means.csv` if needed.
+4. Inspect the all-data figures, source examples, and coverage table, and download
+   `frame-means.csv` if needed. Dates do not need posts in all three windows.
 
 The builder validates unique score IDs and post/event pairs, complete score joins,
 consistent repeated text, finite 0–1 scores, and saved Eastern Time date offsets.
@@ -33,7 +32,7 @@ was not rerun, and classifier accuracy has not been established**.
 | Path | Role |
 | --- | --- |
 | `docs/index.html` | GitHub Pages poster and supporting evidence; no CDN dependencies |
-| `docs/evidence.json` | Counts, coverage, examples, two comparison populations, input SHA-256 hashes |
+| `docs/evidence.json` | Counts, coverage, examples, all-data window means, input SHA-256 hashes |
 | `docs/frame-means.csv` | Exact six-frame means with contributing-date and post/event-pair counts |
 | `scripts/build_poster.py` | Portable, standard-library aggregation and validation |
 | `scripts/poster.template.html` | Editable page, chart, and print source; rebuild after edits |
@@ -78,7 +77,7 @@ these gaps and does not invent evaluation results. See
 
 **AI-use update (October 31, 2026):** OpenAI Codex read the instructor's rubric,
 inspected this repository, created the poster and aggregation script, recomputed
-the saved-score means, added a matched-date comparison, fixed the six-frame HTML
+the saved-score means, documented coverage, fixed the six-frame HTML
 style mapping, and performed implementation checks. The notebook, corpus, and
 cached scores already existed. BART was not rerun. Qualitative model examples
 are not human gold labels or a performance estimate. The earlier AI-use history

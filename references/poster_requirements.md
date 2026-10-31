@@ -22,13 +22,14 @@ a poster submission assignment during this review.
 | Criterion | Weight | Evidence on the page | Remaining limit |
 | --- | ---: | --- | --- |
 | Problem & Technical Workflow | 25% | Concrete input/output task, corpus, unique-post scoring, tokenizer/representation, six frame descriptions, BART-MNLI settings, two-stage mean | Original upstream acquisition, source/model revisions and environment are not fully reconstructable yet |
-| Experimental Evidence & Evaluation Validity | 30% | Real saved-score figures, exact values, coverage table, same-date sensitivity, source-linked qualitative cases, explicit dependence and interpretation limits | No human gold labels, held-out performance, or evaluated baseline; cannot claim exemplary evaluation |
+| Experimental Evidence & Evaluation Validity | 30% | Real saved-score figures, exact values, coverage table, all-data window coverage, source-linked qualitative cases, explicit dependence and interpretation limits | No human gold labels, held-out performance, or evaluated baseline; cannot claim exemplary evaluation |
 | Poster Design & Technical Communication | 25% | Three-column poster, readable small multiples on a common scale, numeric labels, compact takeaway, print view, mobile layout, accessible controls | Final upload format and dimensions must follow any later Canvas instructions |
 | Oral Defense & Team Command | 20% | 90-second explanation, rehearseable questions, code links, AI-use statement | Sean must personally understand and defend the code and choices |
 
 The original repository estimator uses 20 / 21 / 21 nonempty date groups in the
-three windows. The poster's primary estimator uses the same 14 dates in each
-window, with 26 / 25 / 26 post/event pairs. These are descriptive comparisons,
+three windows. The poster uses all available posts, with 40 / 40 / 49 post/event pairs.
+Dates contribute wherever a window contains posts; there is no requirement to
+have posts in every window. These are descriptive comparisons,
 not experimental treatment effects. Reusing posts across dates creates dependence.
 
 ## Evaluation plan — proposed, not performed

@@ -1,22 +1,4 @@
 scope,frame,relative_day,mean_entailment_score,contributing_dates,post_event_pairs
-matched,Threat,-1,0.578906514476763,14,26
-matched,Threat,0,0.5939718519137906,14,25
-matched,Threat,1,0.5292083450116306,14,26
-matched,Victory,-1,0.6944189257587173,14,26
-matched,Victory,0,0.8440977576233092,14,25
-matched,Victory,1,0.7288924085552848,14,26
-matched,Diplomacy,-1,0.20696809273795225,14,26
-matched,Diplomacy,0,0.2448930847382317,14,25
-matched,Diplomacy,1,0.2764598590833235,14,26
-matched,Ceasefire / Ending,-1,0.366762132893893,14,26
-matched,Ceasefire / Ending,0,0.36896209654930445,14,25
-matched,Ceasefire / Ending,1,0.39934857174410443,14,26
-matched,Blame Allies,-1,0.07745341962332272,14,26
-matched,Blame Allies,0,0.1472806861981683,14,25
-matched,Blame Allies,1,0.14353408023487732,14,26
-matched,Media Criticism,-1,0.35848908006612745,14,26
-matched,Media Criticism,0,0.32129566553270533,14,25
-matched,Media Criticism,1,0.3494109500288254,14,26
 available,Threat,-1,0.5476339321273068,20,40
 available,Threat,0,0.5244780239912438,21,40
 available,Threat,1,0.4845270719814358,21,49
