@@ -1,5 +1,84 @@
 # Trump’s Iran Rhetoric Before, During, and After Conflict Events
 
+**[Read the interactive research poster](https://strokeofluck.github.io/DSA495-trump-iran-rhetoric-analysis/)**
+
+The poster uses the committed 87-post / 26-date dataset. It includes a matched-date
+sensitivity comparison, exact downloadable values, source-linked model examples,
+limitations, an AI-use statement, and oral-presentation notes. Its print button
+isolates the three-column poster and resets the comparison to the same 14 dates.
+The print stylesheet targets a 36 × 24 inch landscape poster; the instructor has
+not specified dimensions or confirmed that a web URL alone is a valid submission.
+
+### Start here and reproduce the poster
+
+1. Clone this repository and open a terminal in it.
+2. With **Python 3.10 or later**, run `python scripts/build_poster.py`.
+   No third-party packages, network calls, or model downloads are required.
+3. Run `python -m http.server 8000 --directory docs` and open
+   `http://localhost:8000/` in a browser.
+4. Compare **Same 14 dates** with **All available dates**, inspect the source
+   examples and coverage table, and download `frame-means.csv` if needed.
+
+The builder validates unique score IDs and post/event pairs, complete score joins,
+consistent repeated text, finite 0–1 scores, and saved Eastern Time date offsets.
+It writes the page, exact means, source checksums, and evidence JSON. It was checked
+with Python 3.13. This reproduces aggregation from saved scores; **BART inference
+was not rerun, and classifier accuracy has not been established**.
+
+| Path | Role |
+| --- | --- |
+| `docs/index.html` | GitHub Pages poster and supporting evidence; no CDN dependencies |
+| `docs/evidence.json` | Counts, coverage, examples, two comparison populations, input SHA-256 hashes |
+| `docs/frame-means.csv` | Exact six-frame means with contributing-date and post/event-pair counts |
+| `scripts/build_poster.py` | Portable, standard-library aggregation and validation |
+| `scripts/poster.template.html` | Editable page, chart, and print source; rebuild after edits |
+| `data/` | Prepared post/event CSV, saved scores, and UCDP-derived event workbook |
+| `Trump_Iran_Connected_Timeline_ZeroShot_Colab.ipynb` | Original classification and connected-timeline workflow |
+| `references/poster_requirements.md` | Rubric mapping and remaining evaluation work |
+
+### Original classification workflow
+
+Open the existing notebook in Google Colab, select a T4 GPU when available, and
+run cells in order. The notebook installs Transformers, Accelerate, SentencePiece,
+Sentence Transformers, OpenPyXL, pandas, NumPy, and scikit-learn. It also uses
+PyTorch, tqdm, and the Colab runtime. Its package versions and model revision are
+not pinned; an exact inference reproduction is not yet guaranteed.
+
+The notebook expects `MyDrive/Trump_Iran_Project` and asks for the prepared CSV
+and workbook if absent. Upload the corresponding files from `data/`. To reuse
+saved scores, copy `data/trump_iran_zero_shot_scores_26event_subset.csv` to that
+Drive folder as `trump_iran_zero_shot_scores.csv` **before the scoring cell**.
+To obtain fresh scores, use an empty cache location; inference downloads
+`facebook/bart-large-mnli` and may take time. Keep the six prompts fixed when
+comparing cached and regenerated results. This notebook uses Google Drive and
+is not a local, headless reproduction script.
+
+The poster work also corrected the original HTML renderer's missing style-map
+entries for Blame Allies and Media Criticism and stale references to four frames.
+This fixes the six-frame mapping error; it does not claim a fresh full Colab run.
+
+### Readiness and submission
+
+The course site states **poster due November 25, 2026 at 11:59 p.m.**, presentation
+**November 30**, and documented repository due **December 6**. Submit through the
+designated Canvas links when available; this repository is not a Canvas submission.
+The poster submission window was not available during this review.
+
+**Remaining for the full evaluation rubric:** blind human labels, a distinct
+held-out evaluation, an evaluated baseline, per-frame precision/recall/F1 and
+support, and error analysis. Exact upstream snapshots, UCDP release, package
+versions, and model revision also need to be recorded. The page clearly labels
+these gaps and does not invent evaluation results. See
+[rubric mapping and next steps](references/poster_requirements.md).
+
+**AI-use update (October 31, 2026):** OpenAI Codex read the instructor's rubric,
+inspected this repository, created the poster and aggregation script, recomputed
+the saved-score means, added a matched-date comparison, fixed the six-frame HTML
+style mapping, and performed implementation checks. The notebook, corpus, and
+cached scores already existed. BART was not rerun. Qualitative model examples
+are not human gold labels or a performance estimate. The earlier AI-use history
+is retained in section 11 below.
+
 ## 1. Working project title
 
 **Trump’s Iran Rhetoric Before, During, and After Conflict Events: A Truth Social Text Analysis**
