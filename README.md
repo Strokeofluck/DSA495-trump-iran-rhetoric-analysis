@@ -2,17 +2,21 @@
 
 **[Read the interactive research poster](https://strokeofluck.github.io/DSA495-trump-iran-rhetoric-analysis/)**
 
+**[Open the complete print-ready poster PDF](https://strokeofluck.github.io/DSA495-trump-iran-rhetoric-analysis/research-poster.pdf)**
+
 The poster uses all available posts in the committed 87-post / 26-date dataset.
 It contains the three-column research poster, figures, source links, limitations,
 and AI-use statement. The print view uses the same all-data results shown on screen.
 
 Supporting material lives on separate pages, linked here rather than on the poster:
 
-- **[Explore evidence](https://strokeofluck.github.io/DSA495-trump-iran-rhetoric-analysis/evidence.html)** — coverage table, source-linked model examples, methods, exact means, and data downloads.
+- **[Explore evidence](https://strokeofluck.github.io/DSA495-trump-iran-rhetoric-analysis/evidence.html)** — interactive event/post browser, workbook records, severity checks, coverage table, source-linked model examples, methods, exact means, and data downloads.
 - **[Presentation notes](https://strokeofluck.github.io/DSA495-trump-iran-rhetoric-analysis/presentation-notes.html)** — 90-second explanation, rehearsal questions, and remaining rubric work.
 
 The print stylesheet targets a 36 × 24 inch landscape poster; the instructor has
 not specified dimensions or confirmed that a web URL alone is a valid submission.
+The Print poster control opens the verified one-page PDF, including all columns
+and the severity figure. It does not depend on an in-app browser's print dialog.
 
 The typography and palette match Sean's portfolio: locally bundled Source Sans
 Pro, the light Quarto/Cosmo colors, blue links, and the portfolio's six rhetorical
@@ -41,13 +45,58 @@ was not rerun, and classifier accuracy has not been established**.
 | `docs/index.html` | Standalone GitHub Pages poster; no CDN dependencies |
 | `docs/evidence.html` | Supporting coverage, methods, examples, and exact results |
 | `docs/presentation-notes.html` | Speaking notes, rehearsal questions, and completion guidance |
+| `docs/research-poster.pdf` | Verified one-page 36 × 24 inch print output |
+| `docs/severity-results.json` | Plotted date-level values and Spearman correlations for each window, with the largest-date check |
 | `docs/evidence.json` | Counts, coverage, examples, all-data window means, input SHA-256 hashes |
 | `docs/frame-means.csv` | Exact six-frame means with contributing-date and post/event-pair counts |
 | `scripts/build_poster.py` | Portable, standard-library aggregation and validation |
+| `scripts/poster_evidence.py` | Standard-library workbook reader, same-day fatality sums, source-post windows, and tied-rank correlations |
+| `scripts/render_poster_pdf.py` | Optional PDF rebuild using a separate headless Chromium process |
 | `scripts/*.template.html` | Editable source for the poster, evidence, and presentation pages; rebuild after edits |
 | `data/` | Prepared post/event CSV, saved scores, and UCDP-derived event workbook |
 | `Trump_Iran_Connected_Timeline_ZeroShot_Colab.ipynb` | Original classification and connected-timeline workflow |
 | `references/poster_requirements.md` | Rubric mapping and remaining evaluation work |
+
+### Severity and timeline evidence
+
+The event browser uses the same 87 unique posts and 129 post/date pairs as the
+poster, across 26 dates. It includes six saved scores, full post text, source links,
+and the workbook records starting on each selected date. Missing windows remain
+explicitly empty; they are never converted to zero rhetorical scores.
+
+Severity is the summed `best` fatality estimate for workbook records whose
+`date_start == date_end == event_date`. Spanning records are retained in the source
+viewer but their cumulative fatalities are excluded from same-day severity.
+Each plotted point is a date with positive same-day fatalities and at least one
+post in the selected window. The samples are 19 dates before, 20 on the event day,
+and 20 after; no requirement to have posts in all three windows is imposed.
+Horizontal whiskers show summed low/high source estimates, not confidence intervals.
+Spearman correlations use average ranks for ties. The optional sensitivity check
+omits February 28, the largest same-day fatality date (162 best; 162–175 low/high).
+
+The 47-row workbook labels its releases `Jan-Jun 2026 v26.01.26.06` and
+`July 2026 v26.0.7`. Record 625182 has inconsistent supplied bounds
+(low/best 2417, high 2401); the browser flags this without altering the source.
+That record spans multiple days and is not included in any severity point.
+Every plotted point has internally ordered source bounds. These are provisional
+source estimates and descriptive associations, not a causal or predictive test.
+
+The newer portfolio screenshot uses a different refreshed dataset. Its sample
+sizes and coefficients are not silently copied into this repository's figures.
+
+To rebuild the PDF after rebuilding the HTML, use an installed Chromium/Chrome
+executable supporting headless printing:
+
+```text
+python scripts/render_poster_pdf.py --browser /path/to/chrome
+```
+
+This optional step needs no extra Python packages. It starts a temporary headless
+profile, loads only the local built page, and writes `docs/research-poster.pdf`.
+Check that the result has one page and that every section and chart is present
+after any content/layout change. The committed output was rendered and visually
+checked; PDF text/page-size checks and an independent workbook/rank-correlation
+recalculation also passed.
 
 ### Original classification workflow
 
@@ -79,8 +128,8 @@ The poster submission window was not available during this review.
 
 **Remaining for the full evaluation rubric:** blind human labels, a distinct
 held-out evaluation, an evaluated baseline, per-frame precision/recall/F1 and
-support, and error analysis. Exact upstream snapshots, UCDP release, package
-versions, and model revision also need to be recorded. The page clearly labels
+support, and error analysis. The original archive snapshot, workbook download
+provenance, package versions, and model revision also need to be recorded. The page clearly labels
 these gaps and does not invent evaluation results. See
 [rubric mapping and next steps](references/poster_requirements.md).
 

@@ -67,3 +67,12 @@ Colab/Drive and unpinned packages; exact upstream collection and inference are
 explicitly unfinished. Saved scores were used unchanged.
 
 Supporting evidence and presentation notes are separate pages linked from the repository README. The main poster does not link to those pages.
+
+The poster also contains an exploratory severity figure with a post-window selector
+and largest-date exclusion check. Its downloadable PDF includes the default
+event-day figure. The evidence page contains an interactive event/post browser,
+individual workbook records, full post text, exact severity values, and the
+documented source-bound inconsistency. These use this repository's snapshot,
+not the newer portfolio dataset. The Print poster link opens a verified one-page
+36 × 24 inch PDF; the native print CSS is also constrained to avoid the original
+grid page-break defect.

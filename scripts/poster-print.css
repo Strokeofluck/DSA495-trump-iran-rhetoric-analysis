@@ -1,0 +1,56 @@
+/* A single 36 x 24 inch canvas, with no grid fragmentation between sheets. */
+@media print {
+  @page {size:36in 24in;margin:.5in}
+  html,body{margin:0!important;padding:0!important;background:#fff!important}
+  body{font-family:var(--portfolio-font);color:#343a40;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .toolbar,.end,.skip,.severity-controls,.severity-detail,.pdf-note{display:none!important}
+  main{width:35in;max-width:none;margin:0;padding:0}
+  .paper{width:35in;margin:0;padding:0;border:0;box-shadow:none;border-radius:0}
+  .paper section,.paper figure,.poster-grid{break-inside:auto;page-break-inside:auto}
+  .masthead{padding-bottom:16px;gap:30px}
+  .masthead h1{font:700 52pt/1.05 var(--portfolio-font);margin:10px 0 12px;max-width:none}
+  .dek{font-size:23pt;line-height:1.25}
+  .eyebrow{font-size:14pt}
+  .byline{min-width:310px;font-size:15pt}
+  .byline b{font-size:23pt}
+  .snapshot{padding:14px 0}
+  .stat strong{font-size:34pt}
+  .stat span{font-size:14pt;max-width:220px}
+  .takeaway{margin:18px 0;padding:15px 20px;grid-template-columns:180px 1fr;gap:20px}
+  .takeaway .label{font-size:15pt}
+  .takeaway h2{font-size:25pt;line-height:1.15;margin:0 0 5px}
+  .takeaway h2 br{display:block}
+  .takeaway p{font-size:16pt}
+  .poster-grid{display:grid;grid-template-columns:.91fr 1.65fr 1.02fr;gap:32px}
+  .column+.column{margin:0;border-top:0;border-left:1px solid #dee2e6;padding:0 0 0 30px}
+  .column p,.column li{font-size:16pt;line-height:1.4;margin-bottom:12px}
+  .column h3{font-size:18pt;margin:16px 0 8px}
+  .section-title{font-size:20pt;margin:0 0 12px}
+  .section-title span{font-size:13pt}
+  .flow{margin:12px 0}
+  .flow li{padding-bottom:13px}
+  .flow span{font-size:15pt;line-height:1.4}
+  .note{font-size:13pt!important;line-height:1.4!important}
+  .figure-head h3{font-size:18pt}
+  .figure-tag{font-size:12pt}
+  .small-charts{display:grid;grid-template-columns:repeat(3,1fr);gap:14px 20px}
+  .mini figcaption{font-size:16pt}
+  .mini svg{width:100%;height:150pt;overflow:visible}
+  .mini svg text{font-size:12px}
+  .score-key,.coverage-inline,.interpretation{font-size:12pt!important;line-height:1.4!important}
+  .review-status{font-size:12pt}
+  .error-example{margin:13px 0;padding:13px}
+  .error-example p,.error-example .score{font-size:13pt;line-height:1.4}
+  .evaluation{display:block;grid-column:auto}
+  .severity-block{margin-top:22px;border-top:1px solid #dee2e6;padding-top:15px}
+  .severity-block h2{font-size:21pt;margin:0 0 8px}
+  .severity-intro,.severity-summary,.severity-caption{font-size:13pt!important;line-height:1.4!important;margin:6px 0}
+  .severity-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:25px}
+  .severity-small{margin:0}
+  .severity-small figcaption{font-size:16pt}
+  .severity-small figcaption span{font-size:12pt}
+  .severity-small svg{display:block;width:100%;height:275pt;overflow:visible}
+  .severity-small svg text{font-size:12px;fill:#56625d}
+  .poster-footer{margin-top:16px;padding-top:12px;gap:35px}
+  .poster-footer p{font-size:11pt;line-height:1.4}
+}

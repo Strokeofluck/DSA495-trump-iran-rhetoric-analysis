@@ -11,6 +11,7 @@ import math
 from collections import defaultdict, Counter
 from datetime import date
 from statistics import mean
+from poster_evidence import WORKBOOK, build_context
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / 'data'
@@ -55,21 +56,26 @@ def main():
             'means': {f: [mean(event_means[(d, w)][f] for d in selected if (d, w) in event_means) for w in WINDOWS] for f in FRAMES},
         }
     appearances = Counter(r['truth_id'] for r in rows)
+    context = build_context(DATA/WORKBOOK, dates, groups, event_means, scores, FRAMES)
     example_ids = ['116302505060458396', '116366072136989268']
     evidence = {
         'frames': FRAMES, 'windows': WINDOWS,
         'snapshot': {'posts': len(posts), 'pairs': len(pairs), 'dates': len(dates), 'first': dates[0], 'last': dates[-1],
                      'overlapping_posts': sum(n > 1 for n in appearances.values()), 'extra_links': len(rows)-len(posts)},
         'summaries': summaries,
+        'event_context': context,
         'coverage': [{'date': d, 'counts': [len(groups.get((d, w), [])) for w in WINDOWS]} for d in dates],
         'examples': [{'id': tid, 'text': posts[tid]['content_text'], 'source': posts[tid]['source_url'],
                       'url': posts[tid]['truth_url'], 'date': posts[tid]['post_date_et'], 'scores': scores[tid]} for tid in example_ids],
-        'inputs': [{'path': 'data/'+name, 'sha256': hashlib.sha256((DATA/name).read_bytes()).hexdigest()} for name in ['trump_iran_event_windows_unique_dates.csv', 'trump_iran_zero_shot_scores_26event_subset.csv']],
+        'inputs': [{'path': 'data/'+name, 'sha256': hashlib.sha256((DATA/name).read_bytes()).hexdigest()} for name in ['trump_iran_event_windows_unique_dates.csv', 'trump_iran_zero_shot_scores_26event_subset.csv',WORKBOOK]],
         'limitations': ['Saved model scores, not a fresh inference run.', 'No human-labeled evaluation supplied.', 'Non-independent overlapping windows.', 'Source snapshot and model revision are not pinned.'],
     }
     DOCS.mkdir(exist_ok=True)
     (DOCS/'portfolio.css').write_text((ROOT/'scripts/portfolio.css').read_text(encoding='utf-8'), encoding='utf-8')
+    for asset in ['poster-interactions.js','poster-print.css']:
+        (DOCS/asset).write_text((ROOT/'scripts'/asset).read_text(encoding='utf-8'),encoding='utf-8')
     (DOCS/'evidence.json').write_text(json.dumps(evidence, ensure_ascii=False, indent=2)+'\n', encoding='utf-8')
+    (DOCS/'severity-results.json').write_text(json.dumps(context['severity'],ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     with (DOCS/'frame-means.csv').open('w', newline='', encoding='utf-8') as handle:
         writer=csv.writer(handle)
         writer.writerow(['scope', 'frame', 'relative_day', 'mean_entailment_score', 'contributing_dates', 'post_event_pairs'])
@@ -78,6 +84,7 @@ def main():
                 for i,w in enumerate(WINDOWS):
                     writer.writerow([mode,f,w,summary['means'][f][i],summary['coverage'][i],summary['rows'][i]])
     inline = json.dumps(evidence, ensure_ascii=False).replace('<','\\u003c')
+    asset_version = hashlib.sha256(b''.join((DOCS/name).read_bytes() for name in ['portfolio.css','poster-interactions.js','poster-print.css'])).hexdigest()[:12]
     for source_name, output_name in [
         ('poster.template.html', 'index.html'),
         ('evidence.template.html', 'evidence.html'),
@@ -85,7 +92,10 @@ def main():
     ]:
         template = (ROOT/'scripts'/source_name).read_text(encoding='utf-8')
         assert template.count('__EVIDENCE_JSON__') == (0 if output_name == 'presentation-notes.html' else 1)
-        (DOCS/output_name).write_text(template.replace('__EVIDENCE_JSON__', inline), encoding='utf-8')
+        rendered=template.replace('__EVIDENCE_JSON__', inline)
+        for asset in ['portfolio.css','poster-interactions.js','poster-print.css']:
+            rendered=rendered.replace('"'+asset+'"','"'+asset+'?v='+asset_version+'"')
+        (DOCS/output_name).write_text(rendered, encoding='utf-8')
     print(json.dumps({'snapshot':evidence['snapshot'], 'available':summaries['available'], 'checks':'ID joins, finite score range, unique pairs, consistent text, and ET date offsets passed'}, indent=2))
 
 if __name__ == '__main__':
