@@ -98,7 +98,22 @@ button:disabled{opacity:.45;cursor:default}
 
 .severity-grid.threat-windows{grid-template-columns:repeat(3,minmax(0,1fr))}
 .severity-reading{font-size:14px;line-height:1.5;padding:12px 14px;background:#f2f7fd;border-left:3px solid #2780e3;border-radius:4px}
-.severity-filter-note{font-size:12px;color:var(--muted);margin:0 0 12px}
 #single-window-control:not([hidden]){display:inline-flex;align-items:center;gap:10px}
-.severity-controls label:has(input:disabled){color:var(--muted)}
 @media screen and (max-width:800px){.severity-grid.threat-windows{grid-template-columns:1fr}}
+
+.event-point{cursor:pointer;touch-action:manipulation}
+.event-point[aria-expanded="true"]{stroke:#202d2a;stroke-width:3}
+.event-popover{position:fixed;z-index:1000;box-sizing:border-box;width:380px;max-width:calc(100vw - 16px);max-height:min(500px,calc(100vh - 16px));overflow:auto;background:#fff;color:#343a40;border:1px solid #bccbd9;border-radius:10px;box-shadow:0 8px 28px #1b314433;font:14px/1.45 var(--portfolio-font)}
+.event-popover[hidden]{display:none!important}
+.event-popover-header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 16px;border-bottom:1px solid #dee2e6;background:#f2f7fd;position:sticky;top:0}
+.event-popover-header h3{font:700 17px/1.2 var(--portfolio-font);margin:0}
+.event-popover-header button{font:24px/1 var(--portfolio-font);width:32px;height:32px;padding:0;border:1px solid #ced4da;background:#fff;color:#343a40;border-radius:4px;cursor:pointer}
+.event-popover-body{padding:13px 16px}
+.event-popover-body p{margin:0 0 10px}
+.event-popover-location{font-size:15px;font-weight:700}
+.event-popover-stats{display:grid;grid-template-columns:1fr 1fr;gap:5px 12px;margin:0 0 14px;font-variant-numeric:tabular-nums}
+.event-popover-stats dt{color:#56625d}.event-popover-stats dd{margin:0;font-weight:700;text-align:right}
+.event-popover-source-label{font-size:12px;font-weight:700;color:#56625d}
+.event-popover-headlines{padding-left:18px;margin:0 0 13px}.event-popover-headlines li{margin:0 0 8px}
+.event-popover-note{font-size:11px;color:#6c757d}
+@media print{.event-popover{display:none!important}}

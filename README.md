@@ -71,12 +71,13 @@ Each plotted point is a date with positive same-day fatalities and at least one
 post in the selected window. The samples are 19 dates before, 20 on the event day,
 and 20 after; no requirement to have posts in all three windows is imposed.
 Horizontal whiskers show summed low/high source estimates, not confidence intervals.
-The exclusion checkbox is disabled with an explanation if the selected window
-already omits February 28. In the three-window Threat view, excluding that date
-changes only the event-day and day-after panels, because no day-before post exists.
-Spearman correlations use average ranks for ties. The default severity view shows Threat for all three windows side by side.
-The four-frame view remains available through the comparison menu. The optional
-sensitivity check omits February 28, the largest same-day fatality date (162 best; 162–175 low/high).
+All eligible dates are included in the charts. Hover over a circle to see its
+event date, locations, same-day source headlines, fatality range, selected post
+window, post count, and frame score. Click/tap pins the pop-up; Enter or Space
+opens it for keyboard users, and Escape dismisses it. The former exclusion
+checkbox has been removed. The three-window Threat view is the default, with
+the four-frame view available through the comparison menu. Largest-date
+sensitivity results remain in the JSON as an audit record, without a page control.
 
 The 47-row workbook labels its releases `Jan-Jun 2026 v26.01.26.06` and
 `July 2026 v26.0.7`. Record 625182 has inconsistent supplied bounds

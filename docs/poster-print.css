@@ -3,7 +3,7 @@
   @page {size:36in 24in;margin:.5in}
   html,body{margin:0!important;padding:0!important;background:#fff!important}
   body{font-family:var(--portfolio-font);color:#343a40;-webkit-print-color-adjust:exact;print-color-adjust:exact}
-  .toolbar,.end,.skip,.severity-controls,.severity-detail,.severity-filter-note,.pdf-note{display:none!important}
+  .toolbar,.end,.skip,.severity-controls,.severity-detail,.event-popover,.pdf-note{display:none!important}
   main{width:35in;max-width:none;margin:0;padding:0}
   .paper{width:35in;margin:0;padding:0;border:0;box-shadow:none;border-radius:0}
   .paper section,.paper figure,.poster-grid{break-inside:auto;page-break-inside:auto}

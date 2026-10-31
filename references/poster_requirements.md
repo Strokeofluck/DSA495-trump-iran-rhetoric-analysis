@@ -69,7 +69,7 @@ explicitly unfinished. Saved scores were used unchanged.
 Supporting evidence and presentation notes are separate pages linked from the repository README. The main poster does not link to those pages.
 
 The poster also contains an exploratory severity figure with a post-window selector
-and largest-date exclusion check. Its downloadable PDF includes the default
+and hover/focus event pop-ups. All eligible dates are retained; there is no exclusion checkbox. Its downloadable PDF includes the default
 three-window Threat figure. The evidence page contains an interactive event/post browser,
 individual workbook records, full post text, exact severity values, and the
 documented source-bound inconsistency. These use this repository's snapshot,

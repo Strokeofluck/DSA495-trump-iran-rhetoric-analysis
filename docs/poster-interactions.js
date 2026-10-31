@@ -12,39 +12,92 @@
   const chartHost=document.getElementById('severity-charts');
   if(chartHost){
     const viewSelect=document.getElementById('severity-view');
-    const windowSelect=document.getElementById('severity-window'),exclude=document.getElementById('severity-exclude');
+    const windowSelect=document.getElementById('severity-window');
     const limit=Math.max(200,...Object.values(context.severity).flatMap(s=>s.rows.map(p=>p.high)));
     const xmax=Math.ceil(limit/100)*100;
     const x=v=>44+Math.log10(Math.max(1,v))/Math.log10(xmax)*260,y=v=>168-v*124;
-    document.getElementById('severity-exclude-label').textContent=`Exclude ${context.largest_date} (${context.largest_fatalities} deaths)`;
     const overall=data.summaries.available.means.Threat;
     document.getElementById('severity-reading').textContent=`Overall mean Threat score: ${fmt(overall[0])} before → ${fmt(overall[1])} on the event day → ${fmt(overall[2])} after. These all-data averages compare time windows. The scatterplots below ask a different question: whether higher Threat scores accompany higher event-day death counts.`;
+    const eventsByDate=new Map(context.events.map(event=>[event.date,event]));
+    const popup=make('aside','event-popover');
+    popup.id='event-popover';popup.hidden=true;popup.setAttribute('role','dialog');popup.setAttribute('aria-modal','false');popup.setAttribute('aria-labelledby','event-popover-title');
+    const popupHeader=make('div','event-popover-header'),popupTitle=make('h3');popupTitle.id='event-popover-title';
+    const closePopup=make('button','','×');closePopup.type='button';closePopup.setAttribute('aria-label','Close event details');
+    popupHeader.append(popupTitle,closePopup);const popupBody=make('div','event-popover-body');popup.append(popupHeader,popupBody);document.body.append(popup);
+    let activeDot=null,pinned=false,closeTimer=null,suppressFocus=false;
+    function dismiss(returnFocus=false){
+      clearTimeout(closeTimer);const previous=activeDot;
+      popup.hidden=true;pinned=false;
+      if(activeDot)activeDot.setAttribute('aria-expanded','false');activeDot=null;
+      if(returnFocus&&previous&&document.contains(previous)&&document.activeElement!==previous){suppressFocus=true;previous.focus();suppressFocus=false}
+    }
+    function positionPopup(){
+      if(!activeDot||popup.hidden)return;
+      const dot=activeDot.getBoundingClientRect(),box=popup.getBoundingClientRect(),gap=12;
+      const left=Math.max(8,Math.min(dot.left+gap,window.innerWidth-box.width-8));
+      const top=dot.bottom+gap+box.height<=window.innerHeight-8?dot.bottom+gap:dot.top-box.height-gap;
+      popup.style.left=left+'px';popup.style.top=Math.max(8,Math.min(top,window.innerHeight-box.height-8))+'px';
+    }
+    function showPopup(dot,point,panel,pin=false){
+      clearTimeout(closeTimer);
+      if(activeDot&&activeDot!==dot)activeDot.setAttribute('aria-expanded','false');
+      activeDot=dot;pinned=pin;dot.setAttribute('aria-expanded','true');
+      const event=eventsByDate.get(point.date);
+      const records=event.records.filter(record=>record.date_start===point.date&&record.date_end===point.date);
+      const locations=[...new Set(records.map(r=>r.where_coordinates).filter(Boolean))];
+      popupTitle.textContent='Event date · '+point.date;popupBody.replaceChildren();
+      popupBody.append(make('p','event-popover-location',locations.join(' · ')||'Location unavailable'));
+      const stats=make('dl','event-popover-stats');
+      const fields=[['Estimated deaths',`${point.fatalities} (low–high ${point.low}–${point.high})`],['Post window',names[panel.offset]],['Posts',String(point.count)],[panel.frame+' score',fmt(point.means[panel.frame])]];
+      fields.forEach(([label,value])=>stats.append(make('dt','',label),make('dd','',value)));popupBody.append(stats);
+      popupBody.append(make('p','event-popover-source-label',`Source headlines · ${records.length} same-day record${records.length===1?'':'s'}`));
+      const list=make('ul','event-popover-headlines');
+      const headlines=[...new Set(records.map(r=>r.source_headline.split(';')[0].trim()).filter(Boolean))];
+      headlines.slice(0,3).forEach(text=>list.append(make('li','',text.length>230?text.slice(0,230)+'…':text)));popupBody.append(list);
+      if(headlines.length>3)popupBody.append(make('p','note',`Plus ${headlines.length-3} additional source headline${headlines.length===4?'':'s'}.`));
+      popupBody.append(make('p','event-popover-note','This point groups records by date. Deaths are source estimates; rhetoric is a model score.'));
+      popup.hidden=false;positionPopup();
+      document.getElementById('severity-detail').textContent=`${point.date} · ${locations.join(' / ')} · ${point.fatalities} deaths · ${names[panel.offset]} ${panel.frame}: ${fmt(point.means[panel.frame])}`;
+    }
+    function scheduleDismiss(){
+      clearTimeout(closeTimer);closeTimer=setTimeout(()=>{
+        if(!pinned&&!popup.matches(':hover')&&!popup.contains(document.activeElement)&&activeDot!==document.activeElement)dismiss();
+      },160);
+    }
+    popup.addEventListener('pointerenter',()=>clearTimeout(closeTimer));popup.addEventListener('pointerleave',scheduleDismiss);popup.addEventListener('focusout',scheduleDismiss);
+    closePopup.addEventListener('click',()=>dismiss(true));
+    document.addEventListener('keydown',event=>{if(event.key==='Escape'&&!popup.hidden){event.preventDefault();dismiss(true)}});
+    document.addEventListener('pointerdown',event=>{if(!popup.hidden&&!popup.contains(event.target)&&event.target!==activeDot)dismiss()});
+    window.addEventListener('scroll',()=>dismiss(),{passive:true});window.addEventListener('resize',()=>dismiss());
+    function attachPopup(dot,point,panel){
+      dot.classList.add('event-point');dot.setAttribute('role','button');dot.setAttribute('aria-haspopup','dialog');dot.setAttribute('aria-controls','event-popover');dot.setAttribute('aria-expanded','false');
+      dot.addEventListener('pointerenter',event=>{if(event.pointerType!=='touch'&&(!pinned||activeDot===dot))showPopup(dot,point,panel,pinned)});
+      dot.addEventListener('pointerleave',scheduleDismiss);
+      dot.addEventListener('focus',()=>{if(!suppressFocus)showPopup(dot,point,panel,false)});dot.addEventListener('blur',scheduleDismiss);
+      dot.addEventListener('click',()=>{if(activeDot===dot&&pinned)dismiss();else showPopup(dot,point,panel,true)});
+      dot.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();showPopup(dot,point,panel,true);closePopup.focus()}});
+    }
+
     function render(){
+      dismiss();
       const threatView=viewSelect.value==='threat';
       document.getElementById('single-window-control').hidden=threatView;
       chartHost.classList.toggle('threat-windows',threatView);
       const panels=threatView?['-1','0','1'].map(offset=>({offset,frame:'Threat',color:colors[0],title:names[offset]})):
         frames.slice(0,4).map((frame,i)=>({offset:windowSelect.value,frame,color:colors[i],title:frame}));
-      const includesLargest=panels.some(panel=>context.severity[panel.offset].rows.some(p=>p.date===context.largest_date));
-      exclude.disabled=!includesLargest;
-      if(!includesLargest)exclude.checked=false;
-      document.getElementById('severity-exclude-reason').textContent=threatView?
-        'February 28 has no day-before post, so excluding it changes only the event-day and day-after panels.':
-        includesLargest?'Uncheck to include February 28 again.':
-        'February 28 is already absent from this window because there is no day-before post in the saved data. There is nothing to exclude here.';
       chartHost.replaceChildren();
       const table=document.querySelector('#severity-values tbody');if(table)table.replaceChildren();
       const sampleLabels=[];
-      document.getElementById('severity-detail').textContent='Hover over or focus a point to inspect its date, fatality estimate, post count, and score.';
+      document.getElementById('severity-detail').textContent='Hover over a circle for event details. Click or tap to keep the pop-up open; keyboard users can focus a circle and press Enter. Press Escape to close.';
       panels.forEach(panel=>{
         const group=context.severity[panel.offset];
-        const rows=group.rows.filter(p=>!exclude.checked||p.date!==context.largest_date);
-        const rho=(exclude.checked?group.without_largest_spearman:group.spearman)[panel.frame];
+        const rows=group.rows;
+        const rho=group.spearman[panel.frame];
         if(threatView||sampleLabels.length===0)sampleLabels.push(`${names[panel.offset]}: ${rows.length} dates`);
         const fig=make('figure','severity-small');
         const caption=make('figcaption','',panel.title);
         caption.append(make('span','',`ρ = ${rho===null?'n/a':rho.toFixed(2)} · n = ${rows.length}`));fig.append(caption);
-        const plot=svg('svg',{viewBox:'0 0 340 220',role:'img','aria-label':`${panel.frame} versus event-day deaths, ${names[panel.offset]}, ${rows.length} dates; Spearman rho ${rho===null?'unavailable':rho.toFixed(2)}.`});
+        const plot=svg('svg',{viewBox:'0 0 340 220',role:'group','aria-label':`${panel.frame} versus event-day deaths, ${names[panel.offset]}, ${rows.length} dates; Spearman rho ${rho===null?'unavailable':rho.toFixed(2)}.`});
         [0,.5,1].forEach(t=>{plot.append(svg('line',{x1:44,x2:304,y1:y(t),y2:y(t),stroke:'#dee2e6'}));plot.append(svg('text',{x:34,y:y(t)+4,'text-anchor':'end'},String(t)))});
         [1,5,25,100,xmax].filter((v,i,a)=>a.indexOf(v)===i).forEach(t=>plot.append(svg('text',{x:x(t),y:188,'text-anchor':'middle'},String(t))));
         plot.append(svg('text',{x:44,y:25},threatView?'Mean Threat score':'Mean model score'));
@@ -53,9 +106,7 @@
           if(point.bounds_valid)plot.append(svg('line',{x1:x(point.low),x2:x(point.high),y1:y(point.means[panel.frame]),y2:y(point.means[panel.frame]),stroke:panel.color,'stroke-width':2,opacity:.6}));
           const description=`${point.date} event; ${names[panel.offset]} posts: ${point.fatalities} event-day deaths (low-high ${point.low}-${point.high}), ${point.count} posts, ${panel.frame} ${fmt(point.means[panel.frame])}`;
           const dot=svg('circle',{cx:x(point.fatalities),cy:y(point.means[panel.frame]),r:4.5,fill:panel.color,stroke:'#fff','stroke-width':1,tabindex:0,'aria-label':description});
-          dot.append(svg('title',{},description));
-          const show=()=>{document.getElementById('severity-detail').textContent=description};
-          dot.addEventListener('focus',show);dot.addEventListener('mouseenter',show);dot.addEventListener('click',show);plot.append(dot);
+          attachPopup(dot,point,panel);plot.append(dot);
         });
         fig.append(plot);chartHost.append(fig);
         if(table&&(threatView||panels.indexOf(panel)===0))rows.forEach(p=>{
@@ -64,8 +115,8 @@
       });
       document.getElementById('severity-summary').textContent=(threatView?'Threat across all three windows · ':'')+sampleLabels.join(' · ')+'. Each panel uses the dates with same-day fatality records and posts in that window.';
     }
-    viewSelect.addEventListener('change',render);windowSelect.addEventListener('change',render);exclude.addEventListener('change',render);
-    window.addEventListener('beforeprint',()=>{viewSelect.value='threat';exclude.checked=false;render()});
+    viewSelect.addEventListener('change',render);windowSelect.addEventListener('change',render);
+    window.addEventListener('beforeprint',()=>{viewSelect.value='threat';render()});
     render();
   }
 
