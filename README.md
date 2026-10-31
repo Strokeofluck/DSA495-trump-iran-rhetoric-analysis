@@ -2,9 +2,15 @@
 
 **[Read the interactive research poster](https://strokeofluck.github.io/DSA495-trump-iran-rhetoric-analysis/)**
 
-The poster uses the committed 87-post / 26-date dataset. It includes all available posts, exact downloadable values, source-linked model examples,
-limitations, an AI-use statement, and oral-presentation notes. Its print button
-isolates the three-column poster using the same all-data results shown on screen.
+The poster uses all available posts in the committed 87-post / 26-date dataset.
+It contains the three-column research poster, figures, source links, limitations,
+and AI-use statement. The print view uses the same all-data results shown on screen.
+
+Supporting material lives on separate pages, linked here rather than on the poster:
+
+- **[Explore evidence](https://strokeofluck.github.io/DSA495-trump-iran-rhetoric-analysis/evidence.html)** — coverage table, source-linked model examples, methods, exact means, and data downloads.
+- **[Presentation notes](https://strokeofluck.github.io/DSA495-trump-iran-rhetoric-analysis/presentation-notes.html)** — 90-second explanation, rehearsal questions, and remaining rubric work.
+
 The print stylesheet targets a 36 × 24 inch landscape poster; the instructor has
 not specified dimensions or confirmed that a web URL alone is a valid submission.
 
@@ -20,22 +26,25 @@ Font licensing is included in `docs/fonts/OFL.txt`.
    No third-party packages, network calls, or model downloads are required.
 3. Run `python -m http.server 8000 --directory docs` and open
    `http://localhost:8000/` in a browser.
-4. Inspect the all-data figures, source examples, and coverage table, and download
-   `frame-means.csv` if needed. Dates do not need posts in all three windows.
+4. Open `evidence.html` for the source examples, coverage table, exact values, and
+   downloads. Open `presentation-notes.html` for the speaking notes. Dates do not
+   need posts in all three windows.
 
 The builder validates unique score IDs and post/event pairs, complete score joins,
 consistent repeated text, finite 0–1 scores, and saved Eastern Time date offsets.
-It writes the page, exact means, source checksums, and evidence JSON. It was checked
+It writes all three pages, exact means, source checksums, and evidence JSON. It was checked
 with Python 3.13. This reproduces aggregation from saved scores; **BART inference
 was not rerun, and classifier accuracy has not been established**.
 
 | Path | Role |
 | --- | --- |
-| `docs/index.html` | GitHub Pages poster and supporting evidence; no CDN dependencies |
+| `docs/index.html` | Standalone GitHub Pages poster; no CDN dependencies |
+| `docs/evidence.html` | Supporting coverage, methods, examples, and exact results |
+| `docs/presentation-notes.html` | Speaking notes, rehearsal questions, and completion guidance |
 | `docs/evidence.json` | Counts, coverage, examples, all-data window means, input SHA-256 hashes |
 | `docs/frame-means.csv` | Exact six-frame means with contributing-date and post/event-pair counts |
 | `scripts/build_poster.py` | Portable, standard-library aggregation and validation |
-| `scripts/poster.template.html` | Editable page, chart, and print source; rebuild after edits |
+| `scripts/*.template.html` | Editable source for the poster, evidence, and presentation pages; rebuild after edits |
 | `data/` | Prepared post/event CSV, saved scores, and UCDP-derived event workbook |
 | `Trump_Iran_Connected_Timeline_ZeroShot_Colab.ipynb` | Original classification and connected-timeline workflow |
 | `references/poster_requirements.md` | Rubric mapping and remaining evaluation work |

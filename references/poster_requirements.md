@@ -19,12 +19,12 @@ a poster submission assignment during this review.
 
 ## Rubric mapping
 
-| Criterion | Weight | Evidence on the page | Remaining limit |
+| Criterion | Weight | Evidence in the poster and supporting pages | Remaining limit |
 | --- | ---: | --- | --- |
 | Problem & Technical Workflow | 25% | Concrete input/output task, corpus, unique-post scoring, tokenizer/representation, six frame descriptions, BART-MNLI settings, two-stage mean | Original upstream acquisition, source/model revisions and environment are not fully reconstructable yet |
 | Experimental Evidence & Evaluation Validity | 30% | Real saved-score figures, exact values, coverage table, all-data window coverage, source-linked qualitative cases, explicit dependence and interpretation limits | No human gold labels, held-out performance, or evaluated baseline; cannot claim exemplary evaluation |
 | Poster Design & Technical Communication | 25% | Three-column poster, readable small multiples on a common scale, numeric labels, compact takeaway, print view, mobile layout, accessible controls | Final upload format and dimensions must follow any later Canvas instructions |
-| Oral Defense & Team Command | 20% | 90-second explanation, rehearseable questions, code links, AI-use statement | Sean must personally understand and defend the code and choices |
+| Oral Defense & Team Command | 20% | Separate presentation-notes page with a 90-second explanation and rehearsal questions; code links and AI-use statement | Sean must personally understand and defend the code and choices |
 
 The original repository estimator uses 20 / 21 / 21 nonempty date groups in the
 three windows. The poster uses all available posts, with 40 / 40 / 49 post/event pairs.
@@ -65,3 +65,5 @@ portable structure, version control, and an AI-use statement. This update provid
 a complete saved-score poster rebuild. The original notebook still depends on
 Colab/Drive and unpinned packages; exact upstream collection and inference are
 explicitly unfinished. Saved scores were used unchanged.
+
+Supporting evidence and presentation notes are separate pages linked from the repository README. The main poster does not link to those pages.

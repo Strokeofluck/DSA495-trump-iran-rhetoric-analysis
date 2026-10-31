@@ -77,10 +77,15 @@ def main():
             for f in FRAMES:
                 for i,w in enumerate(WINDOWS):
                     writer.writerow([mode,f,w,summary['means'][f][i],summary['coverage'][i],summary['rows'][i]])
-    template = (ROOT/'scripts/poster.template.html').read_text(encoding='utf-8')
     inline = json.dumps(evidence, ensure_ascii=False).replace('<','\\u003c')
-    assert template.count('__EVIDENCE_JSON__') == 1
-    (DOCS/'index.html').write_text(template.replace('__EVIDENCE_JSON__', inline), encoding='utf-8')
+    for source_name, output_name in [
+        ('poster.template.html', 'index.html'),
+        ('evidence.template.html', 'evidence.html'),
+        ('presentation-notes.template.html', 'presentation-notes.html'),
+    ]:
+        template = (ROOT/'scripts'/source_name).read_text(encoding='utf-8')
+        assert template.count('__EVIDENCE_JSON__') == (0 if output_name == 'presentation-notes.html' else 1)
+        (DOCS/output_name).write_text(template.replace('__EVIDENCE_JSON__', inline), encoding='utf-8')
     print(json.dumps({'snapshot':evidence['snapshot'], 'available':summaries['available'], 'checks':'ID joins, finite score range, unique pairs, consistent text, and ET date offsets passed'}, indent=2))
 
 if __name__ == '__main__':
