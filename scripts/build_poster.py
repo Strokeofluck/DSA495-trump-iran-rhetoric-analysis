@@ -95,6 +95,7 @@ def main():
         rendered=template.replace('__EVIDENCE_JSON__', inline)
         for asset in ['portfolio.css','poster-interactions.js','poster-print.css']:
             rendered=rendered.replace('"'+asset+'"','"'+asset+'?v='+asset_version+'"')
+        rendered=rendered.replace('href="research-poster.pdf"','href="research-poster.pdf?v='+asset_version+'"')
         (DOCS/output_name).write_text(rendered, encoding='utf-8')
     print(json.dumps({'snapshot':evidence['snapshot'], 'available':summaries['available'], 'checks':'ID joins, finite score range, unique pairs, consistent text, and ET date offsets passed'}, indent=2))
 

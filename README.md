@@ -16,7 +16,7 @@ Supporting material lives on separate pages, linked here rather than on the post
 The print stylesheet targets a 36 × 24 inch landscape poster; the instructor has
 not specified dimensions or confirmed that a web URL alone is a valid submission.
 The Print poster control opens the verified one-page PDF, including all columns
-and the severity figure. It does not depend on an in-app browser's print dialog.
+and Threat severity plots for all three windows. It does not depend on an in-app browser's print dialog.
 
 The typography and palette match Sean's portfolio: locally bundled Source Sans
 Pro, the light Quarto/Cosmo colors, blue links, and the portfolio's six rhetorical
@@ -71,8 +71,12 @@ Each plotted point is a date with positive same-day fatalities and at least one
 post in the selected window. The samples are 19 dates before, 20 on the event day,
 and 20 after; no requirement to have posts in all three windows is imposed.
 Horizontal whiskers show summed low/high source estimates, not confidence intervals.
-Spearman correlations use average ranks for ties. The optional sensitivity check
-omits February 28, the largest same-day fatality date (162 best; 162–175 low/high).
+The exclusion checkbox is disabled with an explanation if the selected window
+already omits February 28. In the three-window Threat view, excluding that date
+changes only the event-day and day-after panels, because no day-before post exists.
+Spearman correlations use average ranks for ties. The default severity view shows Threat for all three windows side by side.
+The four-frame view remains available through the comparison menu. The optional
+sensitivity check omits February 28, the largest same-day fatality date (162 best; 162–175 low/high).
 
 The 47-row workbook labels its releases `Jan-Jun 2026 v26.01.26.06` and
 `July 2026 v26.0.7`. Record 625182 has inconsistent supplied bounds

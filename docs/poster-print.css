@@ -3,7 +3,7 @@
   @page {size:36in 24in;margin:.5in}
   html,body{margin:0!important;padding:0!important;background:#fff!important}
   body{font-family:var(--portfolio-font);color:#343a40;-webkit-print-color-adjust:exact;print-color-adjust:exact}
-  .toolbar,.end,.skip,.severity-controls,.severity-detail,.pdf-note{display:none!important}
+  .toolbar,.end,.skip,.severity-controls,.severity-detail,.severity-filter-note,.pdf-note{display:none!important}
   main{width:35in;max-width:none;margin:0;padding:0}
   .paper{width:35in;margin:0;padding:0;border:0;box-shadow:none;border-radius:0}
   .paper section,.paper figure,.poster-grid{break-inside:auto;page-break-inside:auto}
@@ -44,8 +44,8 @@
   .evaluation{display:block;grid-column:auto}
   .severity-block{margin-top:22px;border-top:1px solid #dee2e6;padding-top:15px}
   .severity-block h2{font-size:21pt;margin:0 0 8px}
-  .severity-intro,.severity-summary,.severity-caption{font-size:13pt!important;line-height:1.4!important;margin:6px 0}
-  .severity-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:25px}
+  .severity-intro,.severity-summary,.severity-caption,.severity-reading{font-size:13pt!important;line-height:1.4!important;margin:6px 0}
+  .severity-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:25px}
   .severity-small{margin:0}
   .severity-small figcaption{font-size:16pt}
   .severity-small figcaption span{font-size:12pt}

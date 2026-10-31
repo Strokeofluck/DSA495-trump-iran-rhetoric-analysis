@@ -11,42 +11,61 @@
   const fmt=n=>Number(n).toFixed(3);
   const chartHost=document.getElementById('severity-charts');
   if(chartHost){
+    const viewSelect=document.getElementById('severity-view');
     const windowSelect=document.getElementById('severity-window'),exclude=document.getElementById('severity-exclude');
     const limit=Math.max(200,...Object.values(context.severity).flatMap(s=>s.rows.map(p=>p.high)));
     const xmax=Math.ceil(limit/100)*100;
     const x=v=>44+Math.log10(Math.max(1,v))/Math.log10(xmax)*260,y=v=>168-v*124;
     document.getElementById('severity-exclude-label').textContent=`Exclude ${context.largest_date} (${context.largest_fatalities} deaths)`;
+    const overall=data.summaries.available.means.Threat;
+    document.getElementById('severity-reading').textContent=`Overall mean Threat score: ${fmt(overall[0])} before → ${fmt(overall[1])} on the event day → ${fmt(overall[2])} after. These all-data averages compare time windows. The scatterplots below ask a different question: whether higher Threat scores accompany higher event-day death counts.`;
     function render(){
-      const group=context.severity[windowSelect.value];
-      const rows=group.rows.filter(p=>!exclude.checked||p.date!==context.largest_date);
-      const correlations=exclude.checked?group.without_largest_spearman:group.spearman;
+      const threatView=viewSelect.value==='threat';
+      document.getElementById('single-window-control').hidden=threatView;
+      chartHost.classList.toggle('threat-windows',threatView);
+      const panels=threatView?['-1','0','1'].map(offset=>({offset,frame:'Threat',color:colors[0],title:names[offset]})):
+        frames.slice(0,4).map((frame,i)=>({offset:windowSelect.value,frame,color:colors[i],title:frame}));
+      const includesLargest=panels.some(panel=>context.severity[panel.offset].rows.some(p=>p.date===context.largest_date));
+      exclude.disabled=!includesLargest;
+      if(!includesLargest)exclude.checked=false;
+      document.getElementById('severity-exclude-reason').textContent=threatView?
+        'February 28 has no day-before post, so excluding it changes only the event-day and day-after panels.':
+        includesLargest?'Uncheck to include February 28 again.':
+        'February 28 is already absent from this window because there is no day-before post in the saved data. There is nothing to exclude here.';
       chartHost.replaceChildren();
-      document.getElementById('severity-summary').textContent=`${names[windowSelect.value]} · ${rows.length} dates with same-day fatality records and posts in this window.`;
+      const table=document.querySelector('#severity-values tbody');if(table)table.replaceChildren();
+      const sampleLabels=[];
       document.getElementById('severity-detail').textContent='Hover over or focus a point to inspect its date, fatality estimate, post count, and score.';
-      frames.slice(0,4).forEach((frame,i)=>{
+      panels.forEach(panel=>{
+        const group=context.severity[panel.offset];
+        const rows=group.rows.filter(p=>!exclude.checked||p.date!==context.largest_date);
+        const rho=(exclude.checked?group.without_largest_spearman:group.spearman)[panel.frame];
+        if(threatView||sampleLabels.length===0)sampleLabels.push(`${names[panel.offset]}: ${rows.length} dates`);
         const fig=make('figure','severity-small');
-        const caption=make('figcaption','',frame);const rho=correlations[frame];
+        const caption=make('figcaption','',panel.title);
         caption.append(make('span','',`ρ = ${rho===null?'n/a':rho.toFixed(2)} · n = ${rows.length}`));fig.append(caption);
-        const plot=svg('svg',{viewBox:'0 0 340 220',role:'img','aria-label':`${frame} versus same-day deaths, ${names[windowSelect.value]}, ${rows.length} dates; Spearman rho ${rho===null?'unavailable':rho.toFixed(2)}.`});
+        const plot=svg('svg',{viewBox:'0 0 340 220',role:'img','aria-label':`${panel.frame} versus event-day deaths, ${names[panel.offset]}, ${rows.length} dates; Spearman rho ${rho===null?'unavailable':rho.toFixed(2)}.`});
         [0,.5,1].forEach(t=>{plot.append(svg('line',{x1:44,x2:304,y1:y(t),y2:y(t),stroke:'#dee2e6'}));plot.append(svg('text',{x:34,y:y(t)+4,'text-anchor':'end'},String(t)))});
-        [1,5,25,100,xmax].filter((v,i,a)=>a.indexOf(v)===i).forEach(t=>{plot.append(svg('text',{x:x(t),y:188,'text-anchor':'middle'},String(t)))});
-        plot.append(svg('text',{x:44,y:25},'Mean model score'));
-        plot.append(svg('text',{x:174,y:211,'text-anchor':'middle'},'Same-day deaths · log scale'));
+        [1,5,25,100,xmax].filter((v,i,a)=>a.indexOf(v)===i).forEach(t=>plot.append(svg('text',{x:x(t),y:188,'text-anchor':'middle'},String(t))));
+        plot.append(svg('text',{x:44,y:25},threatView?'Mean Threat score':'Mean model score'));
+        plot.append(svg('text',{x:174,y:211,'text-anchor':'middle'},'Event-day deaths · log scale'));
         rows.forEach(point=>{
-          if(point.bounds_valid)plot.append(svg('line',{x1:x(point.low),x2:x(point.high),y1:y(point.means[frame]),y2:y(point.means[frame]),stroke:colors[i],'stroke-width':2,opacity:.6}));
-          const description=`${point.date}: ${point.fatalities} deaths (low-high ${point.low}-${point.high}), ${point.count} posts, ${frame} ${fmt(point.means[frame])}`;
-          const dot=svg('circle',{cx:x(point.fatalities),cy:y(point.means[frame]),r:4.5,fill:colors[i],stroke:'#fff','stroke-width':1,tabindex:0,'aria-label':description});
+          if(point.bounds_valid)plot.append(svg('line',{x1:x(point.low),x2:x(point.high),y1:y(point.means[panel.frame]),y2:y(point.means[panel.frame]),stroke:panel.color,'stroke-width':2,opacity:.6}));
+          const description=`${point.date} event; ${names[panel.offset]} posts: ${point.fatalities} event-day deaths (low-high ${point.low}-${point.high}), ${point.count} posts, ${panel.frame} ${fmt(point.means[panel.frame])}`;
+          const dot=svg('circle',{cx:x(point.fatalities),cy:y(point.means[panel.frame]),r:4.5,fill:panel.color,stroke:'#fff','stroke-width':1,tabindex:0,'aria-label':description});
           dot.append(svg('title',{},description));
           const show=()=>{document.getElementById('severity-detail').textContent=description};
-          dot.addEventListener('focus',show);dot.addEventListener('mouseenter',show);dot.addEventListener('click',show);
-          plot.append(dot);
-        });fig.append(plot);chartHost.append(fig);
+          dot.addEventListener('focus',show);dot.addEventListener('mouseenter',show);dot.addEventListener('click',show);plot.append(dot);
+        });
+        fig.append(plot);chartHost.append(fig);
+        if(table&&(threatView||panels.indexOf(panel)===0))rows.forEach(p=>{
+          const tr=make('tr');[names[panel.offset],p.date,`${p.fatalities} (${p.low}-${p.high})`,p.count,...frames.slice(0,4).map(f=>fmt(p.means[f]))].forEach(t=>tr.append(make('td','',String(t))));table.append(tr);
+        });
       });
-      const table=document.querySelector('#severity-values tbody');
-      if(table){table.replaceChildren();rows.forEach(p=>{const tr=make('tr');[p.date,`${p.fatalities} (${p.low}-${p.high})`,p.count,...frames.slice(0,4).map(f=>fmt(p.means[f]))].forEach(t=>tr.append(make('td','',String(t))));table.append(tr)})}
+      document.getElementById('severity-summary').textContent=(threatView?'Threat across all three windows · ':'')+sampleLabels.join(' · ')+'. Each panel uses the dates with same-day fatality records and posts in that window.';
     }
-    windowSelect.addEventListener('change',render);exclude.addEventListener('change',render);
-    window.addEventListener('beforeprint',()=>{windowSelect.value='0';exclude.checked=false;render()});
+    viewSelect.addEventListener('change',render);windowSelect.addEventListener('change',render);exclude.addEventListener('change',render);
+    window.addEventListener('beforeprint',()=>{viewSelect.value='threat';exclude.checked=false;render()});
     render();
   }
 
