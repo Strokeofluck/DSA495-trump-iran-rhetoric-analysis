@@ -43,3 +43,5 @@ dialog{width:650px;max-width:calc(100vw - 32px);max-height:85vh;padding:24px;bor
 .poster-footer{grid-template-columns:1fr}
 
 .ribbon-bottom{display:flex;align-items:center;gap:18px;margin-top:7px}.ribbon-bottom .case-note{flex:1;margin:0}.ribbon-bottom button{background:white;border:1px solid #c8d2db;border-radius:4px;padding:3px 9px;font-size:11px;white-space:nowrap}@media print{.ribbon-bottom{display:none}}@media screen and (max-width:600px){.ribbon-bottom{align-items:flex-start;gap:10px}}
+
+.error-example .example-author{font-size:12px;color:#64717b;margin:7px 0}.error-example blockquote{margin:8px 0 12px;padding:9px 11px;background:#fff;border-left:3px solid #7d6594;font-size:15px;line-height:1.4;font-style:normal;overflow-wrap:anywhere}.error-example .example-reading{font-size:13px;line-height:1.4}
