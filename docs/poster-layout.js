@@ -16,15 +16,13 @@
   document.fonts.ready.then(resize);resize();
 
   const data=JSON.parse(document.getElementById('evidence-data').textContent);
-  const unique=new Map();
-  for(const event of data.event_context.events)for(const posts of Object.values(event.windows))for(const post of posts)unique.set(post.truth_id,post);
-  const posts=[...unique.values()].sort((a,b)=>a.created_at_et.localeCompare(b.created_at_et)||a.truth_id.localeCompare(b.truth_id));
-  const ribbon=document.querySelector('.post-ribbon'),track=document.getElementById('ribbon-track'),pause=document.getElementById('ribbon-pause');
+  const event=data.event_context.events.find(event=>event.date==='2026-02-28');
+  const ribbon=document.querySelector('.post-ribbon'),pause=document.getElementById('ribbon-pause');
   const reduced=matchMedia('(prefers-reduced-motion: reduce)');
-  const savedMotion=sessionStorage.getItem('dsa495-post-strip');
+  const savedMotion=sessionStorage.getItem('dsa495-event-posts');
   let paused=savedMotion==='running'?false:savedMotion==='paused'?true:reduced.matches;
-  function updatePause(){ribbon.classList.toggle('is-paused',paused);pause.textContent=paused?'Resume scrolling':'Pause scrolling';pause.setAttribute('aria-pressed',String(paused))}
-  pause.addEventListener('click',()=>{paused=!paused;sessionStorage.setItem('dsa495-post-strip',paused?'paused':'running');updatePause()});
+  function updatePause(){ribbon.classList.toggle('is-paused',paused);pause.textContent=paused?'Play posts':'Pause posts';pause.setAttribute('aria-pressed',String(paused))}
+  pause.addEventListener('click',()=>{paused=!paused;sessionStorage.setItem('dsa495-event-posts',paused?'paused':'running');updatePause()});
   reduced.addEventListener('change',event=>{if(event.matches)paused=true;updatePause()});updatePause();
   const dialog=document.getElementById('post-dialog');
   document.getElementById('post-close').addEventListener('click',()=>dialog.close());
@@ -60,14 +58,37 @@
     const source=el('a',null,'Truth Social ↗');source.href=post.truth_url;source.target='_blank';source.rel='noopener';
     foot.append(date,read,source);item.append(foot);return item;
   }
-  const group=el('div','ribbon-group');posts.forEach(post=>group.append(card(post)));track.append(group);
   dialog.addEventListener('close',()=>ribbon.classList.remove('dialog-paused'));
-  // Same post cards form a seamless second loop; only the first loop has keyboard stops.
-  const copy=el('div','ribbon-group');copy.setAttribute('aria-hidden','true');posts.forEach(post=>copy.append(card(post)));copy.querySelectorAll('button,a').forEach(e=>e.tabIndex=-1);track.append(copy);
-  function speed(){track.style.setProperty('--ribbon-duration',`${group.offsetWidth/42}s`)}
-  new ResizeObserver(speed).observe(group);speed();
-  const print=document.getElementById('print-excerpts');
-  posts.filter(post=>post.content_text.length>200).slice(0,2).forEach(post=>{const item=el('article','print-post');item.append(el('time',null,post.post_date_et+' · @realDonaldTrump · excerpt'),el('p',null,short(post.content_text)));print.append(item)});
+  document.getElementById('case-estimate').textContent=`${event.fatalities.toFixed(0)} estimated deaths · ${event.same_day_records} selected single-day records · UCDP 26.01.26.09`;
+  const windows=[{offset:-1,date:'2026-02-27',label:'Day before'},{offset:0,date:event.date,label:'Event day'},{offset:1,date:'2026-03-01',label:'Day after'}];
+  const container=document.getElementById('case-windows'),print=document.getElementById('print-excerpts'),players=[];
+  let pointerInside=false,focusInside=false;
+  container.addEventListener('pointerenter',()=>pointerInside=true);container.addEventListener('pointerleave',()=>pointerInside=false);
+  container.addEventListener('focusin',()=>focusInside=true);container.addEventListener('focusout',event=>focusInside=container.contains(event.relatedTarget));
+  windows.forEach(w=>{
+    const posts=[...event.windows[String(w.offset)]].sort((a,b)=>a.created_at_et.localeCompare(b.created_at_et));
+    const section=el('section',`case-window case-window-${w.offset}`),heading=el('h3',null,w.label),date=el('p','case-window-date',`${w.date} · ${posts.length} matching post${posts.length===1?'':'s'}`);
+    section.append(heading,date);
+    const still=el('article','print-post');still.append(el('b',null,`${w.label} · ${w.date} · ${posts.length} posts`));
+    if(!posts.length){
+      const empty=el('div','case-empty');empty.append(el('b',null,'No matching post in the saved corpus'),el('p',null,'No rhetorical score is assigned. This does not establish that Trump made no posts that day.'));section.append(empty);still.append(el('p',null,'No matching post in the saved Iran-related corpus. No score assigned.'));
+    }else{
+      let index=0;
+      const controls=el('div','case-controls'),prev=el('button',null,'←'),count=el('span'),next=el('button',null,'→'),slot=el('div','case-card-slot');
+      prev.type=next.type='button';prev.setAttribute('aria-label',`Previous ${w.label.toLowerCase()} post`);next.setAttribute('aria-label',`Next ${w.label.toLowerCase()} post`);
+      controls.append(prev,count,next);section.append(controls,slot);
+      function render(animate=false){
+        const post=posts[index],item=card(post);if(animate)item.classList.add('case-card-enter');slot.replaceChildren(item);count.textContent=`${index+1} of ${posts.length}`;
+        prev.disabled=index===0;next.disabled=index===posts.length-1;
+      }
+      prev.addEventListener('click',()=>{index--;render(true)});next.addEventListener('click',()=>{index++;render(true)});
+      players.push(()=>{index=(index+1)%posts.length;render(true)});render();
+      still.append(el('p',null,short(posts[0].content_text)));const source=el('a',null,'Source ↗');source.href=posts[0].source_url;still.append(source);
+    }
+    container.append(section);print.append(still);
+  });
+  // Rotate within the before/on/after groups, preserving the event comparison.
+  setInterval(()=>{if(!paused&&!pointerInside&&!focusInside&&!dialog.open&&!document.hidden)players.forEach(next=>next())},10000);
 
   // Calendar-time means keep all later rebounds visible; empty periods remain gaps.
   const trend=data.threat_timeline,NS='http://www.w3.org/2000/svg';

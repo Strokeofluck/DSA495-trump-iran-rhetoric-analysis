@@ -89,12 +89,20 @@ is not established. Single-post spikes and partial boundary periods are marked.
 The six smaller figures and scrolling cards continue to use the distinct
 130-post, six-frame event-matched analysis described above.
 
-The animated strip now follows the original timeline's post-card design:
-avatar/name/handle, highest-scoring frame badge, excerpt, all six colored score
-bars, ET timestamp, full-post dialog, and Truth Social link. Badges describe model
-scores, not human labels. Hover/focus pauses scrolling; the button explicitly
-starts or stops it. Reduced-motion preferences default to paused. The one-page
-PDF keeps two static excerpts.
+The animated case study now focuses on **February 28**, with three simultaneous
+groups: February 27 (0 matching posts), February 28 (2), and March 1 (5). Each
+populated group has the familiar avatar/name/handle, highest-scoring frame badge,
+text, six score bars, ET timestamp, full-post dialog, and source link. Cards rotate
+within their day every 10 seconds; arrows and Play/Pause provide manual control.
+Hover/focus pauses playback; reduced-motion preferences default to paused.
+
+The earlier 162-death label was a selected date-level sum, rather than one
+incident. The refreshed release sums to **192** across three selected single-day
+records (Minab 157, Tehran 33, Bandar Abbas 2; recorded total range 192–203).
+Multi-day totals are excluded. The display explicitly records the revision.
+No matching February 27 post is invented or replaced with a nearby date. These
+posts are matched by date, not verified responses to the individual incidents.
+The PDF keeps one static excerpt per populated day plus the empty before window.
 
 1. Run `python scripts/build_poster.py` (Python 3.10+, standard library only).
 2. Run `python scripts/validate_final_snapshot.py` to check source membership,
