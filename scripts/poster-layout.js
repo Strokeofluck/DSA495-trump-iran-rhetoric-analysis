@@ -19,10 +19,10 @@
   const event=data.event_context.events.find(event=>event.date==='2026-02-28');
   const ribbon=document.querySelector('.post-ribbon'),pause=document.getElementById('ribbon-pause');
   const reduced=matchMedia('(prefers-reduced-motion: reduce)');
-  const savedMotion=sessionStorage.getItem('dsa495-event-posts');
+  const savedMotion=sessionStorage.getItem('dsa495-event-scroll');
   let paused=savedMotion==='running'?false:savedMotion==='paused'?true:reduced.matches;
-  function updatePause(){ribbon.classList.toggle('is-paused',paused);pause.textContent=paused?'Play posts':'Pause posts';pause.setAttribute('aria-pressed',String(paused))}
-  pause.addEventListener('click',()=>{paused=!paused;sessionStorage.setItem('dsa495-event-posts',paused?'paused':'running');updatePause()});
+  function updatePause(){ribbon.classList.toggle('is-paused',paused);pause.textContent=paused?'Resume scrolling':'Pause scrolling';pause.setAttribute('aria-pressed',String(paused))}
+  pause.addEventListener('click',()=>{paused=!paused;sessionStorage.setItem('dsa495-event-scroll',paused?'paused':'running');updatePause()});
   reduced.addEventListener('change',event=>{if(event.matches)paused=true;updatePause()});updatePause();
   const dialog=document.getElementById('post-dialog');
   document.getElementById('post-close').addEventListener('click',()=>dialog.close());
@@ -61,59 +61,52 @@
   dialog.addEventListener('close',()=>ribbon.classList.remove('dialog-paused'));
   document.getElementById('case-estimate').textContent=`${event.fatalities.toFixed(0)} estimated deaths · ${event.same_day_records} selected single-day records · UCDP 26.01.26.09`;
   const windows=[{offset:-1,date:'2026-02-27',label:'Day before'},{offset:0,date:event.date,label:'Event day'},{offset:1,date:'2026-03-01',label:'Day after'}];
-  const container=document.getElementById('case-windows'),print=document.getElementById('print-excerpts'),players=[];
-  let pointerInside=false,focusInside=false;
-  container.addEventListener('pointerenter',()=>pointerInside=true);container.addEventListener('pointerleave',()=>pointerInside=false);
-  container.addEventListener('focusin',()=>focusInside=true);container.addEventListener('focusout',event=>focusInside=container.contains(event.relatedTarget));
-  windows.forEach(w=>{
-    const posts=[...event.windows[String(w.offset)]].sort((a,b)=>a.created_at_et.localeCompare(b.created_at_et));
-    const section=el('section',`case-window case-window-${w.offset}`),heading=el('h3',null,w.label),date=el('p','case-window-date',`${w.date} · ${posts.length} matching post${posts.length===1?'':'s'}`);
-    section.append(heading,date);
-    const still=el('article','print-post');still.append(el('b',null,`${w.label} · ${w.date} · ${posts.length} posts`));
-    if(!posts.length){
-      const empty=el('div','case-empty');empty.append(el('b',null,'No matching post in the saved corpus'),el('p',null,'No rhetorical score is assigned. This does not establish that Trump made no posts that day.'));section.append(empty);still.append(el('p',null,'No matching post in the saved Iran-related corpus. No score assigned.'));
-    }else{
-      let index=0;
-      const controls=el('div','case-controls'),prev=el('button',null,'←'),count=el('span'),next=el('button',null,'→'),slot=el('div','case-card-slot');
-      prev.type=next.type='button';prev.setAttribute('aria-label',`Previous ${w.label.toLowerCase()} post`);next.setAttribute('aria-label',`Next ${w.label.toLowerCase()} post`);
-      controls.append(prev,count,next);section.append(controls,slot);
-      function render(animate=false){
-        const post=posts[index],item=card(post);if(animate)item.classList.add('case-card-enter');slot.replaceChildren(item);count.textContent=`${index+1} of ${posts.length}`;
-        prev.disabled=index===0;next.disabled=index===posts.length-1;
-      }
-      prev.addEventListener('click',()=>{index--;render(true)});next.addEventListener('click',()=>{index++;render(true)});
-      players.push(()=>{index=(index+1)%posts.length;render(true)});render();
-      still.append(el('p',null,short(posts[0].content_text)));const source=el('a',null,'Source ↗');source.href=posts[0].source_url;still.append(source);
-    }
-    container.append(section);print.append(still);
-  });
-  // Rotate within the before/on/after groups, preserving the event comparison.
-  setInterval(()=>{if(!paused&&!pointerInside&&!focusInside&&!dialog.open&&!document.hidden)players.forEach(next=>next())},10000);
 
-  // Calendar-time means keep all later rebounds visible; empty periods remain gaps.
-  const trend=data.threat_timeline,NS='http://www.w3.org/2000/svg';
-  const svgEl=(name,attrs,text)=>{const e=document.createElementNS(NS,name);for(const[k,v]of Object.entries(attrs))e.setAttribute(k,v);if(text!==undefined)e.textContent=text;return e};
-  const svg=svgEl('svg',{viewBox:'0 0 900 235',role:'img','aria-label':'Mean Threat by 14-day period, January 1 to November 3, 2026. February 28 to March 13 is 0.691, followed by 0.478. Later periods fluctuate.'});
-  svg.append(svgEl('title',{},'Threat over time in all 380 archived Iran-related text posts'));
-  const start=Date.parse('2026-01-01'),end=Date.parse('2026-11-04'),x=d=>50+(Date.parse(d)-start)/(end-start)*825,y=v=>190-v*157;
-  svg.append(svgEl('rect',{x:x('2026-02-28'),y:28,width:x('2026-03-14')-x('2026-02-28'),height:162,fill:'#f7e8e8'}));
-  [0,.25,.5,.75,1].forEach(v=>{svg.append(svgEl('line',{x1:50,x2:875,y1:y(v),y2:y(v),stroke:'#dce2e7'}));svg.append(svgEl('text',{x:40,y:y(v)+4,'text-anchor':'end','font-size':13,fill:'#64717b'},String(v)))});
-  svg.append(svgEl('text',{x:50,y:17,'font-size':13,fill:'#64717b'},'Mean Threat score · 0–1'));
-  let previous=null;
-  trend.bins.forEach(b=>{
-    if(b.mean===null){previous=null;return}
-    if(previous)svg.append(svgEl('line',{x1:x(previous.midpoint),y1:y(previous.mean),x2:x(b.midpoint),y2:y(b.mean),stroke:'#9a4949','stroke-width':2}));
-    const label=`${b.first} to ${b.last}${b.partial?' (partial)':''} · ${b.posts} posts · mean Threat ${b.mean.toFixed(3)}`;
-    const point=svgEl('circle',{cx:x(b.midpoint),cy:y(b.mean),r:b.index===0?6:4,fill:b.index===0?'#813838':'#fff',stroke:'#9a4949','stroke-width':2,tabindex:0,role:'img','aria-label':label});point.append(svgEl('title',{},label));
-    if(b.posts===1)svg.append(svgEl('text',{x:x(b.midpoint)+8,y:y(b.mean)+17,'font-size':12,fill:'#64717b'},'n=1'));
-    const detail=()=>document.getElementById('trend-detail').textContent=label;point.addEventListener('focus',detail);point.addEventListener('mouseenter',detail);svg.append(point);previous=b;
-  });
-  for(let month=1;month<=11;month++){
-    const d=`2026-${String(month).padStart(2,'0')}-01`;
-    svg.append(svgEl('text',{x:x(d),y:214,'text-anchor':'middle','font-size':13,fill:'#64717b'},['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov'][month-1]));
+  const track=document.getElementById('ribbon-track'),print=document.getElementById('print-excerpts');
+  function windowCard(w,post,index,total){
+    const item=post?card(post):el('article','ribbon-card empty-ribbon-card');
+    const label=el('p',`ribbon-day ribbon-day-${w.offset}`,`${w.label} · ${w.date}${post?` · ${index+1} of ${total}`:''}`);item.prepend(label);
+    if(!post)item.append(el('b',null,'No matching post in the saved corpus'),el('p',null,'February 27 has no saved Iran-related text post. No score assigned.'));
+    return item;
   }
-  const focus=trend.opening,next=trend.following;
-  svg.append(svgEl('text',{x:x(focus.midpoint)-10,y:y(focus.mean)-13,'text-anchor':'end','font-size':15,'font-weight':700,fill:'#813838'},'Opening 0.691'));
-  svg.append(svgEl('text',{x:x(next.midpoint)+10,y:y(next.mean)+20,'font-size':14,'font-weight':700,fill:'#813838'},'Next 0.478'));
+  function loop(hidden=false){
+    const group=el('div','ribbon-group');if(hidden)group.setAttribute('aria-hidden','true');
+    windows.forEach(w=>{
+      const posts=[...event.windows[String(w.offset)]].sort((a,b)=>a.created_at_et.localeCompare(b.created_at_et));
+      if(!posts.length)group.append(windowCard(w,null));else posts.forEach((post,i)=>group.append(windowCard(w,post,i,posts.length)));
+      if(!hidden){
+        const still=el('article','print-post');still.append(el('b',null,`${w.label} · ${w.date} · ${posts.length} posts`));
+        still.append(el('p',null,posts.length?short(posts[0].content_text):'No matching post in the saved Iran-related corpus. No score assigned.'));
+        if(posts.length){const source=el('a',null,'Source ↗');source.href=posts[0].source_url;still.append(source)}print.append(still);
+      }
+    });
+    if(hidden)group.querySelectorAll('a,button').forEach(e=>e.tabIndex=-1);
+    return group;
+  }
+  const group=loop();track.append(group,loop(true));
+  function speed(){track.style.setProperty('--ribbon-duration',`${group.offsetWidth/42}s`)}
+  new ResizeObserver(speed).observe(group);speed();
+
+
+  // The primary figure retains before/on/after timing for both event cohorts.
+  const periods=data.threat_period_windows,NS='http://www.w3.org/2000/svg';
+  const svgEl=(name,attrs,text)=>{const e=document.createElementNS(NS,name);for(const[k,v]of Object.entries(attrs))e.setAttribute(k,v);if(text!==undefined)e.textContent=text;return e};
+  const svg=svgEl('svg',{viewBox:'0 0 900 245',role:'img','aria-label':'Threat scores before, on, and after selected event starts. Opening two weeks: 0.638, 0.603, 0.485. Later starts: 0.517, 0.555, 0.462. Scale zero to one.'});
+  svg.append(svgEl('title',{},'Threat before, on and after event starts: opening two weeks compared with later dates'));
+  const xs=[155,450,745],y=v=>192-v*158;
+  svg.append(svgEl('rect',{x:392,y:28,width:116,height:166,fill:'#f3f6fa'}));
+  [0,.25,.5,.75,1].forEach(v=>{svg.append(svgEl('line',{x1:60,x2:860,y1:y(v),y2:y(v),stroke:'#dce2e7'}));svg.append(svgEl('text',{x:47,y:y(v)+4,'text-anchor':'end','font-size':13,fill:'#64717b'},String(v)))});
+  svg.append(svgEl('text',{x:60,y:16,'font-size':13,fill:'#64717b'},'Mean Threat score · 0–1'));
+  periods.forEach((period,k)=>{
+    const color=k===0?'#9a4949':'#4b719c';
+    svg.append(svgEl('polyline',{points:period.means.map((v,i)=>`${xs[i]},${y(v)}`).join(' '),fill:'none',stroke:color,'stroke-width':3,'stroke-dasharray':k===0?'none':'7 5'}));
+    period.means.forEach((v,i)=>{
+      const label=`${period.label} · ${['Before','Event day','After'][i]} · mean ${v.toFixed(3)} · ${period.coverage[i]} contributing dates · ${period.pairs[i]} post/date pairs`;
+      const point=svgEl('circle',{cx:xs[i],cy:y(v),r:k===0?6:5,fill:k===0?color:'#fff',stroke:color,'stroke-width':2,tabindex:0,role:'img','aria-label':label});point.append(svgEl('title',{},label));
+      const detail=()=>document.getElementById('trend-detail').textContent=label;point.addEventListener('focus',detail);point.addEventListener('mouseenter',detail);svg.append(point);
+      svg.append(svgEl('text',{x:xs[i],y:y(v)+(k===0?-13:23),'text-anchor':'middle','font-size':17,'font-weight':700,fill:color},v.toFixed(3)));
+    });
+  });
+  ['Day before','Event day','Day after'].forEach((label,i)=>{svg.append(svgEl('text',{x:xs[i],y:220,'text-anchor':'middle','font-size':16,'font-weight':700,fill:'#343a40'},label));svg.append(svgEl('text',{x:xs[i],y:238,'text-anchor':'middle','font-size':12,fill:'#64717b'},['−1 calendar day','Recorded start date','+1 calendar day'][i]))});
   document.getElementById('threat-chart').append(svg);
 })();

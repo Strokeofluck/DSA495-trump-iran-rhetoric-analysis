@@ -69,6 +69,14 @@ def main():
             value=sum(values)/len(values)
             assert math.isclose(value,evidence['summaries']['available']['means'][frame][index],rel_tol=0,abs_tol=1e-12)
     assert evidence['summaries']['available']['coverage']==[36,35,35]
+    for period in evidence['threat_period_windows']:
+        for i,offset in enumerate([-1,0,1]):
+            members=[ids for (d,w),ids in grouped.items() if period['first']<=d<=period['last'] and w==offset]
+            value=fmean(fmean(float(scoremap[id]['Threat']) for id in ids) for ids in members)
+            assert math.isclose(value,period['means'][i],abs_tol=1e-12)
+            assert period['coverage'][i]==len(members) and period['pairs'][i]==sum(map(len,members))
+    assert evidence['threat_period_windows'][0]['coverage']==[9,9,9]
+    assert evidence['threat_period_windows'][1]['coverage']==[27,26,26]
     assert evidence['snapshot']['dates']==43 and len(evidence['event_context']['events'])==43
     assert next(r for r in evidence['coverage'] if r['date']=='2026-07-30')['counts']==[0,0,0]
     timeline=read(DATA/'threat_timeline_scores.csv')

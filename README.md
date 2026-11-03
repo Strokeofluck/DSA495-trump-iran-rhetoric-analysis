@@ -76,25 +76,29 @@ or causal/predictive conclusions are asserted.
 
 ## Reproduce and inspect
 
-**Calendar-time Threat highlight.** The large poster chart uses all **380**
-original Iran-related text posts in the frozen archive, including posts outside
-UCDP matching windows. All 380 were freshly scored for Threat with the same
-pinned BART revision and original Threat prompt, with no legacy-score reuse.
-Non-overlapping 14-day periods are anchored on February 28; each post receives
-equal weight. February 28–March 13 averages **0.691** (36 posts), compared with
-**0.478** (32 posts) for March 14–27. This supports a decline after the opening
-fortnight, followed by fluctuations, rather than a steady decline throughout
-the conflict. February 14–27 has only two posts (mean 0.686), so a prewar rise
-is not established. Single-post spikes and partial boundary periods are marked.
-The six smaller figures and scrolling cards continue to use the distinct
-130-post, six-frame event-matched analysis described above.
+**Opening-period before/on/after comparison.** The large poster figure uses
+the same event-date/window method and 130-post analysis population as the six
+smaller charts. It compares starts in February 28–March 13 (10 selected dates,
+9 / 9 / 9 contributing dates) with later starts in March 14–September 2
+(33 selected dates, 27 / 26 / 26 contributing dates). Opening-period Threat means
+are **0.638 → 0.603 → 0.485** before / on / after starts; later means are
+**0.517 → 0.555 → 0.462**. These are different sets of event dates, with overlapping
+post windows, missing coverage, and no human accuracy evaluation or uncertainty
+intervals. The comparison does not establish that individual posts respond to
+an incident, or that events cause rhetorical changes. Exact figures, counts,
+and date ranges are exported in `docs/threat-period-windows.csv`.
 
-The animated case study now focuses on **February 28**, with three simultaneous
-groups: February 27 (0 matching posts), February 28 (2), and March 1 (5). Each
-populated group has the familiar avatar/name/handle, highest-scoring frame badge,
-text, six score bars, ET timestamp, full-post dialog, and source link. Cards rotate
-within their day every 10 seconds; arrows and Play/Pause provide manual control.
-Hover/focus pauses playback; reduced-motion preferences default to paused.
+The earlier full-corpus 14-day calendar-time chart was removed from the poster
+to keep before/on/after timing consistent. Its 380 freshly scored Threat values,
+provenance, aggregation code, and `docs/threat-timeline.csv` remain inspectable
+as a separate derived analysis; they are not the plotted opening-period means.
+
+The bottom is one continuously scrolling row focused on **February 28**:
+February 27 has no matching post, February 28 has two posts, and March 1 has five.
+Cards appear in that order and show the day/window label, avatar/name/handle,
+highest-scoring frame badge, text, six score bars, ET timestamp, full-post dialog,
+and source link. Hover/focus pauses scrolling; Resume/Pause controls motion.
+Reduced-motion preferences default to paused. The PDF keeps three static windows.
 
 The earlier 162-death label was a selected date-level sum, rather than one
 incident. The refreshed release sums to **192** across three selected single-day

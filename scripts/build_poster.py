@@ -64,6 +64,13 @@ def main():
             'means': {f: [mean(event_means[(d, w)][f] for d in selected if (d, w) in event_means) for w in WINDOWS] for f in FRAMES},
         }
     appearances = Counter(r['truth_id'] for r in rows)
+    threat_periods=[]
+    for key,label,first,last in [('opening','Opening two weeks','2026-02-28','2026-03-13'),('later','Later event dates','2026-03-14',dates[-1])]:
+        selected=[d for d in dates if first<=d<=last]
+        threat_periods.append({'key':key,'label':label,'first':first,'last':last,'selected_dates':len(selected),
+            'coverage':[sum((d,w) in groups for d in selected) for w in WINDOWS],
+            'pairs':[sum(len(groups.get((d,w),[])) for d in selected) for w in WINDOWS],
+            'means':[mean(event_means[(d,w)]['Threat'] for d in selected if (d,w) in event_means) for w in WINDOWS]})
     context = build_context(DATA/event_file, dates, groups, event_means, scores, FRAMES)
     example_ids = ['116302505060458396', '116366072136989268']
     evidence = {
@@ -74,6 +81,7 @@ def main():
         'event_context': context,
         'provenance': manifest,
         'threat_timeline': build_timeline(DATA),
+        'threat_period_windows':threat_periods,
         'coverage': [{'date': d, 'counts': [len(groups.get((d, w), [])) for w in WINDOWS]} for d in dates],
         'examples': [{'id': tid, 'text': posts[tid]['content_text'], 'source': posts[tid]['source_url'],
                       'url': posts[tid]['truth_url'], 'date': posts[tid]['post_date_et'], 'scores': scores[tid]} for tid in example_ids],
@@ -86,6 +94,10 @@ def main():
         (DOCS/asset).write_text((ROOT/'scripts'/asset).read_text(encoding='utf-8'),encoding='utf-8')
     (DOCS/'evidence.json').write_text(json.dumps(evidence, ensure_ascii=False, indent=2)+'\n', encoding='utf-8')
     (DOCS/'severity-results.json').write_text(json.dumps(context['severity'],ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    with (DOCS/'threat-period-windows.csv').open('w',newline='',encoding='utf-8') as handle:
+        writer=csv.writer(handle);writer.writerow(['period','first_event_start','last_event_start','selected_dates','relative_day','contributing_dates','post_event_pairs','mean_Threat'])
+        for p in threat_periods:
+            for i,w in enumerate(WINDOWS):writer.writerow([p['key'],p['first'],p['last'],p['selected_dates'],w,p['coverage'][i],p['pairs'][i],p['means'][i]])
     with (DOCS/'threat-timeline.csv').open('w',newline='',encoding='utf-8') as handle:
         writer=csv.DictWriter(handle,fieldnames=['first','last','posts','mean','partial'])
         writer.writeheader()
@@ -112,8 +124,9 @@ def main():
         '__VICTORY_VALUES__':' → '.join(f'{v:.3f}' for v in victory),
         '__THREAT_VALUES__':' → '.join(f'{v:.3f}' for v in threat),
         '__VICTORY_DAY__':f'{victory[1]:.3f}',
-        '__FINDING_HEADLINE__':'Threat scores fall after the opening two weeks, then fluctuate.',
-        '__FINDING_SPOKEN__':'In all 380 archived Iran-related text posts, mean Threat is 0.691 during February 28 to March 13 and 0.478 during March 14 to 27. Later rebounds mean this is not a steady decline. Separately, '+victory_line+' '+threat_line+' in the 130-post event-matched sample. These are descriptive model scores, not predictions.',
+        '__FINDING_HEADLINE__':'Opening-period Threat scores decline across event windows.',
+        '__OPENING_WINDOW_VALUES__':' → '.join(f'{v:.3f}' for v in threat_periods[0]['means']),
+        '__FINDING_SPOKEN__':'For event starts in February 28 to March 13, mean Threat scores are 0.638 before, 0.603 on the start date, and 0.485 after. Later dates show 0.517, 0.555, and 0.462. Each point averages event-date/window means; these are selected, overlapping windows, and no causal or accuracy claim is made. Across all dates, '+victory_line+' '+threat_line,
     }
     asset_version = hashlib.sha256(b''.join((DOCS/name).read_bytes() for name in ['portfolio.css','poster-interactions.js','poster-print.css','poster-layout.css','poster-layout.js'])).hexdigest()[:12]
     for source_name, output_name in [
