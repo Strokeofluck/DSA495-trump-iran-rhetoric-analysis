@@ -19,10 +19,10 @@
   const event=data.event_context.events.find(event=>event.date==='2026-02-28');
   const ribbon=document.querySelector('.post-ribbon'),pause=document.getElementById('ribbon-pause');
   const reduced=matchMedia('(prefers-reduced-motion: reduce)');
-  const savedMotion=sessionStorage.getItem('dsa495-event-scroll');
-  let paused=savedMotion==='running'?false:savedMotion==='paused'?true:reduced.matches;
+  const savedMotion=sessionStorage.getItem('dsa495-event-scroll-autoplay');
+  let paused=savedMotion==='paused';
   function updatePause(){ribbon.classList.toggle('is-paused',paused);pause.textContent=paused?'Resume scrolling':'Pause scrolling';pause.setAttribute('aria-pressed',String(paused))}
-  pause.addEventListener('click',()=>{paused=!paused;sessionStorage.setItem('dsa495-event-scroll',paused?'paused':'running');updatePause()});
+  pause.addEventListener('click',()=>{paused=!paused;sessionStorage.setItem('dsa495-event-scroll-autoplay',paused?'paused':'running');updatePause()});
   reduced.addEventListener('change',event=>{if(event.matches)paused=true;updatePause()});updatePause();
   const dialog=document.getElementById('post-dialog');
   document.getElementById('post-close').addEventListener('click',()=>dialog.close());
@@ -95,8 +95,12 @@
   svg.append(svgEl('title',{},'Threat before, on and after event starts: opening two weeks compared with later dates'));
   const xs=[155,450,745],y=v=>192-v*158;
   svg.append(svgEl('rect',{x:392,y:28,width:116,height:166,fill:'#f3f6fa'}));
+  svg.append(svgEl('line',{x1:450,x2:450,y1:28,y2:192,stroke:'#8a99a8','stroke-width':1,'stroke-dasharray':'4 4'}));
   [0,.25,.5,.75,1].forEach(v=>{svg.append(svgEl('line',{x1:60,x2:860,y1:y(v),y2:y(v),stroke:'#dce2e7'}));svg.append(svgEl('text',{x:47,y:y(v)+4,'text-anchor':'end','font-size':13,fill:'#64717b'},String(v)))});
   svg.append(svgEl('text',{x:60,y:16,'font-size':13,fill:'#64717b'},'Mean Threat score · 0–1'));
+  const anchorLabel=svgEl('text',{x:450,y:16,'text-anchor':'middle','font-size':14,'font-weight':700,fill:'#536473'},'Opening case: Feb 28, 2026');
+  anchorLabel.append(svgEl('title',{},'The February 28 case was labeled 162 deaths in the earlier snapshot; the refreshed selected single-day total is 192. The plotted lines average multiple event starts.'));
+  svg.append(anchorLabel);
   periods.forEach((period,k)=>{
     const color=k===0?'#9a4949':'#4b719c';
     svg.append(svgEl('polyline',{points:period.means.map((v,i)=>`${xs[i]},${y(v)}`).join(' '),fill:'none',stroke:color,'stroke-width':3,'stroke-dasharray':k===0?'none':'7 5'}));

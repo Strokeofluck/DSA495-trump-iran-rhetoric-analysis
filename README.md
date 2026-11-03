@@ -98,7 +98,7 @@ February 27 has no matching post, February 28 has two posts, and March 1 has fiv
 Cards appear in that order and show the day/window label, avatar/name/handle,
 highest-scoring frame badge, text, six score bars, ET timestamp, full-post dialog,
 and source link. Hover/focus pauses scrolling; Resume/Pause controls motion.
-Reduced-motion preferences default to paused. The PDF keeps three static windows.
+Scrolling starts automatically on page load, as requested; an explicit Pause choice is remembered for the tab session. The PDF keeps three static windows.
 
 The earlier 162-death label was a selected date-level sum, rather than one
 incident. The refreshed release sums to **192** across three selected single-day

@@ -39,3 +39,5 @@ dialog{width:650px;max-width:calc(100vw - 32px);max-height:85vh;padding:24px;bor
 @media screen and (max-width:999px){.case-context{display:block}.case-context b{white-space:normal}.case-context span{margin-top:5px}}
 @media screen and (max-width:600px){.event-case .ribbon-card{width:310px;height:420px;min-height:420px}.period-legend{gap:5px;font-size:12px}.threat-feature svg{min-width:560px}.threat-feature{overflow:visible}#threat-chart{overflow-x:auto}}
 @media print{.case-note{display:none!important}.case-context{font-size:11px;margin:0 0 7px;gap:14px}.case-context b{white-space:normal}.event-case .print-excerpts{grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}.event-case .print-post{min-height:88px;max-height:100px;padding:7px 10px}.event-case .print-post b{font-size:11px}.event-case .print-post p{font-size:11px;line-height:1.35;-webkit-line-clamp:3}.event-case .print-post a{font-size:10px}.threat-feature svg{height:215px}.results-column .small-charts .mini svg{height:100px}.period-legend{font-size:12px;margin:5px 0}}
+
+.poster-footer{grid-template-columns:1fr}
