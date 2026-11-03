@@ -19,7 +19,7 @@
     const left=featured?55:44,right=featured?610:304,bottom=featured?245:168,top=featured?42:44;
     const x=v=>left+Math.log10(Math.max(1,v))/Math.log10(xmax)*(right-left),y=v=>bottom-v*(bottom-top);
     const reading=document.getElementById('severity-reading');
-    if(reading)reading.textContent='Compare event-day death estimates with model scores in the selected post window. The poster highlights the exploratory next-day Victory pattern; the full comparisons remain here.';
+    if(reading)reading.textContent='Compare event-day death estimates with model scores in the selected post window. These are exploratory supporting comparisons; the poster focuses on frame scores across the three windows.';
     const eventsByDate=new Map(context.events.map(event=>[event.date,event]));
     const popup=make('aside','event-popover');
     popup.id='event-popover';popup.hidden=true;popup.setAttribute('role','dialog');popup.setAttribute('aria-modal','false');popup.setAttribute('aria-labelledby','event-popover-title');
