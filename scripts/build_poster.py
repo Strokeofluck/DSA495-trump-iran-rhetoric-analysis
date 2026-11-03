@@ -11,7 +11,7 @@ import math
 from collections import defaultdict, Counter
 from datetime import date
 from statistics import mean
-from poster_evidence import WORKBOOK, build_context
+from poster_evidence import WORKBOOK, build_context, read_records
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / 'data'
@@ -24,8 +24,13 @@ def read(name):
         return list(csv.DictReader(handle))
 
 def main():
-    rows = read('trump_iran_event_windows_unique_dates.csv')
-    score_rows = read('trump_iran_zero_shot_scores_26event_subset.csv')
+    manifest_path=DATA/'analysis_manifest.json'
+    manifest=json.loads(manifest_path.read_text(encoding='utf-8')) if manifest_path.exists() else {}
+    window_file=manifest.get('files',{}).get('windows','trump_iran_event_windows_unique_dates.csv')
+    score_file=manifest.get('files',{}).get('scores','trump_iran_zero_shot_scores_26event_subset.csv')
+    event_file=manifest.get('files',{}).get('events',WORKBOOK)
+    rows = read(window_file)
+    score_rows = read(score_file)
     scores = {r['truth_id']: {f: float(r[f]) for f in FRAMES} for r in score_rows}
     assert len(scores) == len(score_rows), 'Duplicate score IDs'
     assert set(scores) == {r['truth_id'] for r in rows}, 'Unmatched score IDs'
@@ -44,7 +49,9 @@ def main():
         assert window in WINDOWS
         assert (date.fromisoformat(row['post_date_et']) - date.fromisoformat(row['event_date'])).days == window
         groups[(row['event_date'], window)].append(row)
-    dates = sorted({r['event_date'] for r in rows})
+    selected_records=read_records(DATA/event_file)
+    dates = sorted({r['date_start'] for r in selected_records})
+    assert {r['event_date'] for r in rows}<=set(dates), 'Unmatched event dates'
     event_means = {k: {f: mean(scores[r['truth_id']][f] for r in rs) for f in FRAMES} for k, rs in groups.items()}
     summaries = {}
     for mode in ['available']:
@@ -56,7 +63,7 @@ def main():
             'means': {f: [mean(event_means[(d, w)][f] for d in selected if (d, w) in event_means) for w in WINDOWS] for f in FRAMES},
         }
     appearances = Counter(r['truth_id'] for r in rows)
-    context = build_context(DATA/WORKBOOK, dates, groups, event_means, scores, FRAMES)
+    context = build_context(DATA/event_file, dates, groups, event_means, scores, FRAMES)
     example_ids = ['116302505060458396', '116366072136989268']
     evidence = {
         'frames': FRAMES, 'windows': WINDOWS,
@@ -64,11 +71,12 @@ def main():
                      'overlapping_posts': sum(n > 1 for n in appearances.values()), 'extra_links': len(rows)-len(posts)},
         'summaries': summaries,
         'event_context': context,
+        'provenance': manifest,
         'coverage': [{'date': d, 'counts': [len(groups.get((d, w), [])) for w in WINDOWS]} for d in dates],
         'examples': [{'id': tid, 'text': posts[tid]['content_text'], 'source': posts[tid]['source_url'],
                       'url': posts[tid]['truth_url'], 'date': posts[tid]['post_date_et'], 'scores': scores[tid]} for tid in example_ids],
-        'inputs': [{'path': 'data/'+name, 'sha256': hashlib.sha256((DATA/name).read_bytes()).hexdigest()} for name in ['trump_iran_event_windows_unique_dates.csv', 'trump_iran_zero_shot_scores_26event_subset.csv',WORKBOOK]],
-        'limitations': ['Saved model scores, not a fresh inference run.', 'No human-labeled evaluation supplied.', 'Non-independent overlapping windows.', 'Source snapshot and model revision are not pinned.'],
+        'inputs': [{'path': 'data/'+name, 'sha256': hashlib.sha256((DATA/name).read_text(encoding='utf-8').encode('utf-8') if (DATA/name).suffix in ['.csv','.json'] else (DATA/name).read_bytes()).hexdigest(), 'hash_format':'UTF-8 with LF line endings' if (DATA/name).suffix in ['.csv','.json'] else 'original bytes'} for name in [window_file,score_file,event_file]],
+        'limitations': ['No human-labeled evaluation supplied.', 'Non-independent overlapping windows.', '90 retained legacy scores have an unpinned original model revision; 40 new scores use the documented pinned revision.' if manifest else 'Source snapshot and original model revision are not pinned.'],
     }
     DOCS.mkdir(exist_ok=True)
     (DOCS/'portfolio.css').write_text((ROOT/'scripts/portfolio.css').read_text(encoding='utf-8'), encoding='utf-8')
@@ -84,6 +92,20 @@ def main():
                 for i,w in enumerate(WINDOWS):
                     writer.writerow([mode,f,w,summary['means'][f][i],summary['coverage'][i],summary['rows'][i]])
     inline = json.dumps(evidence, ensure_ascii=False).replace('<','\\u003c')
+    summary=summaries['available']
+    victory=summary['means']['Victory'];threat=summary['means']['Threat']
+    victory_line='Victory scores peak on event days.' if victory[1]>max(victory[0],victory[2]) else 'Victory scores vary across windows.'
+    threat_line='Threat scores peak on event days.' if threat[1]>max(threat[0],threat[2]) else 'Threat scores decline across windows.' if threat[0]>=threat[1]>=threat[2] else 'Threat scores vary across windows.'
+    replacements={
+        '__POST_COUNT__':str(len(posts)), '__DATE_COUNT__':str(len(dates)),
+        '__PAIR_COUNT__':str(len(pairs)), '__EVENT_COUNT__':str(len(selected_records)),
+        '__COVERAGE__':' / '.join(map(str,summary['coverage'])),
+        '__VICTORY_VALUES__':' → '.join(f'{v:.3f}' for v in victory),
+        '__THREAT_VALUES__':' → '.join(f'{v:.3f}' for v in threat),
+        '__VICTORY_DAY__':f'{victory[1]:.3f}',
+        '__FINDING_HEADLINE__':victory_line+'<br>'+threat_line,
+        '__FINDING_SPOKEN__':victory_line+' '+threat_line+' These are descriptive model scores, not predictions.',
+    }
     asset_version = hashlib.sha256(b''.join((DOCS/name).read_bytes() for name in ['portfolio.css','poster-interactions.js','poster-print.css','poster-layout.css','poster-layout.js'])).hexdigest()[:12]
     for source_name, output_name in [
         ('poster.template.html', 'index.html'),
@@ -93,6 +115,8 @@ def main():
         template = (ROOT/'scripts'/source_name).read_text(encoding='utf-8')
         assert template.count('__EVIDENCE_JSON__') == (0 if output_name == 'presentation-notes.html' else 1)
         rendered=template.replace('__EVIDENCE_JSON__', inline)
+        for key,value in replacements.items():rendered=rendered.replace(key,value)
+        assert not __import__('re').search(r'__[A-Z_]+__',rendered), 'Unfilled template placeholder'
         for asset in ['portfolio.css','poster-interactions.js','poster-print.css','poster-layout.css','poster-layout.js']:
             rendered=rendered.replace('"'+asset+'"','"'+asset+'?v='+asset_version+'"')
         rendered=rendered.replace('href="research-poster.pdf"','href="research-poster.pdf?v='+asset_version+'"')

@@ -1,163 +1,147 @@
 # Trump’s Iran Rhetoric Before, During, and After Conflict Events
 
-**[Read the interactive research poster](https://strokeofluck.github.io/DSA495-trump-iran-rhetoric-analysis/)**
+**[Research poster](https://strokeofluck.github.io/DSA495-trump-iran-rhetoric-analysis/)** · **[One-page PDF](https://strokeofluck.github.io/DSA495-trump-iran-rhetoric-analysis/research-poster.pdf)** · **[Evidence and source viewer](https://strokeofluck.github.io/DSA495-trump-iran-rhetoric-analysis/evidence.html)** · **[Presentation notes](https://strokeofluck.github.io/DSA495-trump-iran-rhetoric-analysis/presentation-notes.html)**
 
-**[Open the complete print-ready poster PDF](https://strokeofluck.github.io/DSA495-trump-iran-rhetoric-analysis/research-poster.pdf)**
+## Final presentation snapshot: frozen November 3, 2026
 
-The poster uses all available posts in the committed 87-post / 26-date dataset.
-It contains the three-column research poster, figures, source links, limitations,
-and AI-use statement. The print view uses the same all-data results shown on screen.
+This is the current analysis snapshot. The original topic brief below is retained
+as historical planning, including its older counts and outstanding questions.
+No automatic refresh is scheduled. Further changes should be documented
+corrections or a deliberately requested new snapshot.
 
-The landscape layout follows the course's four suggested sections: frame the
-project, explain the workflow, show results, and evaluate and reflect. It was
-checked against the instructor's accessible PDF example on November 3, 2026.
-The web poster adds a chronological strip of all 87 unique Truth Social posts.
-Hover or keyboard focus pauses the strip; Pause/Resume controls its motion.
-Click an excerpt to open its full saved text and archived source. Reduced-motion
-preferences start it paused. The PDF uses two deterministic still excerpts.
-On phones, the columns stack for reading; the desktop has a full-size toggle.
+| Quantity | Earlier poster | Frozen snapshot |
+| --- | ---: | ---: |
+| Unique matched posts | 87 | 130 |
+| Selected event start dates | 26 | 43 |
+| Post / start-date pairs | 129 | 235 |
 
-Supporting material lives on separate pages, linked here rather than on the poster:
+The refreshed selection has **75 UCDP records**, grouped into 43 start dates.
+There are **36 / 35 / 35** contributing dates and **76 / 77 / 82** post/date pairs
+before / on / after starts. July 30 has no matched posts and remains visible as
+missing coverage, never a numeric zero.
 
-- **[Explore evidence](https://strokeofluck.github.io/DSA495-trump-iran-rhetoric-analysis/evidence.html)** — interactive event/post browser, workbook records, severity checks, coverage table, source-linked model examples, methods, exact means, and data downloads.
-- **[Presentation notes](https://strokeofluck.github.io/DSA495-trump-iran-rhetoric-analysis/presentation-notes.html)** — 90-second explanation, rehearsal questions, and remaining rubric work.
+**Coverage and versions.** The [official UCDP Candidate release](https://ucdp.uu.se/downloads/)
+is **26.01.26.09**, covering January–September 2026; September 30 is the event-data
+cutoff. Selected starts range from February 28 to September 2; the final matching
+window ends September 3. The [public post archive](https://huggingface.co/datasets/Cameronk199/donald-trump-truth-social-posts)
+is pinned to `db7fed9bc7f495398e29ffa6e3423e21d720cc6b`, with source coverage through
+November 3 at 06:12 UTC. Later archived posts outside selected event windows are
+not added to event comparisons. All raw-source URLs, exact downloaded checksums,
+filtered-file checksums, counts, and the freeze policy are in
+[analysis_manifest.json](data/analysis_manifest.json).
 
-The print stylesheet targets a 36 × 24 inch landscape poster; the instructor has
-not specified dimensions or confirmed that a web URL alone is a valid submission.
-The Print poster control opens the verified one-page PDF, including all columns
-and the six frame comparisons. It does not depend on an in-app browser's print dialog.
+**What changed.** The quarterly release revises historical records as well as
+adding September events. It contains 511 Iran records and 409 records in the
+Iran–Israel/U.S. conflict pool. The final selection retains 47 of the 49 prior
+portfolio inclusions that remain in the current release and adds 28 reviewed
+records with event-specific U.S./joint evidence, including a marked rescue-operation
+context exception. Prior selected IDs 629301 and 637532 are absent from the current
+release and are not carried forward; no official merge crosswalk is inferred.
+Record 640760 reports the rescue-operation context under a different ID and revised
+date span. Revised start dates, including 637743 moving to July 23, are rematched.
 
-The typography and palette match Sean's portfolio: locally bundled Source Sans
-Pro, the light Quarto/Cosmo colors, blue links, and the portfolio's six rhetorical
-frame colors. Edit `scripts/portfolio.css` and rebuild to update this styling.
-Font licensing is included in `docs/fonts/OFL.txt`.
+**Selection meaning.** Inclusion is a project review, not an official UCDP
+classification of U.S. participation. Reviewed event-specific U.S. or joint
+U.S.–Israel attribution is required. Joint dyad membership, a general report title
+such as “US-Israeli Military Operations in Iran,” commentary, or sanctions alone
+do not establish U.S. participation in an individual incident. Unverified records
+are withheld, not proven Israel-only. Every pool ID has an explicit inclusion or
+withholding decision in [selection_review_final.json](data/selection_review_final.json).
+The headline-based review is conservative and is not an exhaustive review of all
+underlying articles.
 
-### Start here and reproduce the poster
+**Post matching.** Original, nonempty 2026 text posts are selected using
+Iran/Iranian, Tehran, Hormuz, or Khamenei, while preserving legacy reviewed IDs.
+The keyword rule is applied uniformly, including newly backfilled historical
+event dates. Quotes/reblogs are excluded. UTC timestamps are converted with
+`America/New_York`; one pair is retained per post and selected start date at −1,
+0, or +1 calendar day. Posts can match multiple nearby dates; timing does not
+prove that a post discusses that particular incident.
 
-1. Clone this repository and open a terminal in it.
-2. With **Python 3.10 or later**, run `python scripts/build_poster.py`.
-   No third-party packages, network calls, or model downloads are required.
-3. Run `python -m http.server 8000 --directory docs` and open
-   `http://localhost:8000/` in a browser.
-4. Open `evidence.html` for the source examples, coverage table, exact values, and
-   downloads. Open `presentation-notes.html` for the speaking notes. Dates do not
-   need posts in all three windows.
+**Scoring.** Ninety existing scores are retained only where normalized source
+text matches the prior snapshot. Forty new texts were scored locally with the
+original six descriptions, `multi_label=True`, hypothesis template
+`This text expresses {}.`, and truncation enabled. The new-score model is
+`facebook/bart-large-mnli` revision `d7645e127eaf1aefc7862fd59a17a5aa8558b8ce`,
+using Transformers 4.57.6 and Torch 2.12.0+cpu. The original revision for the 90
+legacy scores remains unknown. [Scoring provenance](data/scoring-provenance.json)
+records the exact prompts. No human accuracy evaluation is claimed.
 
-The builder validates unique score IDs and post/event pairs, complete score joins,
-consistent repeated text, finite 0–1 scores, and saved Eastern Time date offsets.
-It writes all three pages, exact means, source checksums, and evidence JSON. It was checked
-with Python 3.13. This reproduces aggregation from saved scores; **BART inference
-was not rerun, and classifier accuracy has not been established**.
+**Updated findings.** Victory means are **0.752 → 0.767 → 0.713**; Threat means
+are **0.547 → 0.567 → 0.468**. Both are highest on event days in this selected
+sample. The earlier claim of a steady Threat decline no longer applies and has
+been removed. Scores are uncalibrated entailment outputs, not percentages of
+posts. Windows contain different contributing dates; no uncertainty intervals
+or causal/predictive conclusions are asserted.
 
-| Path | Role |
+## Reproduce and inspect
+
+1. Run `python scripts/build_poster.py` (Python 3.10+, standard library only).
+2. Run `python scripts/validate_final_snapshot.py` to check source membership,
+   selection decisions, unique IDs/pairs, timezone offsets, text joins, score
+   reuse, and independently recomputed means.
+3. Serve `docs/` with `python -m http.server 8000 --directory docs`.
+4. The optional `scripts/render_poster_pdf.py --browser /path/to/chromium` exports
+   the same one-page 36 × 24-inch poster using a separate headless profile.
+
+| File | Purpose |
 | --- | --- |
-| `docs/index.html` | Standalone GitHub Pages poster; no CDN dependencies |
-| `docs/evidence.html` | Supporting coverage, methods, examples, and exact results |
-| `docs/presentation-notes.html` | Speaking notes, rehearsal questions, and completion guidance |
-| `docs/research-poster.pdf` | Verified one-page 36 × 24 inch print output |
-| `docs/severity-results.json` | Plotted date-level values and Spearman correlations for each window, with the largest-date check |
-| `docs/evidence.json` | Counts, coverage, examples, all-data window means, input SHA-256 hashes |
-| `docs/frame-means.csv` | Exact six-frame means with contributing-date and post/event-pair counts |
-| `scripts/build_poster.py` | Portable, standard-library aggregation and validation |
-| `scripts/poster_evidence.py` | Standard-library workbook reader, same-day fatality sums, source-post windows, and tied-rank correlations |
-| `scripts/render_poster_pdf.py` | Optional PDF rebuild using a separate headless Chromium process |
-| `scripts/poster-layout.css`, `scripts/poster-layout.js` | Landscape layout, responsive sizing, scrolling corpus strip, and full-post dialog |
-| `scripts/*.template.html` | Editable source for the poster, evidence, and presentation pages; rebuild after edits |
-| `data/` | Prepared post/event CSV, saved scores, and UCDP-derived event workbook |
-| `Trump_Iran_Connected_Timeline_ZeroShot_Colab.ipynb` | Original classification and connected-timeline workflow |
-| `references/poster_requirements.md` | Rubric mapping and remaining evaluation work |
+| `data/analysis_manifest.json` | Frozen inputs, versions, checksums, counts, and qualifications |
+| `data/ucdp_iran_2026_through_september.csv` | All 511 official Iran rows, with source-release label |
+| `data/selection_review_final.json` | Decisions for all 409 conflict-pool records |
+| `data/ucdp_selected_events_2026_through_september.csv` | Current 75-record selection with involvement evidence |
+| `data/iran_original_posts_snapshot_2026-11-03.csv` | 380 eligible 2026 posts from the pinned archive |
+| `data/trump_iran_event_windows_final.csv` | 235 reconstructed post/date pairs |
+| `data/trump_iran_frame_scores_final.csv` | Six saved frame scores for 130 matched IDs |
+| `data/legacy/` | Prior August text windows and scores retained for reuse audit |
+| `docs/frame-means.csv`, `docs/evidence.json` | Rebuilt exact values, coverage, context, and provenance |
+| `scripts/*.template.html`, `scripts/poster-layout.*` | Poster, evidence page, notes, and scrolling strip |
+| `Trump_Iran_Connected_Timeline_ZeroShot_Colab.ipynb` | Original classification workflow, retained as a legacy reference |
 
-### Severity and timeline evidence
+The older July-named input files remain as historical evidence; the active
+builder reads the final files named in `analysis_manifest.json`.
 
-The event browser uses the same 87 unique posts and 129 post/date pairs as the
-poster, across 26 dates. It includes six saved scores, full post text, source links,
-and the workbook records starting on each selected date. Missing windows remain
-explicitly empty; they are never converted to zero rhetorical scores.
+## Presentation and limitations
 
-Severity is the summed `best` fatality estimate for workbook records whose
-`date_start == date_end == event_date`. Spanning records are retained in the source
-viewer but their cumulative fatalities are excluded from same-day severity.
-Each plotted point is a date with positive same-day fatalities and at least one
-post in the selected window. The samples are 19 dates before, 20 on the event day,
-and 20 after; no requirement to have posts in all three windows is imposed.
-Horizontal whiskers show summed low/high source estimates, not confidence intervals.
-All eligible dates are included in the charts. Hover over a circle to see its
-event date, locations, same-day source headlines, fatality range, selected post
-window, post count, and frame score. Click/tap pins the pop-up; Enter or Space
-opens it for keyboard users, and Escape dismisses it. The former exclusion
-checkbox has been removed. Severity comparisons are supporting evidence only;
-the main poster and its PDF focus on the six frame comparisons. These severity
-associations were explored across multiple frames/windows and are not confirmed
-or predictive results. The evidence page retains the complete four-frame and three-window Threat views,
-defaulting to all four frames the day after. Largest-date sensitivity results
-remain in the JSON as an audit record, without a page control.
+The poster follows the course's four suggested sections in three landscape
+columns. The removed severity comparison stays off the poster and PDF; supporting
+severity exploration remains on the evidence page. The bottom strip scrolls the
+130 matched posts in chronological order. **Posts ↓** jumps to it; click a card
+for full saved text and source. Hover/focus or Pause stops motion. Reduced-motion
+preferences start it paused; an explicit Resume choice is remembered for the tab
+session. The PDF shows two still excerpts. Phone columns and charts stack.
 
-The 47-row workbook labels its releases `Jan-Jun 2026 v26.01.26.06` and
-`July 2026 v26.0.7`. Record 625182 has inconsistent supplied bounds
-(low/best 2417, high 2401); the browser flags this without altering the source.
-That record spans multiple days and is not included in any severity point.
-Every plotted point has internally ordered source bounds. These are provisional
-source estimates and descriptive associations, not a causal or predictive test.
+No human gold labels, held-out precision/recall/F1, or evaluated baseline have
+been produced. Overlapping windows reuse posts, source headlines/media can affect
+attribution, truncation can lose context, and selected date groups are not a
+non-event control. Source record 625182 still has inconsistent low/best/high
+bounds; values are retained as supplied and its multi-day totals do not enter
+same-day fatality comparisons. The original legacy model revision is not pinned.
 
-The newer portfolio screenshot uses a different refreshed dataset. Its sample
-sizes and coefficients are not silently copied into this repository's figures.
+Poster due **November 25, 2026, 11:59 p.m.**; presentation **November 30**; final
+repository **December 6**, according to the [course project page](https://courseweb.site/dsa495-2026/project.html).
+This update does not submit work through Canvas.
 
-To rebuild the PDF after rebuilding the HTML, use an installed Chromium/Chrome
-executable supporting headless printing:
+**AI-use update, November 3.** Sean directed the project and final data freeze.
+Codex retrieved the official release and a size-bounded, checksum-verified public
+text archive, reconciled IDs and prior review decisions, rebuilt windows, scored
+40 new texts with BART using the existing prompts, updated the figures and notes,
+and performed source, numerical, browser, and PDF checks. BART supplied analytical
+scores; these checks do not establish rhetorical accuracy. Sean remains
+responsible for reviewing decisions and defending the work.
 
-```text
-python scripts/render_poster_pdf.py --browser /path/to/chrome
-```
+**Attribution.** UCDP data are CC BY 4.0. Cite Hegre, Croicu, Eck, and Högbladh
+(2020), “Introducing the UCDP Candidate Events Dataset,” Research & Politics,
+[doi:10.1177/2053168020935257](https://doi.org/10.1177/2053168020935257), and Högbladh
+(2026), UCDP Candidate Events Dataset Codebook v1.5. Underlying post/media rights
+remain with their owners; public access does not imply unrestricted reuse.
 
-This optional step needs no extra Python packages. It starts a temporary headless
-profile, loads only the local built page, and writes `docs/research-poster.pdf`.
-Check that the result has one page and that every section and chart is present
-after any content/layout change. The committed output was rendered and visually
-checked; PDF text/page-size checks and an independent workbook/rank-correlation
-recalculation also passed.
+---
 
-### Original classification workflow
+# Original topic brief — historical planning
 
-Open the existing notebook in Google Colab, select a T4 GPU when available, and
-run cells in order. The notebook installs Transformers, Accelerate, SentencePiece,
-Sentence Transformers, OpenPyXL, pandas, NumPy, and scikit-learn. It also uses
-PyTorch, tqdm, and the Colab runtime. Its package versions and model revision are
-not pinned; an exact inference reproduction is not yet guaranteed.
-
-The notebook expects `MyDrive/Trump_Iran_Project` and asks for the prepared CSV
-and workbook if absent. Upload the corresponding files from `data/`. To reuse
-saved scores, copy `data/trump_iran_zero_shot_scores_26event_subset.csv` to that
-Drive folder as `trump_iran_zero_shot_scores.csv` **before the scoring cell**.
-To obtain fresh scores, use an empty cache location; inference downloads
-`facebook/bart-large-mnli` and may take time. Keep the six prompts fixed when
-comparing cached and regenerated results. This notebook uses Google Drive and
-is not a local, headless reproduction script.
-
-The poster work also corrected the original HTML renderer's missing style-map
-entries for Blame Allies and Media Criticism and stale references to four frames.
-This fixes the six-frame mapping error; it does not claim a fresh full Colab run.
-
-### Readiness and submission
-
-The course site states **poster due November 25, 2026 at 11:59 p.m.**, presentation
-**November 30**, and documented repository due **December 6**. Submit through the
-designated Canvas links when available; this repository is not a Canvas submission.
-The poster submission window was not available during this review.
-
-**Remaining for the full evaluation rubric:** blind human labels, a distinct
-held-out evaluation, an evaluated baseline, per-frame precision/recall/F1 and
-support, and error analysis. The original archive snapshot, workbook download
-provenance, package versions, and model revision also need to be recorded. The page clearly labels
-these gaps and does not invent evaluation results. See
-[rubric mapping and next steps](references/poster_requirements.md).
-
-**AI-use update (October 31, 2026):** OpenAI Codex read the instructor's rubric,
-inspected this repository, created the poster and aggregation script, recomputed
-the saved-score means, documented coverage, fixed the six-frame HTML
-style mapping, and performed implementation checks. The notebook, corpus, and
-cached scores already existed. BART was not rerun. Qualitative model examples
-are not human gold labels or a performance estimate. The earlier AI-use history
-is retained in section 11 below.
+The sections below preserve the earlier submission and its then-current counts.
+Use the frozen snapshot above for the final poster and repository results.
 
 ## 1. Working project title
 

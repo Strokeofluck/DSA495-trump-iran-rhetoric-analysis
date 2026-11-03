@@ -1,0 +1,158 @@
+{
+  "frozen_at": "2026-11-03",
+  "freeze_policy": "Final presentation snapshot. No automatic refresh; apply documented corrections only unless Sean explicitly requests a new snapshot.",
+  "ucdp_coverage_through": "2026-09-30",
+  "ucdp_release": "26.01.26.09",
+  "post_archive": {
+    "revision": "db7fed9bc7f495398e29ffa6e3423e21d720cc6b",
+    "url": "https://huggingface.co/datasets/Cameronk199/donald-trump-truth-social-posts/resolve/db7fed9bc7f495398e29ffa6e3423e21d720cc6b/data/full_archive.posts.v1.jsonl.gz",
+    "sha256": "0fa09000e9431a951035329a145bc60406097ae865f7b012118c644f74ad94d3",
+    "bytes": 11295790,
+    "stats": {
+      "date_max": "2026-11-03T06:12:00Z",
+      "date_min": "2022-02-14T15:54:00Z",
+      "duplicate_truth_ids": 0,
+      "empty_text_rows": 7173,
+      "post_types": {
+        "original": 30204,
+        "quote": 2107,
+        "reblog": 5734
+      },
+      "rows": 38045,
+      "sources": {
+        "trumpstruth_status_detail": 38045
+      },
+      "unique_truth_ids": 38045
+    },
+    "download_scope": "Only the 11.3 MB compressed posts JSONL; no media objects or other archives."
+  },
+  "ucdp_source": {
+    "url": "https://ucdp.uu.se/downloads/candidateged/GEDEvent_v26_01_26_09.csv",
+    "file": "GEDEvent_v26_01_26_09.csv",
+    "bytes": 13065779,
+    "sha256": "134da9b3df08b65266802c4b662e572f396c70c92ab62297319be657540bcede"
+  },
+  "selection": "Country Iran, conflict_new_id 16905; event-specific documented U.S./joint attribution, including the explicitly marked rescue-operation-context exception. Prior included IDs are reconciled to the current release; withdrawn IDs are not carried forward. Generic report titles alone are not event-specific attribution.",
+  "post_selection": "Preserve legacy reviewed IDs; additionally include original nonempty 2026 posts matching Iran/Iranian, Tehran, Hormuz, or Khamenei, applied uniformly across all dates. Match date windows using America/New_York calendar dates. Media content is not inferred.",
+  "model": {
+    "name": "facebook/bart-large-mnli",
+    "revision_new_scores": "d7645e127eaf1aefc7862fd59a17a5aa8558b8ce",
+    "multi_label": true,
+    "hypothesis_template": "This text expresses {}.",
+    "truncation": true,
+    "frame_prompts": {
+      "Threat": "military threats, escalation, retaliation, ultimatums, warnings, strikes, or destruction directed at Iran",
+      "Victory": "claims of victory, military success, Iranian weakness, defeat, surrender, decimation, or successful U.S. operations",
+      "Diplomacy": "diplomacy, negotiations, talks, deals, conditions, agreements, or communication with Iran or allied governments",
+      "Ceasefire / Ending": "a ceasefire, stopping military operations, ending the conflict, pausing attacks, or declaring the fighting essentially finished",
+      "Blame Allies": "blaming or criticizing NATO, European allies, or other countries for not helping enough or being unhelpful",
+      "Media Criticism": "criticizing, blaming, or attacking the mainstream news media, journalists, or press coverage as biased, fake, or dishonest"
+    },
+    "torch": "2.12.0+cpu",
+    "transformers": "4.57.6",
+    "new_scores": 40,
+    "legacy_scores": "90 scores reused only when normalized source text matched; original model revision was not pinned."
+  },
+  "counts": {
+    "source_cutoff": "2026-09-30",
+    "ucdp_release": "26.01.26.09",
+    "source_iran_records": 511,
+    "source_conflict_records": 409,
+    "selected_events": 75,
+    "selected_start_dates": 43,
+    "selected_date_first": "2026-02-28",
+    "selected_date_last": "2026-09-02",
+    "newly_selected_ids": [
+      "637557",
+      "639765",
+      "639844",
+      "640077",
+      "640168",
+      "640208",
+      "640258",
+      "640276",
+      "640330",
+      "640562",
+      "640591",
+      "640599",
+      "640610",
+      "640611",
+      "640749",
+      "640760",
+      "640823",
+      "640869",
+      "640894",
+      "640938",
+      "640943",
+      "641048",
+      "641062",
+      "642139",
+      "642294",
+      "645375",
+      "645376",
+      "645378"
+    ],
+    "withdrawn_prior_selected_ids": [
+      "629301",
+      "637532"
+    ],
+    "post_archive_revision": "db7fed9bc7f495398e29ffa6e3423e21d720cc6b",
+    "post_archive_latest_utc": "2026-11-03T06:12:00Z",
+    "original_iran_posts_2026": 380,
+    "matched_posts": 130,
+    "post_event_pairs": 235,
+    "reused_score_posts": 90,
+    "posts_to_score": 40,
+    "coverage_dates": [
+      36,
+      35,
+      35
+    ],
+    "window_pairs": [
+      76,
+      77,
+      82
+    ],
+    "empty_event_dates": [
+      "2026-07-30"
+    ],
+    "legacy_posts_no_longer_matched": [],
+    "post_selection": "Preserve legacy reviewed IDs; additionally include original nonempty 2026 posts matching Iran/Iranian, Tehran, Hormuz, or Khamenei, applied uniformly across all dates. Match date windows using America/New_York calendar dates. Media content is not inferred."
+  },
+  "files": {
+    "windows": "trump_iran_event_windows_final.csv",
+    "scores": "trump_iran_frame_scores_final.csv",
+    "events": "ucdp_selected_events_2026_through_september.csv",
+    "source_events": "ucdp_iran_2026_through_september.csv",
+    "posts": "iran_original_posts_snapshot_2026-11-03.csv",
+    "selection_review": "selection_review_final.json"
+  },
+  "file_sha256": {
+    "ucdp_iran_2026_through_september.csv": "019e77e7234aa60059448eec42cb471f64b56724d448f5607e0d29067ec49688",
+    "ucdp_selected_events_2026_through_september.csv": "193be241fcc5531a20c9752025a5b11539e239527fd56f48f52ea113daa62b3b",
+    "iran_original_posts_snapshot_2026-11-03.csv": "88b916e5c742fa8978494b10c6383a1461684f954a53ce479c25edfaf6cf64bd",
+    "trump_iran_event_windows_final.csv": "cf8374803770910214bb5e05944ec247c67956eb8b997e7d06b32ee166ed8a9d",
+    "trump_iran_frame_scores_final.csv": "4a58ef61ca05fe57438293725e810450a90313599932aeeed5125e871f82f02f",
+    "selection_review_final.json": "111ed1a7d03e186c4d30985f3f794accf8391368e685ec086c4032226267fefb",
+    "scoring-provenance.json": "69d251b6f11ce6329b0a1f18be65877b2d4168575e1e1a6da1acf867012ed2a0",
+    "legacy/august_frame_scores.csv": "eaf77423b8b664cf1bfaf04e043a6580001e5c36d86119176f613d918e43807b",
+    "legacy/august_post_windows.csv": "e41b53ce5da55d654e6dd7e85e409e3c5e2fcd0b52493804c9f0b5febfab4060"
+  },
+  "changes_from_poster": {
+    "prior_posts": 87,
+    "prior_start_dates": 26,
+    "prior_pairs": 129,
+    "final_posts": 130,
+    "final_start_dates": 43,
+    "final_pairs": 235,
+    "legacy_model_revision_known": false
+  },
+  "quality_limits": [
+    "Model accuracy remains unvalidated by human labels.",
+    "Headline-based U.S. involvement is a project review, not an official UCDP actor variable. Generic war titles are insufficient.",
+    "Multi-day starts are not precise dates for each death; no intraday ordering is inferred.",
+    "Source record 625182 has inconsistent death bounds; retained as supplied and excluded from same-day severity.",
+    "Legacy source/model inference is not fully pinned; newly scored texts use a pinned model revision."
+  ],
+  "file_hash_format": "SHA-256 of UTF-8 text with universal newlines normalized to LF; official source receipts use exact downloaded bytes."
+}

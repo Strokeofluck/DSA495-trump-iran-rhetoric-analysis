@@ -1,19 +1,19 @@
 scope,frame,relative_day,mean_entailment_score,contributing_dates,post_event_pairs
-available,Threat,-1,0.5476339321273068,20,40
-available,Threat,0,0.5244780239912438,21,40
-available,Threat,1,0.4845270719814358,21,49
-available,Victory,-1,0.6729612269982075,20,40
-available,Victory,0,0.7611159462472498,21,40
-available,Victory,1,0.6996707000686521,21,49
-available,Diplomacy,-1,0.222735445581687,20,40
-available,Diplomacy,0,0.20924540703242187,21,40
-available,Diplomacy,1,0.27170955790668755,21,49
-available,Ceasefire / Ending,-1,0.34289052658714353,20,40
-available,Ceasefire / Ending,0,0.3279236771417634,21,40
-available,Ceasefire / Ending,1,0.39100891781050623,21,49
-available,Blame Allies,-1,0.07084261536777679,20,40
-available,Blame Allies,0,0.12468281057090425,21,40
-available,Blame Allies,1,0.1123854595546921,21,49
-available,Media Criticism,-1,0.34286164434161037,20,40
-available,Media Criticism,0,0.33287014830561856,21,40
-available,Media Criticism,1,0.3511452108917255,21,49
+available,Threat,-1,0.5467640140645758,36,76
+available,Threat,0,0.5671012929923988,35,77
+available,Threat,1,0.46792084189037614,35,82
+available,Victory,-1,0.7524230456178042,36,76
+available,Victory,0,0.7667417105689778,35,77
+available,Victory,1,0.7130224919038647,35,82
+available,Diplomacy,-1,0.25305440760362047,36,76
+available,Diplomacy,0,0.19919302425386073,35,77
+available,Diplomacy,1,0.25872927624144637,35,82
+available,Ceasefire / Ending,-1,0.3711649401747208,36,76
+available,Ceasefire / Ending,0,0.3447410712040783,35,77
+available,Ceasefire / Ending,1,0.35418913073871017,35,82
+available,Blame Allies,-1,0.06965005085159512,36,76
+available,Blame Allies,0,0.13769261126165344,35,77
+available,Blame Allies,1,0.10195156585236656,35,82
+available,Media Criticism,-1,0.34352277055451713,36,76
+available,Media Criticism,0,0.38062953398696014,35,77
+available,Media Criticism,1,0.35753760482051544,35,82

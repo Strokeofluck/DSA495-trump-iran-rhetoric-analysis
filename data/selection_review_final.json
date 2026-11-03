@@ -1,0 +1,2464 @@
+{
+  "reviewed_at": "2026-11-03",
+  "scope": "Country Iran, conflict_new_id 16905; event-specific documented U.S./joint attribution, including the explicitly marked rescue-operation-context exception. Prior included IDs are reconciled to the current release; withdrawn IDs are not carried forward. Generic report titles alone are not event-specific attribution.",
+  "decisions": {
+    "620877": {
+      "included": true,
+      "category": "Joint US-Israel",
+      "reason": "Retained prior documented inclusion by persistent UCDP ID; current official fields replace older release values.",
+      "involvement_evidence": "Iran leader Khamenei killed in massive US and Israeli attack"
+    },
+    "620876": {
+      "included": true,
+      "category": "Joint US-Israel",
+      "reason": "Retained prior documented inclusion by persistent UCDP ID; current official fields replace older release values.",
+      "involvement_evidence": "1st LD Writethru: Death toll rises to 148 in U.S.-Israeli attack on Iranian school"
+    },
+    "621091": {
+      "included": true,
+      "category": "Joint US-Israel",
+      "reason": "Retained prior documented inclusion by persistent UCDP ID; current official fields replace older release values.",
+      "involvement_evidence": "US-Israel attacks on Iran: Death toll and injuries live tracker"
+    },
+    "625374": {
+      "included": true,
+      "category": "Joint US-Israel",
+      "reason": "Retained prior documented inclusion by persistent UCDP ID; current official fields replace older release values.",
+      "involvement_evidence": "1st LD Writethru: Death toll rises to 13 from U.S.-Israeli attacks on bridge in N. Iran"
+    },
+    "625367": {
+      "included": true,
+      "category": "Joint US-Israel",
+      "reason": "Retained prior documented inclusion by persistent UCDP ID; current official fields replace older release values.",
+      "involvement_evidence": "5 killed in U.S.-Israeli raid on port city in Iran"
+    },
+    "629412": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Rubio reporting sailor deaths does not establish U.S. responsibility or participation in the fatal incidents. This multi-day record also has best fatalities 0. General report-title additions do not by themselves overturn this decision.",
+      "involvement_evidence": ""
+    },
+    "629399": {
+      "included": true,
+      "category": "Joint US-Israel",
+      "reason": "Retained prior documented inclusion by persistent UCDP ID; current official fields replace older release values.",
+      "involvement_evidence": "More than 40 Iranian seafarers killed during US-Israeli war: Union leader\n\n\nAU \n\n\nErin Hale"
+    },
+    "625182": {
+      "included": true,
+      "category": "Joint US-Israel",
+      "reason": "Retained prior documented inclusion by persistent UCDP ID; current official fields replace older release values.",
+      "involvement_evidence": "Iran reports 3,468 dead in war with US, Israel: official"
+    },
+    "640862": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640860": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640875": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640900": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640918": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640908": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640811": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640819": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640837": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640839": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640828": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640831": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640980": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "642304": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "642319": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "642321": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "642322": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "642323": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "642324": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "642325": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "642326": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "642327": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "642373": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "642374": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "642375": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "642376": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "642370": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "642371": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "642346": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "642347": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "642350": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "642354": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "642355": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "642356": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "642357": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "642358": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "642359": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "642360": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "642362": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "642363": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "642364": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "642365": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "639742": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "639761": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "639762": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "639769": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "639766": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "639753": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "639756": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "639796": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "639794": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "639809": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "639828": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "639811": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "639831": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "641048": {
+      "included": true,
+      "category": "Joint US-Israel",
+      "reason": "Current event-specific supplied source headline attributes the incident to U.S. or joint U.S.-Israel action.",
+      "involvement_evidence": "Funeral ceremony for two martyrs of the Zionist-American regime attacks in Gachsaran"
+    },
+    "640600": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640363": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640377": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640385": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640388": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640390": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640394": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640284": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640285": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640312": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640313": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640257": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640259": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640262": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640264": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640265": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640267": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640269": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640274": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640282": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "639866": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640060": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640235": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640206": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640157": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640165": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640193": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640199": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640073": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "639852": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "639837": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640201": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640202": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640207": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640209": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640254": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640294": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640392": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "641062": {
+      "included": true,
+      "category": "Joint US-Israel",
+      "reason": "Current event-specific supplied source headline attributes the incident to U.S. or joint U.S.-Israel action.",
+      "involvement_evidence": "Briefing: US-Israeli strikes hit Iran police, military, hospital for second day"
+    },
+    "639757": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "639746": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "642302": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640827": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "620879": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "One supplied headline explicitly attributes the border-force attack to Israel; the other does not name an attacker. No U.S. role is documented. General report-title additions do not by themselves overturn this decision.",
+      "involvement_evidence": ""
+    },
+    "621092": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Headline reports three deaths in western-Iran strikes but does not identify the attacker or a U.S. operation. General report-title additions do not by themselves overturn this decision.",
+      "involvement_evidence": ""
+    },
+    "625357": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Headline reports a Chinese national dying in the Tehran conflict but does not identify the attacker or a U.S. operation. General report-title additions do not by themselves overturn this decision.",
+      "involvement_evidence": ""
+    },
+    "640854": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640855": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640849": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640850": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "642301": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "639804": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "639759": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "639823": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640393": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "637560": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640210": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640208": {
+      "included": true,
+      "category": "Joint US-Israel",
+      "reason": "Current event-specific supplied source headline attributes the incident to U.S. or joint U.S.-Israel action.",
+      "involvement_evidence": "East Azarbaijan Taekwondo Athlete Martyred in U.S.-Israeli Attack"
+    },
+    "640224": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640391": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640372": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "641046": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "639810": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "642300": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640924": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "621096": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Headline explicitly describes an Israeli airstrike; no U.S. role is documented in the supplied fields. General report-title additions do not by themselves overturn this decision.",
+      "involvement_evidence": ""
+    },
+    "625183": {
+      "included": true,
+      "category": "US",
+      "reason": "Retained prior documented inclusion by persistent UCDP ID; current official fields replace older release values.",
+      "involvement_evidence": "US says it killed leader of unit that tried to assassinate Trump"
+    },
+    "642299": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "639827": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640375": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640211": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640236": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640062": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640052": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640246": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640058": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640150": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640376": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640562": {
+      "included": true,
+      "category": "Joint US-Israel",
+      "reason": "Current event-specific supplied source headline attributes the incident to U.S. or joint U.S.-Israel action.",
+      "involvement_evidence": "17 compatriots martyred during U.S.-Israeli terrorist attack to Abhar"
+    },
+    "639758": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "641021": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "641065": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640309": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640270": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640151": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640237": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640153": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "625185": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Headline reports 20 deaths in Shiraz strikes but does not identify the attacker or a U.S. operation. General report-title additions do not by themselves overturn this decision.",
+      "involvement_evidence": ""
+    },
+    "625186": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Headline reports eight deaths in central-Iran strikes but does not identify the attacker or a U.S. operation. General report-title additions do not by themselves overturn this decision.",
+      "involvement_evidence": ""
+    },
+    "640154": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640155": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640238": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640214": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640152": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640064": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640925": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640869": {
+      "included": true,
+      "category": "Joint US-Israel",
+      "reason": "Current event-specific supplied source headline attributes the incident to U.S. or joint U.S.-Israel action.",
+      "involvement_evidence": "Basij chief at Iran armed forces general staff killed in US-Israeli strikes"
+    },
+    "640871": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640867": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640905": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "642298": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640241": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640268": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640261": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "625187": {
+      "included": true,
+      "category": "Joint US-Israel",
+      "reason": "Retained prior documented inclusion by persistent UCDP ID; current official fields replace older release values.",
+      "involvement_evidence": "US, Israel hit five oil sites in and near Tehran: official"
+    },
+    "633791": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Headline reports a wounded man dying in Lorestan; the supplied fields do not establish who caused the wounds or a U.S. role. General report-title additions do not by themselves overturn this decision.",
+      "involvement_evidence": ""
+    },
+    "640558": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640159": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "639765": {
+      "included": true,
+      "category": "Joint US-Israel",
+      "reason": "Current event-specific supplied source headline attributes the incident to U.S. or joint U.S.-Israel action.",
+      "involvement_evidence": "Guards aerospace commander killed in US-Israeli strikes"
+    },
+    "639747": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640891": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640894": {
+      "included": true,
+      "category": "Joint US-Israel",
+      "reason": "Current event-specific supplied source headline attributes the incident to U.S. or joint U.S.-Israel action.",
+      "involvement_evidence": "Colonel Majid Kashfi, a kickboxing coach and referee for the Federation of Martial Arts Associations who worked in Qarchak city, was martyred following the criminal attacks by the Zionist regime and the United States."
+    },
+    "639763": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "639751": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "639829": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "642297": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "642320": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640160": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640260": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640258": {
+      "included": true,
+      "category": "Joint US-Israel",
+      "reason": "Current event-specific supplied source headline attributes the incident to U.S. or joint U.S.-Israel action.",
+      "involvement_evidence": "​Mehdi Mousapour, an employee of the National Post Company in East Azerbaijan Province, was killed following Israeli and American attacks on the Azarshahr County post office."
+    },
+    "640266": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640371": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640330": {
+      "included": true,
+      "category": "Joint US-Israel",
+      "reason": "Current event-specific supplied source headline attributes the incident to U.S. or joint U.S.-Israel action.",
+      "involvement_evidence": "At least 9 people have been killed in the US-Israeli attacks on Iran’s Aligudarz city, reports the Tasnim news agency."
+    },
+    "640356": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640067": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640907": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "625190": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Headline reports drone attacks killing Tehran security forces but does not identify the attacker or a U.S. operation. General report-title additions do not by themselves overturn this decision.",
+      "involvement_evidence": ""
+    },
+    "640901": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "642296": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640068": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640069": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640161": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640162": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "639854": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640378": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640326": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640273": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640271": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640272": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640279": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640579": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "639767": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "639748": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "639787": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "639788": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640913": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "625192": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Supplied headlines report a blast near a Tehran rally without identifying the attacker or a U.S. operation. General report-title additions do not by themselves overturn this decision.",
+      "involvement_evidence": ""
+    },
+    "625194": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Headline explicitly attributes the strikes and intelligence-officer deaths to Israel; no U.S. role is documented. General report-title additions do not by themselves overturn this decision.",
+      "involvement_evidence": ""
+    },
+    "625193": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Headline reports an Isfahan industrial-area missile strike but does not identify the attacker or a U.S. operation. General report-title additions do not by themselves overturn this decision.",
+      "involvement_evidence": ""
+    },
+    "633711": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Headline reports an Ilam airstrike without identifying the attacker or a U.S. operation. General report-title additions do not by themselves overturn this decision.",
+      "involvement_evidence": ""
+    },
+    "640592": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640572": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640574": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640379": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640164": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640148": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640938": {
+      "included": true,
+      "category": "Joint US-Israel",
+      "reason": "Current event-specific supplied source headline attributes the incident to U.S. or joint U.S.-Israel action.",
+      "involvement_evidence": "Several mid- and high-ranking commanders from Iran’s IRGC and Basij forces have been reported killed in US and Israeli strikes, according to Iranian and regional media."
+    },
+    "642172": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "642295": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640943": {
+      "included": true,
+      "category": "Joint US-Israel",
+      "reason": "Current event-specific supplied source headline attributes the incident to U.S. or joint U.S.-Israel action.",
+      "involvement_evidence": "Identity of Baloch conscript killed in US-Israeli airstrike on Bampur confirmed"
+    },
+    "640380": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640580": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640275": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640277": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "625197": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Headlines discuss and confirm Larijani's death. An Israeli defence minister is named as a source, but the supplied fields do not establish U.S. participation. General report-title additions do not by themselves overturn this decision.",
+      "involvement_evidence": ""
+    },
+    "625196": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Supplied headlines attribute the Basij leadership strikes to the Israeli military; no U.S. role is documented. General report-title additions do not by themselves overturn this decision.",
+      "involvement_evidence": ""
+    },
+    "625198": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "One headline attributes the intelligence-minister killing to Israel; the other confirms the death. No U.S. role is documented. General report-title additions do not by themselves overturn this decision.",
+      "involvement_evidence": ""
+    },
+    "640163": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640276": {
+      "included": true,
+      "category": "Joint US-Israel",
+      "reason": "Current event-specific supplied source headline attributes the incident to U.S. or joint U.S.-Israel action.",
+      "involvement_evidence": "The martyrdom of 4 teachers following today's air raid by the Zionist enemy, the American, is a blessing."
+    },
+    "640599": {
+      "included": true,
+      "category": "Joint US-Israel",
+      "reason": "Current event-specific supplied source headline attributes the incident to U.S. or joint U.S.-Israel action.",
+      "involvement_evidence": "Israeli and US fighter jets struck the courthouse in Larestan, Fars province, on Wednesday, with witnesses reporting five explosions, according to videos sent to Iran International."
+    },
+    "642158": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "642136": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "639750": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "639793": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640614": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640381": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640280": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640071": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "639832": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "639834": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "639856": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640612": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "625358": {
+      "included": true,
+      "category": "Joint US-Israel",
+      "reason": "Retained prior documented inclusion by persistent UCDP ID; current official fields replace older release values.",
+      "involvement_evidence": "Iran Revolutionary Guards say US-Israel strikes kill spokesman"
+    },
+    "640606": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640281": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640278": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "639835": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "639836": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "639842": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640287": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640283": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640616": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "639857": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "639752": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "639795": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "642292": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "642293": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "625359": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Headline reports an attack on a coastal broadcaster without identifying the attacker or a U.S. operation. General report-title additions do not by themselves overturn this decision.",
+      "involvement_evidence": ""
+    },
+    "639797": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "639799": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "642130": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "642132": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640717": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640168": {
+      "included": true,
+      "category": "Joint US-Israel",
+      "reason": "Current event-specific supplied source headline attributes the incident to U.S. or joint U.S.-Israel action.",
+      "involvement_evidence": "9 killed, 28 injured in US-Israeli attacks on Iran's Tabriz"
+    },
+    "640286": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "642135": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "625362": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Headline combines Shiraz and Abu Dhabi deaths; the Iran record does not establish a U.S. role in the Shiraz incident. General report-title additions do not by themselves overturn this decision.",
+      "involvement_evidence": ""
+    },
+    "625361": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Supplied headlines identify Israeli claims about the IRGC navy-commander killing; no U.S. role is documented. General report-title additions do not by themselves overturn this decision.",
+      "involvement_evidence": ""
+    },
+    "640736": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640293": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640305": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "639860": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640216": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640217": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "639846": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640740": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "639801": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "639802": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "639803": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "639805": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "639807": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "642294": {
+      "included": true,
+      "category": "Joint US-Israel",
+      "reason": "Current event-specific supplied source headline attributes the incident to U.S. or joint U.S.-Israel action.",
+      "involvement_evidence": "The martyrdom of First Lieutenant Hashem Miri Baqal in the Zionist-American attacks"
+    },
+    "625363": {
+      "included": true,
+      "category": "Joint US-Israel",
+      "reason": "Retained prior documented inclusion by persistent UCDP ID; current official fields replace older release values.",
+      "involvement_evidence": "Iran emergency workers search for survivors after deadly US-Israel attacks"
+    },
+    "625364": {
+      "included": true,
+      "category": "Joint US-Israel",
+      "reason": "Retained prior documented inclusion by persistent UCDP ID; current official fields replace older release values.",
+      "involvement_evidence": "Iran emergency workers search for survivors after deadly US-Israel attacks"
+    },
+    "639806": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "639812": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "642139": {
+      "included": true,
+      "category": "Joint US-Israel",
+      "reason": "Current event-specific supplied source headline attributes the incident to U.S. or joint U.S.-Israel action.",
+      "involvement_evidence": "Two Yazdi soldiers martyred in Isfahan following US and Israeli attacks + photos"
+    },
+    "639844": {
+      "included": true,
+      "category": "Joint US-Israel",
+      "reason": "Current event-specific supplied source headline attributes the incident to U.S. or joint U.S.-Israel action.",
+      "involvement_evidence": "US-Israeli Strikes Hit Multiple Residential, Civilian Areas in Iran: Iranian Media"
+    },
+    "639845": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640077": {
+      "included": true,
+      "category": "Joint US-Israel",
+      "reason": "Current event-specific supplied source headline attributes the incident to U.S. or joint U.S.-Israel action.",
+      "involvement_evidence": "US-Israeli Strikes Hit Multiple Residential, Civilian Areas in Iran: Iranian Media; US-Israeli strike on residential areas in western Iran kills 5, injures 35: Report"
+    },
+    "640171": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640173": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640315": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640382": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "642146": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "642170": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "639815": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "625365": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "The live-blog headline mentions threats to U.S. and Israeli universities and Houthi missiles; it does not establish U.S. participation in this Bushehr record. General report-title additions do not by themselves overturn this decision.",
+      "involvement_evidence": ""
+    },
+    "625366": {
+      "included": true,
+      "category": "Joint US-Israel",
+      "reason": "Retained prior documented inclusion by persistent UCDP ID; current official fields replace older release values.",
+      "involvement_evidence": "US, Israeli strikes hit Iran port city near Hormuz strait: state media"
+    },
+    "625369": {
+      "included": true,
+      "category": "Joint US-Israel",
+      "reason": "Retained prior documented inclusion by persistent UCDP ID; current official fields replace older release values.",
+      "involvement_evidence": "At least 15 killed in U.S.-Israeli strikes across two Iranian provinces"
+    },
+    "639754": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640221": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640136": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640223": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640383": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "642168": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "642291": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "625368": {
+      "included": true,
+      "category": "Joint US-Israel",
+      "reason": "Retained prior documented inclusion by persistent UCDP ID; current official fields replace older release values.",
+      "involvement_evidence": "Deadly US-Israeli strikes damage religious site in Iran: media"
+    },
+    "625371": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "U.S. sanctions on the general identify a sanctioning authority, not the actor responsible for the killing. General report-title additions do not by themselves overturn this decision.",
+      "involvement_evidence": ""
+    },
+    "625372": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Headline reports an IRGC elite-unit commander killed without identifying the attacker or a U.S. operation. General report-title additions do not by themselves overturn this decision.",
+      "involvement_evidence": ""
+    },
+    "629315": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Headline reports a former foreign minister dying from attack wounds without identifying the attacker or a U.S. operation. General report-title additions do not by themselves overturn this decision.",
+      "involvement_evidence": ""
+    },
+    "639814": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640720": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640384": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640329": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640389": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "625373": {
+      "included": true,
+      "category": "Joint US-Israel",
+      "reason": "Retained prior documented inclusion by persistent UCDP ID; current official fields replace older release values.",
+      "involvement_evidence": "1st LD Writethru: 8 killed, 95 wounded in U.S.-Israeli attacks on bridge in N. Iran"
+    },
+    "629300": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "One headline reports Trump commenting on Tehran deaths; the AFP article does not specify who attacked. The other headline attributes the oil-official strike to Israel. U.S. participation is unverified. General report-title additions do not by themselves overturn this decision.",
+      "involvement_evidence": ""
+    },
+    "640324": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640321": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640174": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640749": {
+      "included": true,
+      "category": "Joint US-Israel",
+      "reason": "Current event-specific supplied source headline attributes the incident to U.S. or joint U.S.-Israel action.",
+      "involvement_evidence": "3 killed, several injured in US-Israeli attack in western Iranian province"
+    },
+    "640760": {
+      "included": true,
+      "category": "US operation context",
+      "reason": "Current record reports lethal strikes during the U.S. pilot-rescue operation; operation context is documented but the strike actor is not explicit. Previously reviewed rescue-context record 629301 is absent from this release; this is not asserted to be an official ID crosswalk.",
+      "involvement_evidence": "Five killed in Iran in strikes during US pilot rescue: Iranian media"
+    },
+    "640763": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640764": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640053": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640386": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640358": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640560": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "629298": {
+      "included": true,
+      "category": "Joint US-Israel",
+      "reason": "Retained prior documented inclusion by persistent UCDP ID; current official fields replace older release values.",
+      "involvement_evidence": "US-Israeli strike on Iran's Bushehr nuclear plant kills one: state media"
+    },
+    "629314": {
+      "included": true,
+      "category": "Joint US-Israel",
+      "reason": "Retained prior documented inclusion by persistent UCDP ID; current official fields replace older release values.",
+      "involvement_evidence": "US, Israel strike Iran petrochemicals hub"
+    },
+    "628242": {
+      "included": true,
+      "category": "Joint US-Israel",
+      "reason": "Retained prior documented inclusion by persistent UCDP ID; current official fields replace older release values.",
+      "involvement_evidence": "US-Israeli strike hits trade terminal at Iran-Iraq border, killing one: media"
+    },
+    "629302": {
+      "included": true,
+      "category": "Joint US-Israel",
+      "reason": "Retained prior documented inclusion by persistent UCDP ID; current official fields replace older release values.",
+      "involvement_evidence": "US-Israeli strikes kill five Guards members in northwest Iran: state media"
+    },
+    "629309": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Headline attributes the Quds Force commander killing to Israel; no U.S. role is documented in the supplied fields. General report-title additions do not by themselves overturn this decision.",
+      "involvement_evidence": ""
+    },
+    "639865": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "639862": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "642290": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "642288": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "642289": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "642317": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640779": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640387": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "629310": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Headline reports strikes outside Tehran without identifying the attacker or a U.S. operation. General report-title additions do not by themselves overturn this decision.",
+      "involvement_evidence": ""
+    },
+    "629304": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Headline reports a residential-area attack south of Tehran without identifying the attacker or a U.S. operation. General report-title additions do not by themselves overturn this decision.",
+      "involvement_evidence": ""
+    },
+    "629305": {
+      "included": true,
+      "category": "Joint US-Israel",
+      "reason": "Retained prior documented inclusion by persistent UCDP ID; current official fields replace older release values.",
+      "involvement_evidence": "US-Israeli strikes kill Iran Guards intelligence chief: Guards"
+    },
+    "629306": {
+      "included": true,
+      "category": "Joint US-Israel",
+      "reason": "Retained prior documented inclusion by persistent UCDP ID; current official fields replace older release values.",
+      "involvement_evidence": "Iran’s top university bombed as US, Israel intensify attacks"
+    },
+    "629307": {
+      "included": true,
+      "category": "Joint US-Israel",
+      "reason": "Retained prior documented inclusion by persistent UCDP ID; current official fields replace older release values.",
+      "involvement_evidence": "Iran’s top university bombed as US, Israel intensify attacks"
+    },
+    "629308": {
+      "included": true,
+      "category": "Joint US-Israel",
+      "reason": "Retained prior documented inclusion by persistent UCDP ID; current official fields replace older release values.",
+      "involvement_evidence": "Iran’s top university bombed as US, Israel intensify attacks"
+    },
+    "629313": {
+      "included": true,
+      "category": "Joint US-Israel",
+      "reason": "Retained prior documented inclusion by persistent UCDP ID; current official fields replace older release values.",
+      "involvement_evidence": "Synagogue in Tehran ‘completely destroyed’ in US-Israeli attack"
+    },
+    "629311": {
+      "included": true,
+      "category": "Joint US-Israel",
+      "reason": "Retained prior documented inclusion by persistent UCDP ID; current official fields replace older release values.",
+      "involvement_evidence": "1st LD: 2 killed, 3 wounded in U.S.-Israeli attack on railway bridge in C. Iran"
+    },
+    "629312": {
+      "included": true,
+      "category": "Joint US-Israel",
+      "reason": "Retained prior documented inclusion by persistent UCDP ID; current official fields replace older release values.",
+      "involvement_evidence": "Synagogue in Tehran ‘completely destroyed’ in US-Israeli attack"
+    },
+    "640362": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640332": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640364": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640334": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "639859": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "642316": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "642287": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "642372": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "639848": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640366": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640333": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "629398": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Headline reports Iranian soldiers killed while demining. It does not establish U.S. participation in the incident or identify the origin of the ordnance. General report-title additions do not by themselves overturn this decision.",
+      "involvement_evidence": ""
+    },
+    "629402": {
+      "included": true,
+      "category": "US",
+      "reason": "Retained prior documented inclusion by persistent UCDP ID; current official fields replace older release values.",
+      "involvement_evidence": "Iran says US military killed five civilians in attacks on passenger boats"
+    },
+    "635421": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Both supplied headlines attribute the air-defence officer deaths to Israeli strikes; no U.S. role is documented. General report-title additions do not by themselves overturn this decision.",
+      "involvement_evidence": ""
+    },
+    "637557": {
+      "included": true,
+      "category": "US",
+      "reason": "Current event-specific supplied source headline attributes the incident to U.S. or joint U.S.-Israel action.",
+      "involvement_evidence": "Iran says 60 killed, 670 injured in recent US air strikes"
+    },
+    "637547": {
+      "included": true,
+      "category": "US",
+      "reason": "Retained prior documented inclusion by persistent UCDP ID; current official fields replace older release values.",
+      "involvement_evidence": "Iran says US attacks over three weeks killed 50, injured more than 500"
+    },
+    "637517": {
+      "included": true,
+      "category": "US",
+      "reason": "Retained prior documented inclusion by persistent UCDP ID; current official fields replace older release values.",
+      "involvement_evidence": "Iran state media says member of Revolutionary Guards killed in US strikes"
+    },
+    "637518": {
+      "included": true,
+      "category": "US",
+      "reason": "Retained prior documented inclusion by persistent UCDP ID; current official fields replace older release values.",
+      "involvement_evidence": "Eight Iran military personnel killed in US strikes: state media"
+    },
+    "637519": {
+      "included": true,
+      "category": "US",
+      "reason": "Retained prior documented inclusion by persistent UCDP ID; current official fields replace older release values.",
+      "involvement_evidence": "Iran army says eight members killed in latest US attack"
+    },
+    "637521": {
+      "included": true,
+      "category": "US",
+      "reason": "Retained prior documented inclusion by persistent UCDP ID; current official fields replace older release values.",
+      "involvement_evidence": "Iran health ministry says 14 killed in two days of US strikes"
+    },
+    "637534": {
+      "included": true,
+      "category": "US",
+      "reason": "Retained prior documented inclusion by persistent UCDP ID; current official fields replace older release values.",
+      "involvement_evidence": "US strikes Iran, vows to reimpose naval blockade"
+    },
+    "637522": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "637520": {
+      "included": true,
+      "category": "US",
+      "reason": "Retained prior documented inclusion by persistent UCDP ID; current official fields replace older release values.",
+      "involvement_evidence": "US strikes kill three in western Iran: Iranian state media"
+    },
+    "640830": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640832": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640838": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "637523": {
+      "included": true,
+      "category": "US",
+      "reason": "Retained prior documented inclusion by persistent UCDP ID; current official fields replace older release values.",
+      "involvement_evidence": "Overnight US strikes killed Iranian soldier: media"
+    },
+    "637524": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Headline reports attacks in southern Iran without identifying the attacker or a U.S. operation. General report-title additions do not by themselves overturn this decision.",
+      "involvement_evidence": ""
+    },
+    "637528": {
+      "included": true,
+      "category": "US",
+      "reason": "Retained prior documented inclusion by persistent UCDP ID; current official fields replace older release values.",
+      "involvement_evidence": "Several killed in latest U.S. strikes on Iran"
+    },
+    "637526": {
+      "included": true,
+      "category": "US",
+      "reason": "Retained prior documented inclusion by persistent UCDP ID; current official fields replace older release values.",
+      "involvement_evidence": "US strikes kill one, wound 4 in southwest Iran: state media"
+    },
+    "640824": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "640823": {
+      "included": true,
+      "category": "US",
+      "reason": "Current event-specific supplied source headline attributes the incident to U.S. or joint U.S.-Israel action.",
+      "involvement_evidence": "3rd LD: At least 3 killed, 4 injured in fresh U.S. strikes on Iran -- media"
+    },
+    "642286": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "637540": {
+      "included": true,
+      "category": "US",
+      "reason": "Retained prior documented inclusion by persistent UCDP ID; current official fields replace older release values.",
+      "involvement_evidence": "US strikes killed seven military personnel in southeast: Iran army"
+    },
+    "637542": {
+      "included": true,
+      "category": "US",
+      "reason": "Retained prior documented inclusion by persistent UCDP ID; current official fields replace older release values.",
+      "involvement_evidence": "At least 7 people killed as US airstrikes target bridges in southern Iran, Iranian state\ntelevision reports"
+    },
+    "640821": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "642285": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "637545": {
+      "included": true,
+      "category": "US",
+      "reason": "Retained prior documented inclusion by persistent UCDP ID; current official fields replace older release values.",
+      "involvement_evidence": "US strikes kill 3, wound 8 in southern Iran: Iranian state media"
+    },
+    "637525": {
+      "included": true,
+      "category": "US",
+      "reason": "Retained prior documented inclusion by persistent UCDP ID; current official fields replace older release values.",
+      "involvement_evidence": "1 killed, several wounded in U.S. overnight strikes on 2 provinces in Iran"
+    },
+    "642284": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "637743": {
+      "included": true,
+      "category": "US",
+      "reason": "Retained prior documented inclusion by persistent UCDP ID; current official fields replace older release values.",
+      "involvement_evidence": "US launches new strikes as Iran warns of regional turmoil"
+    },
+    "637553": {
+      "included": true,
+      "category": "US",
+      "reason": "Retained prior documented inclusion by persistent UCDP ID; current official fields replace older release values.",
+      "involvement_evidence": "Iran says US attack on southwest kills at least four people"
+    },
+    "637567": {
+      "included": true,
+      "category": "US",
+      "reason": "Retained prior documented inclusion by persistent UCDP ID; current official fields replace older release values.",
+      "involvement_evidence": "Iran's Guards say three members killed in US attack on northwest"
+    },
+    "637563": {
+      "included": true,
+      "category": "US",
+      "reason": "Retained prior documented inclusion by persistent UCDP ID; current official fields replace older release values.",
+      "involvement_evidence": "US strike kills three in Qeshm: Iranian media"
+    },
+    "640591": {
+      "included": true,
+      "category": "US",
+      "reason": "Current event-specific supplied source headline attributes the incident to U.S. or joint U.S.-Israel action.",
+      "involvement_evidence": "Iran buries army drone unit commander killed in US strike"
+    },
+    "640608": {
+      "included": true,
+      "category": "US",
+      "reason": "Retained prior documented inclusion by persistent UCDP ID; current official fields replace older release values.",
+      "involvement_evidence": "Urgent: Iran's IRGC says several killed, wounded in U.S. attack on Larak island, vows\n\"response and punishment\""
+    },
+    "645377": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "645375": {
+      "included": true,
+      "category": "US",
+      "reason": "Current event-specific supplied source headline attributes the incident to U.S. or joint U.S.-Israel action.",
+      "involvement_evidence": "Iran war live: US bombing inflicts heavy casualties as Gulf states targeted"
+    },
+    "645376": {
+      "included": true,
+      "category": "US",
+      "reason": "Current event-specific supplied source headline attributes the incident to U.S. or joint U.S.-Israel action.",
+      "involvement_evidence": "US attack on Iranian Gulf island kills three paramilitary personnel: Guards"
+    },
+    "640610": {
+      "included": true,
+      "category": "US",
+      "reason": "Current event-specific supplied source headline attributes the incident to U.S. or joint U.S.-Israel action.",
+      "involvement_evidence": "Iran Red Crescent says 4 killed, 50 wounded at wedding by US attack; Iran media says 6 navy personnel killed in US attacks; Iran claims attacks on Bahrain, Jordan, Iraq after US strikes kill 11; Iran identifies four army officers killed in recent US attacks"
+    },
+    "640611": {
+      "included": true,
+      "category": "US",
+      "reason": "Current event-specific supplied source headline attributes the incident to U.S. or joint U.S.-Israel action.",
+      "involvement_evidence": "Iran Red Crescent says 4 killed, 50 wounded at wedding by US attack; Iran claims attacks on Bahrain, Jordan, Iraq after US strikes kill 11; U.S. Strike on Residential House Hosting a Wedding in Kuhestak, Sirik County"
+    },
+    "645378": {
+      "included": true,
+      "category": "US",
+      "reason": "Current event-specific supplied source headline attributes the incident to U.S. or joint U.S.-Israel action.",
+      "involvement_evidence": "19 killed in overnight U.S. attacks on Iran as Tehran retaliates across region"
+    },
+    "645384": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    },
+    "645389": {
+      "included": false,
+      "category": "U.S. role unverified",
+      "reason": "Withheld: no reviewed event-specific U.S. attribution. Joint dyad membership or a general war/report title is insufficient; absence of verified evidence is not evidence of no U.S. involvement.",
+      "involvement_evidence": ""
+    }
+  },
+  "withdrawn_prior_selected_ids": [
+    "629301",
+    "637532"
+  ]
+}

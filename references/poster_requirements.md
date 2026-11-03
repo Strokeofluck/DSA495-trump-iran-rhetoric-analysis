@@ -20,7 +20,7 @@ a poster submission assignment during this review.
   folder also includes a PowerPoint copy. The written guidance suggests four
   stages, not an exact mandatory visual template or an animation requirement.
 - The revised poster follows those four stages across three columns. The online
-  version adds a chronological 87-post scrolling strip with explicit pause,
+  version adds a chronological 130-post scrolling strip with explicit pause,
   hover/focus pause, reduced-motion support, and full-text/source dialogs. The
   one-page PDF shows two still excerpts. No Canvas submission was made.
 
@@ -28,13 +28,15 @@ a poster submission assignment during this review.
 
 | Criterion | Weight | Evidence in the poster and supporting pages | Remaining limit |
 | --- | ---: | --- | --- |
-| Problem & Technical Workflow | 25% | Concrete input/output task, corpus, unique-post scoring, tokenizer/representation, six frame descriptions, BART-MNLI settings, two-stage mean | Original upstream acquisition, source/model revisions and environment are not fully reconstructable yet |
+| Problem & Technical Workflow | 25% | Concrete task, pinned final sources, reviewed selection, timezone joins, unique-post scoring, six frame descriptions, BART-MNLI settings, two-stage mean | Original model revision for 90 retained legacy scores remains unknown |
 | Experimental Evidence & Evaluation Validity | 30% | Real saved-score figures, exact values, coverage table, all-data window coverage, source-linked qualitative cases, explicit dependence and interpretation limits | No human gold labels, held-out performance, or evaluated baseline; cannot claim exemplary evaluation |
 | Poster Design & Technical Communication | 25% | Three-column poster, readable small multiples on a common scale, numeric labels, compact takeaway, print view, mobile layout, accessible controls | Final upload format and dimensions must follow any later Canvas instructions |
 | Oral Defense & Team Command | 20% | Separate presentation-notes page with a 90-second explanation and rehearsal questions; code links and AI-use statement | Sean must personally understand and defend the code and choices |
 
-The original repository estimator uses 20 / 21 / 21 nonempty date groups in the
-three windows. The poster uses all available posts, with 40 / 40 / 49 post/event pairs.
+The frozen snapshot uses 36 / 35 / 35 nonempty date groups in the
+three windows, with 76 / 77 / 82 post/event pairs. It includes 130 unique posts,
+75 selected UCDP records, and 43 distinct selected start dates. July 30 has no
+matching posts and remains in the coverage table.
 Dates contribute wherever a window contains posts; there is no requirement to
 have posts in every window. These are descriptive comparisons,
 not experimental treatment effects. Reusing posts across dates creates dependence.
@@ -69,9 +71,13 @@ time-aligned inputs, and an appropriate prospective/temporal evaluation design.
 The course also asks for a clear README/project map, environment and data-access
 instructions, text preparation, modeling/application, evaluation and interpretation,
 portable structure, version control, and an AI-use statement. This update provides
-a complete saved-score poster rebuild. The original notebook still depends on
-Colab/Drive and unpinned packages; exact upstream collection and inference are
-explicitly unfinished. Saved scores were used unchanged.
+a complete saved-score poster rebuild. The final November 3 freeze pins UCDP
+Candidate 26.01.26.09 and the public post archive through November 3. Ninety
+legacy scores are retained after text matching; 40 new texts were scored using
+the same prompts and a pinned BART revision and package versions. The original
+notebook remains a Colab/Drive reference; the original model revision for the
+legacy scores is unknown. Independent source, membership, join, score-reuse,
+and arithmetic checks are in `scripts/validate_final_snapshot.py`.
 
 Supporting evidence and presentation notes are separate pages linked from the repository README. The main poster does not link to those pages.
 
@@ -80,8 +86,9 @@ The exploratory next-day Victory severity section was removed to simplify the
 presentation at Sean's request.
 The evidence page retains all four-frame/window comparisons and the three-window
 Threat view. The evidence page contains an interactive event/post browser,
-individual workbook records, full post text, exact severity values, and the
-documented source-bound inconsistency. These use this repository's snapshot,
-not the newer portfolio dataset. The Print poster link opens a verified one-page
+individual current-release records, full post text, exact severity values, and
+the documented source-bound inconsistency. These use the frozen final snapshot;
+the earlier portfolio snapshot is retained only for the score-reuse audit.
+The Print poster link opens a verified one-page
 36 × 24 inch PDF; the native print CSS is also constrained to avoid the original
 grid page-break defect.

@@ -21,9 +21,10 @@
   const posts=[...unique.values()].sort((a,b)=>a.created_at_et.localeCompare(b.created_at_et)||a.truth_id.localeCompare(b.truth_id));
   const ribbon=document.querySelector('.post-ribbon'),track=document.getElementById('ribbon-track'),pause=document.getElementById('ribbon-pause');
   const reduced=matchMedia('(prefers-reduced-motion: reduce)');
-  let paused=reduced.matches;
+  const savedMotion=sessionStorage.getItem('dsa495-post-strip');
+  let paused=savedMotion==='running'?false:savedMotion==='paused'?true:reduced.matches;
   function updatePause(){ribbon.classList.toggle('is-paused',paused);pause.textContent=paused?'Resume scrolling':'Pause scrolling';pause.setAttribute('aria-pressed',String(paused))}
-  pause.addEventListener('click',()=>{paused=!paused;updatePause()});
+  pause.addEventListener('click',()=>{paused=!paused;sessionStorage.setItem('dsa495-post-strip',paused?'paused':'running');updatePause()});
   reduced.addEventListener('change',event=>{if(event.matches)paused=true;updatePause()});updatePause();
   const dialog=document.getElementById('post-dialog');
   document.getElementById('post-close').addEventListener('click',()=>dialog.close());

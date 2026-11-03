@@ -4,6 +4,7 @@ The XLSX reader intentionally reads values only; it never evaluates formulas.
 Date serials are interpreted using the workbook's declared date system.
 """
 from collections import defaultdict
+import csv
 from datetime import datetime, timedelta
 import math
 from pathlib import PurePosixPath
@@ -15,6 +16,18 @@ WORKBOOK = 'UCDP_Iran_US_or_Joint_US_Involvement_2026_through_July.xlsx'
 NS = {'x':'http://schemas.openxmlformats.org/spreadsheetml/2006/main'}
 
 def read_records(path):
+    if path.suffix.lower()=='.csv':
+        with path.open(encoding='utf-8-sig',newline='') as handle:
+            records=list(csv.DictReader(handle))
+        for record in records:
+            for key in ['date_start','date_end']:record[key]=record[key][:10]
+            for key in ['best','low','high']:
+                record[key]=float(record[key])
+                assert math.isfinite(record[key]) and record[key]>=0
+            assert record['date_start']<=record['date_end']
+            record['bounds_valid']=record['low']<=record['best']<=record['high']
+        assert len(records)==len({r['id'] for r in records})
+        return records
     with ZipFile(path) as archive:
         workbook=ET.fromstring(archive.read('xl/workbook.xml'))
         prop=workbook.find('x:workbookPr',NS)
