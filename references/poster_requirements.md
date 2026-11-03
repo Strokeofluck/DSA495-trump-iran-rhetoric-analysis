@@ -1,6 +1,6 @@
 # Poster requirements and readiness
 
-Reviewed October 31, 2026 against the instructor's
+Reviewed November 3, 2026 against the instructor's
 [End-to-End Text-Analysis Project page](https://courseweb.site/dsa495-2026/project.html).
 The text analysis class uses [Canvas](https://ncsu.instructure.com/courses/385),
 not the Moodle instance used by Sean's other classes. Canvas did not yet expose
@@ -14,8 +14,15 @@ a poster submission assignment during this review.
 - The guidance does not specify poster dimensions or explicitly accept a Pages
   URL as the entire poster submission. The page supplies a 36 × 24 inch print
   layout as a practical default, not an instructor-mandated size.
-- The course's linked Drive example was access-restricted to the browser account.
-  No access request was sent. The published written rubric was available in full.
+- The linked Drive folder was accessible after switching to Sean's NC State
+  account. The PDF example, `SerenaKimRMCWiC.pdf`, uses one landscape sheet,
+  three columns, clear section headers, and a large central results area. The
+  folder also includes a PowerPoint copy. The written guidance suggests four
+  stages, not an exact mandatory visual template or an animation requirement.
+- The revised poster follows those four stages across three columns. The online
+  version adds a chronological 87-post scrolling strip with explicit pause,
+  hover/focus pause, reduced-motion support, and full-text/source dialogs. The
+  one-page PDF shows two still excerpts. No Canvas submission was made.
 
 ## Rubric mapping
 

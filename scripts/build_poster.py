@@ -72,7 +72,7 @@ def main():
     }
     DOCS.mkdir(exist_ok=True)
     (DOCS/'portfolio.css').write_text((ROOT/'scripts/portfolio.css').read_text(encoding='utf-8'), encoding='utf-8')
-    for asset in ['poster-interactions.js','poster-print.css']:
+    for asset in ['poster-interactions.js','poster-print.css','poster-layout.css','poster-layout.js']:
         (DOCS/asset).write_text((ROOT/'scripts'/asset).read_text(encoding='utf-8'),encoding='utf-8')
     (DOCS/'evidence.json').write_text(json.dumps(evidence, ensure_ascii=False, indent=2)+'\n', encoding='utf-8')
     (DOCS/'severity-results.json').write_text(json.dumps(context['severity'],ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
@@ -84,7 +84,7 @@ def main():
                 for i,w in enumerate(WINDOWS):
                     writer.writerow([mode,f,w,summary['means'][f][i],summary['coverage'][i],summary['rows'][i]])
     inline = json.dumps(evidence, ensure_ascii=False).replace('<','\\u003c')
-    asset_version = hashlib.sha256(b''.join((DOCS/name).read_bytes() for name in ['portfolio.css','poster-interactions.js','poster-print.css'])).hexdigest()[:12]
+    asset_version = hashlib.sha256(b''.join((DOCS/name).read_bytes() for name in ['portfolio.css','poster-interactions.js','poster-print.css','poster-layout.css','poster-layout.js'])).hexdigest()[:12]
     for source_name, output_name in [
         ('poster.template.html', 'index.html'),
         ('evidence.template.html', 'evidence.html'),
@@ -93,7 +93,7 @@ def main():
         template = (ROOT/'scripts'/source_name).read_text(encoding='utf-8')
         assert template.count('__EVIDENCE_JSON__') == (0 if output_name == 'presentation-notes.html' else 1)
         rendered=template.replace('__EVIDENCE_JSON__', inline)
-        for asset in ['portfolio.css','poster-interactions.js','poster-print.css']:
+        for asset in ['portfolio.css','poster-interactions.js','poster-print.css','poster-layout.css','poster-layout.js']:
             rendered=rendered.replace('"'+asset+'"','"'+asset+'?v='+asset_version+'"')
         rendered=rendered.replace('href="research-poster.pdf"','href="research-poster.pdf?v='+asset_version+'"')
         (DOCS/output_name).write_text(rendered, encoding='utf-8')

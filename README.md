@@ -8,6 +8,15 @@ The poster uses all available posts in the committed 87-post / 26-date dataset.
 It contains the three-column research poster, figures, source links, limitations,
 and AI-use statement. The print view uses the same all-data results shown on screen.
 
+The landscape layout follows the course's four suggested sections: frame the
+project, explain the workflow, show results, and evaluate and reflect. It was
+checked against the instructor's accessible PDF example on November 3, 2026.
+The web poster adds a chronological strip of all 87 unique Truth Social posts.
+Hover or keyboard focus pauses the strip; Pause/Resume controls its motion.
+Click an excerpt to open its full saved text and archived source. Reduced-motion
+preferences start it paused. The PDF uses two deterministic still excerpts.
+On phones, the columns stack for reading; the desktop has a full-size toggle.
+
 Supporting material lives on separate pages, linked here rather than on the poster:
 
 - **[Explore evidence](https://strokeofluck.github.io/DSA495-trump-iran-rhetoric-analysis/evidence.html)** — interactive event/post browser, workbook records, severity checks, coverage table, source-linked model examples, methods, exact means, and data downloads.
@@ -52,6 +61,7 @@ was not rerun, and classifier accuracy has not been established**.
 | `scripts/build_poster.py` | Portable, standard-library aggregation and validation |
 | `scripts/poster_evidence.py` | Standard-library workbook reader, same-day fatality sums, source-post windows, and tied-rank correlations |
 | `scripts/render_poster_pdf.py` | Optional PDF rebuild using a separate headless Chromium process |
+| `scripts/poster-layout.css`, `scripts/poster-layout.js` | Landscape layout, responsive sizing, scrolling corpus strip, and full-post dialog |
 | `scripts/*.template.html` | Editable source for the poster, evidence, and presentation pages; rebuild after edits |
 | `data/` | Prepared post/event CSV, saved scores, and UCDP-derived event workbook |
 | `Trump_Iran_Connected_Timeline_ZeroShot_Colab.ipynb` | Original classification and connected-timeline workflow |
