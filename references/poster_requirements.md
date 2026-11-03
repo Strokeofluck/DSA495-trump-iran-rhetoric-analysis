@@ -75,10 +75,9 @@ explicitly unfinished. Saved scores were used unchanged.
 
 Supporting evidence and presentation notes are separate pages linked from the repository README. The main poster does not link to those pages.
 
-The poster also contains one larger exploratory next-day Victory severity figure
-with hover/focus event pop-ups, the correlation and sample size, a largest-date
-check in text, and explicit limitations. All 20 eligible dates are retained; there
-is no exclusion checkbox. Its downloadable PDF includes the same Victory figure.
+The poster and its downloadable PDF focus on six larger frame comparison charts.
+The exploratory next-day Victory severity section was removed to simplify the
+presentation at Sean's request.
 The evidence page retains all four-frame/window comparisons and the three-window
 Threat view. The evidence page contains an interactive event/post browser,
 individual workbook records, full post text, exact severity values, and the

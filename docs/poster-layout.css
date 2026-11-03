@@ -21,3 +21,6 @@ dialog{width:650px;max-width:calc(100vw - 32px);max-height:85vh;padding:24px;bor
 .post-ribbon.dialog-paused .ribbon-track{animation-play-state:paused}
 @media print{.paper{zoom:1.84;margin-left:12px}}
 @media screen and (max-width:600px){.small-charts{grid-template-columns:1fr}}
+
+/* Enlarge the six-frame results after removing the severity comparison. */
+@media screen and (min-width:1000px),print{.results-column .small-charts{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 24px}.results-column .small-charts .mini svg{height:165px}.results-column .mini figcaption{font-size:17px}}
