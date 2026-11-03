@@ -59,7 +59,6 @@
     foot.append(date,read,source);item.append(foot);return item;
   }
   dialog.addEventListener('close',()=>ribbon.classList.remove('dialog-paused'));
-  document.getElementById('case-estimate').textContent=`${event.fatalities.toFixed(0)} estimated deaths · ${event.same_day_records} selected single-day records · UCDP 26.01.26.09`;
   const windows=[{offset:-1,date:'2026-02-27',label:'Day before'},{offset:0,date:event.date,label:'Event day'},{offset:1,date:'2026-03-01',label:'Day after'}];
 
   const track=document.getElementById('ribbon-track'),print=document.getElementById('print-excerpts');
