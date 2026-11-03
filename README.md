@@ -76,6 +76,26 @@ or causal/predictive conclusions are asserted.
 
 ## Reproduce and inspect
 
+**Calendar-time Threat highlight.** The large poster chart uses all **380**
+original Iran-related text posts in the frozen archive, including posts outside
+UCDP matching windows. All 380 were freshly scored for Threat with the same
+pinned BART revision and original Threat prompt, with no legacy-score reuse.
+Non-overlapping 14-day periods are anchored on February 28; each post receives
+equal weight. February 28–March 13 averages **0.691** (36 posts), compared with
+**0.478** (32 posts) for March 14–27. This supports a decline after the opening
+fortnight, followed by fluctuations, rather than a steady decline throughout
+the conflict. February 14–27 has only two posts (mean 0.686), so a prewar rise
+is not established. Single-post spikes and partial boundary periods are marked.
+The six smaller figures and scrolling cards continue to use the distinct
+130-post, six-frame event-matched analysis described above.
+
+The animated strip now follows the original timeline's post-card design:
+avatar/name/handle, highest-scoring frame badge, excerpt, all six colored score
+bars, ET timestamp, full-post dialog, and Truth Social link. Badges describe model
+scores, not human labels. Hover/focus pauses scrolling; the button explicitly
+starts or stops it. Reduced-motion preferences default to paused. The one-page
+PDF keeps two static excerpts.
+
 1. Run `python scripts/build_poster.py` (Python 3.10+, standard library only).
 2. Run `python scripts/validate_final_snapshot.py` to check source membership,
    selection decisions, unique IDs/pairs, timezone offsets, text joins, score
@@ -93,6 +113,9 @@ or causal/predictive conclusions are asserted.
 | `data/iran_original_posts_snapshot_2026-11-03.csv` | 380 eligible 2026 posts from the pinned archive |
 | `data/trump_iran_event_windows_final.csv` | 235 reconstructed post/date pairs |
 | `data/trump_iran_frame_scores_final.csv` | Six saved frame scores for 130 matched IDs |
+| `data/threat_timeline_scores.csv`, `data/threat_timeline_provenance.json` | Uniform Threat-only inference for all 380 posts, text hashes, model and settings |
+| `docs/threat-timeline.csv` | Exact 14-day means, counts, and partial-period flags |
+| `scripts/threat_timeline.py`, `scripts/score_threat_timeline.py` | Standard-library aggregation; optional offline model rerun |
 | `data/legacy/` | Prior August text windows and scores retained for reuse audit |
 | `docs/frame-means.csv`, `docs/evidence.json` | Rebuilt exact values, coverage, context, and provenance |
 | `scripts/*.template.html`, `scripts/poster-layout.*` | Poster, evidence page, notes, and scrolling strip |

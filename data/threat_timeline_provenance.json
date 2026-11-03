@@ -1,0 +1,26 @@
+{
+  "question": "Chronological Threat scores in original posts mentioning Iran-related terms, independent of selected event windows.",
+  "source_snapshot": "2026-11-03",
+  "source_archive_revision": "db7fed9bc7f495398e29ffa6e3423e21d720cc6b",
+  "date_field": "post_date_et",
+  "eligibility": "Original nonempty 2026 posts matching Iran/Iranian, Tehran, Hormuz, or Khamenei; no legacy-ID-only exceptions; no quote/reblog rows.",
+  "grain": "One row per unique post; equal post weights within non-overlapping 14-day periods anchored February 28. Monthly summaries are also retained.",
+  "model": "facebook/bart-large-mnli",
+  "revision": "d7645e127eaf1aefc7862fd59a17a5aa8558b8ce",
+  "frame_prompt": "military threats, escalation, retaliation, ultimatums, warnings, strikes, or destruction directed at Iran",
+  "hypothesis_template": "This text expresses {}.",
+  "multi_label": true,
+  "candidate_labels": [
+    "military threats, escalation, retaliation, ultimatums, warnings, strikes, or destruction directed at Iran"
+  ],
+  "truncation": true,
+  "torch": "2.12.0+cpu",
+  "transformers": "4.57.6",
+  "scores": 380,
+  "legacy_scores_reused": 0,
+  "limitations": [
+    "Entailment scores are uncalibrated and have no human accuracy evaluation.",
+    "Keywords and archived text omit posts that discuss Iran only through media or other words.",
+    "November is partial through November 3; no monthly interpolation or smoothing."
+  ]
+}

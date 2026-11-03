@@ -136,7 +136,9 @@
     "selection_review_final.json": "111ed1a7d03e186c4d30985f3f794accf8391368e685ec086c4032226267fefb",
     "scoring-provenance.json": "69d251b6f11ce6329b0a1f18be65877b2d4168575e1e1a6da1acf867012ed2a0",
     "legacy/august_frame_scores.csv": "eaf77423b8b664cf1bfaf04e043a6580001e5c36d86119176f613d918e43807b",
-    "legacy/august_post_windows.csv": "e41b53ce5da55d654e6dd7e85e409e3c5e2fcd0b52493804c9f0b5febfab4060"
+    "legacy/august_post_windows.csv": "e41b53ce5da55d654e6dd7e85e409e3c5e2fcd0b52493804c9f0b5febfab4060",
+    "threat_timeline_scores.csv": "248ce56796816f6271018dc44f528a421e16a31d41dbf7ab024ef711c9aac7c6",
+    "threat_timeline_provenance.json": "285c0a9074667ddc6120160c392b182a935211618a809a956121e5e6334eb6a4"
   },
   "changes_from_poster": {
     "prior_posts": 87,
@@ -154,5 +156,11 @@
     "Source record 625182 has inconsistent death bounds; retained as supplied and excluded from same-day severity.",
     "Legacy source/model inference is not fully pinned; newly scored texts use a pinned model revision."
   ],
-  "file_hash_format": "SHA-256 of UTF-8 text with universal newlines normalized to LF; official source receipts use exact downloaded bytes."
+  "file_hash_format": "SHA-256 of UTF-8 text with universal newlines normalized to LF; official source receipts use exact downloaded bytes.",
+  "derived_threat_timeline": {
+    "scores": "threat_timeline_scores.csv",
+    "provenance": "threat_timeline_provenance.json",
+    "posts": 380,
+    "aggregation": "Equal post weights in non-overlapping 14-day periods anchored 2026-02-28; source cutoff unchanged."
+  }
 }

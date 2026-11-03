@@ -12,6 +12,7 @@ from collections import defaultdict, Counter
 from datetime import date
 from statistics import mean
 from poster_evidence import WORKBOOK, build_context, read_records
+from threat_timeline import build_timeline
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / 'data'
@@ -72,6 +73,7 @@ def main():
         'summaries': summaries,
         'event_context': context,
         'provenance': manifest,
+        'threat_timeline': build_timeline(DATA),
         'coverage': [{'date': d, 'counts': [len(groups.get((d, w), [])) for w in WINDOWS]} for d in dates],
         'examples': [{'id': tid, 'text': posts[tid]['content_text'], 'source': posts[tid]['source_url'],
                       'url': posts[tid]['truth_url'], 'date': posts[tid]['post_date_et'], 'scores': scores[tid]} for tid in example_ids],
@@ -84,6 +86,10 @@ def main():
         (DOCS/asset).write_text((ROOT/'scripts'/asset).read_text(encoding='utf-8'),encoding='utf-8')
     (DOCS/'evidence.json').write_text(json.dumps(evidence, ensure_ascii=False, indent=2)+'\n', encoding='utf-8')
     (DOCS/'severity-results.json').write_text(json.dumps(context['severity'],ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    with (DOCS/'threat-timeline.csv').open('w',newline='',encoding='utf-8') as handle:
+        writer=csv.DictWriter(handle,fieldnames=['first','last','posts','mean','partial'])
+        writer.writeheader()
+        for b in evidence['threat_timeline']['bins']:writer.writerow({k:b[k] for k in writer.fieldnames})
     with (DOCS/'frame-means.csv').open('w', newline='', encoding='utf-8') as handle:
         writer=csv.writer(handle)
         writer.writerow(['scope', 'frame', 'relative_day', 'mean_entailment_score', 'contributing_dates', 'post_event_pairs'])
@@ -97,14 +103,17 @@ def main():
     victory_line='Victory scores peak on event days.' if victory[1]>max(victory[0],victory[2]) else 'Victory scores vary across windows.'
     threat_line='Threat scores peak on event days.' if threat[1]>max(threat[0],threat[2]) else 'Threat scores decline across windows.' if threat[0]>=threat[1]>=threat[2] else 'Threat scores vary across windows.'
     replacements={
+        '__CORPUS_COUNT__':str(evidence['threat_timeline']['posts']),
+        '__OPENING_THREAT__':f"{evidence['threat_timeline']['opening']['mean']:.3f}",
+        '__FOLLOWING_THREAT__':f"{evidence['threat_timeline']['following']['mean']:.3f}",
         '__POST_COUNT__':str(len(posts)), '__DATE_COUNT__':str(len(dates)),
         '__PAIR_COUNT__':str(len(pairs)), '__EVENT_COUNT__':str(len(selected_records)),
         '__COVERAGE__':' / '.join(map(str,summary['coverage'])),
         '__VICTORY_VALUES__':' → '.join(f'{v:.3f}' for v in victory),
         '__THREAT_VALUES__':' → '.join(f'{v:.3f}' for v in threat),
         '__VICTORY_DAY__':f'{victory[1]:.3f}',
-        '__FINDING_HEADLINE__':victory_line+'<br>'+threat_line,
-        '__FINDING_SPOKEN__':victory_line+' '+threat_line+' These are descriptive model scores, not predictions.',
+        '__FINDING_HEADLINE__':'Threat scores fall after the opening two weeks, then fluctuate.',
+        '__FINDING_SPOKEN__':'In all 380 archived Iran-related text posts, mean Threat is 0.691 during February 28 to March 13 and 0.478 during March 14 to 27. Later rebounds mean this is not a steady decline. Separately, '+victory_line+' '+threat_line+' in the 130-post event-matched sample. These are descriptive model scores, not predictions.',
     }
     asset_version = hashlib.sha256(b''.join((DOCS/name).read_bytes() for name in ['portfolio.css','poster-interactions.js','poster-print.css','poster-layout.css','poster-layout.js'])).hexdigest()[:12]
     for source_name, output_name in [

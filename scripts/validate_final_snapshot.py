@@ -71,6 +71,25 @@ def main():
     assert evidence['summaries']['available']['coverage']==[36,35,35]
     assert evidence['snapshot']['dates']==43 and len(evidence['event_context']['events'])==43
     assert next(r for r in evidence['coverage'] if r['date']=='2026-07-30')['counts']==[0,0,0]
+    timeline=read(DATA/'threat_timeline_scores.csv')
+    assert len(timeline)==380 and {r['truth_id'] for r in timeline}==set(postmap)
+    for row in timeline:
+        post=postmap[row['truth_id']]
+        assert row['post_date_et']==post['post_date_et']
+        assert hashlib.sha256(post['content_text'].replace('\r\n','\n').replace('\r','\n').encode()).hexdigest()==row['text_sha256_lf']
+        assert math.isfinite(float(row['Threat'])) and 0<=float(row['Threat'])<=1
+    trend=evidence['threat_timeline'];assert trend['posts']==380
+    seen=[]
+    for period in trend['bins']:
+        members=[r for r in timeline if period['first']<=r['post_date_et']<=period['last']]
+        assert period['posts']==len(members) and set(period['post_ids'])=={r['truth_id'] for r in members}
+        seen.extend(period['post_ids'])
+        assert (period['mean'] is None and not members) or math.isclose(period['mean'],fmean(float(r['Threat']) for r in members),abs_tol=1e-12)
+    assert len(seen)==len(set(seen))==380
+    assert trend['opening']['posts']==36 and trend['following']['posts']==32
+    assert math.isclose(trend['opening']['mean'],0.6910094542221881,abs_tol=1e-9)
+    assert math.isclose(trend['following']['mean'],0.47787605849211046,abs_tol=1e-9)
+    print('PASS: 380 timeline IDs, source text hashes, dates, exact complete period membership, independent means, and opening/next fortnight counts.')
     if args.archive:
         assert hashlib.sha256(args.archive.read_bytes()).hexdigest()==manifest['post_archive']['sha256']
         archive=[json.loads(line) for line in gzip.open(args.archive,'rt',encoding='utf-8')]
