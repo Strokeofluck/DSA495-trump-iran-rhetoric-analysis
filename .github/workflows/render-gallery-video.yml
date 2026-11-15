@@ -3,6 +3,7 @@ on:
   push:
     paths:
       - 'scripts/render_gallery_video.py'
+      - '.github/workflows/render-gallery-video.yml'
   workflow_dispatch:
 permissions:
   contents: write
@@ -12,7 +13,13 @@ concurrency:
 jobs:
   render:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 20
+    strategy:
+      fail-fast: true
+      matrix:
+        batch: [0,10,20,30,40,50,60,70,80,90,100,110,120]
+    env:
+      BATCH_START: ${{ matrix.batch }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -23,12 +30,70 @@ jobs:
       - run: python scripts/render_gallery_video.py
       - uses: actions/upload-artifact@v4
         with:
-          name: animated-gallery-poster
-          path: video-export/
-
-      - name: Publish video and still image
+          name: poster-batch-${{ matrix.batch }}
+          retention-days: 1
+          path: |
+            video-export/part-*.mp4
+            video-export/render-checks-*.json
+      - uses: actions/upload-artifact@v4
+        if: matrix.batch == 0
+        with:
+          name: poster-still
+          retention-days: 1
+          path: video-export/Trump_Iran_Poster_3600x3000.png
+  publish:
+    needs: render
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install imageio-ffmpeg
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: poster-batch-*
+          merge-multiple: true
+          path: video-export
+      - uses: actions/download-artifact@v4
+        with:
+          name: poster-still
+          path: video-export
+      - name: Assemble and verify all 130 posts
+        run: |
+          python - <<'PY'
+          import json, subprocess, imageio_ffmpeg
+          from pathlib import Path
+          out=Path('video-export')
+          checks=[json.loads(p.read_text()) for p in sorted(out.glob('render-checks-*.json'))]
+          ids=[i for c in checks for i in c['included_post_ids']]
+          assert len(checks)==13 and len(ids)==130 and len(set(ids))==130
+          assert ids==checks[0]['post_ids']
+          assert all(c['fps']==30 and c['speed_pixels_per_second']==60 for c in checks)
+          parts=sorted(out.glob('part-*.mp4'))
+          assert len(parts)==13
+          (out/'parts.txt').write_text(''.join(f"file '{p.name}'\n" for p in parts))
+          ff=imageio_ffmpeg.get_ffmpeg_exe()
+          video=out/'Trump_Iran_Animated_Poster_All_130_Posts.mp4'
+          subprocess.run([ff,'-y','-loglevel','error','-f','concat','-safe','0','-i',str(out/'parts.txt'),'-c','copy','-movflags','+faststart',str(video)],check=True)
+          for n,p in enumerate([parts[0],parts[6],parts[-1]]):
+              subprocess.run([ff,'-y','-loglevel','error','-ss','10','-i',str(p),'-frames:v','1',str(out/f'check-{n}.png')],check=True)
+          meta=checks[0]
+          meta.update({'all_unique_posts_included':True,'included_post_ids':ids,'video_bytes':video.stat().st_size,'video_width':3600,'video_height':3000,'note':'All 130 unique matched posts, 30 fps, slow continuous motion. Cards are excerpts; complete text is available in the interactive poster.'})
+          (out/'render-checks.json').write_text(json.dumps(meta,indent=2))
+          print(json.dumps({'posts':len(ids),'fps':30,'video_bytes':video.stat().st_size}))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: animated-gallery-poster-smooth
+          retention-days: 7
+          path: |
+            video-export/Trump_Iran_Animated_Poster_All_130_Posts.mp4
+            video-export/Trump_Iran_Poster_3600x3000.png
+            video-export/render-checks.json
+            video-export/check-*.png
+      - name: Publish slower smooth video
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release view gallery-video-130-posts >/dev/null 2>&1 || gh release create gallery-video-130-posts --title "Animated research poster — all 130 matched posts" --notes "Complete 130-post video and high-resolution poster still."
           gh release upload gallery-video-130-posts video-export/Trump_Iran_Animated_Poster_All_130_Posts.mp4 video-export/Trump_Iran_Poster_3600x3000.png video-export/render-checks.json --clobber
