@@ -3,7 +3,6 @@ on:
   push:
     paths:
       - 'scripts/render_gallery_video.py'
-      - '.github/workflows/render-gallery-video.yml'
   workflow_dispatch:
 permissions:
   contents: write
@@ -28,13 +27,8 @@ jobs:
           path: video-export/
 
       - name: Publish video and still image
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
-          mkdir -p docs/media
-          cp video-export/Trump_Iran_Animated_Poster_All_130_Posts.mp4 docs/media/
-          cp video-export/Trump_Iran_Poster_3600x3000.png docs/media/
-          cp video-export/render-checks.json docs/media/
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/media/
-          git commit -m "Publish complete 130-post gallery video and poster still" || true
-          git push
+          gh release view gallery-video-130-posts >/dev/null 2>&1 || gh release create gallery-video-130-posts --title "Animated research poster — all 130 matched posts" --notes "Complete 130-post video and high-resolution poster still."
+          gh release upload gallery-video-130-posts video-export/Trump_Iran_Animated_Poster_All_130_Posts.mp4 video-export/Trump_Iran_Poster_3600x3000.png video-export/render-checks.json --clobber
