@@ -112,3 +112,9 @@
   ['Day before','Event day','Day after'].forEach((label,i)=>{svg.append(svgEl('text',{x:xs[i],y:220,'text-anchor':'middle','font-size':16,'font-weight':700,fill:'#343a40'},label));svg.append(svgEl('text',{x:xs[i],y:238,'text-anchor':'middle','font-size':12,fill:'#64717b'},['−1 calendar day','Recorded start date','+1 calendar day'][i]))});
   document.getElementById('threat-chart').append(svg);
 })();
+
+// Portfolio embeds use Explorer in place of the print link.
+if(new URLSearchParams(location.search).get('portfolio')==='1'){
+ const link=document.getElementById('print');
+ if(link){link.textContent='Explorer page ↗';link.href='https://strokeofluck.github.io/sean-data-portfolio/projects/iran-timeline-explorer.html';link.target='_top';link.removeAttribute('rel');}
+}
