@@ -105,3 +105,5 @@ body.poster-page #fit-toggle{display:inline-block}
 body.poster-page .toolbar nav>a:first-child{display:none}
 
 body.poster-page .evaluation p{font-size:15.5px;line-height:1.35}
+
+body.poster-page .column.evaluation p{font-size:15px!important;line-height:1.35!important}
