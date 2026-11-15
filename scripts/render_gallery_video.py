@@ -9,7 +9,7 @@ OUT.mkdir(exist_ok=True)
 async def main():
  async with async_playwright() as p:
   browser=await p.chromium.launch(headless=True)
-  page=await browser.new_page(viewport={"width":1800,"height":1500},device_scale_factor=2)
+  page=await browser.new_page(viewport={"width":1800,"height":1500},device_scale_factor=2, reduced_motion="reduce")
   await page.goto((ROOT/"docs/gallery-poster.html").as_uri(),wait_until="networkidle")
   await page.evaluate("document.fonts.ready")
   await page.add_style_tag(content="""html,body.poster-page{margin:0!important;padding:0!important;background:white!important;width:1800px!important;height:1500px!important;overflow:hidden!important}.toolbar,.skip{display:none!important}main{padding:0!important}.poster-stage{width:1800px!important;height:1500px!important;margin:0!important}.paper{transform:none!important;box-shadow:none!important}.ribbon-track{animation:none!important;transform:none!important}""")
