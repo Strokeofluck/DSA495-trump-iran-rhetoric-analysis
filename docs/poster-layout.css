@@ -91,3 +91,15 @@ body.poster-page .ribbon-bottom{align-items:center}
 body.poster-page .poster-footer{grid-template-columns:1fr;min-width:0}
 body.poster-page .poster-footer p{font-size:12px}
 @media print{@page{size:18in 15in;margin:0}html,body.poster-page{width:18in;height:15in;margin:0!important;padding:0!important;background:white!important}body.poster-page main{padding:0;margin:0;max-width:none;width:18in}body.poster-page .poster-stage{width:18in!important;height:15in!important}body.poster-page .paper{zoom:.96;transform:none!important;margin:0;border:0}body.poster-page .post-ribbon .print-excerpts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;height:290px}body.poster-page .print-post{max-height:none;min-height:0;padding:18px}body.poster-page .print-post b{font-size:16px}body.poster-page .print-post p{font-size:16px;line-height:1.5;-webkit-line-clamp:9}body.poster-page .print-post a{font-size:14px}}
+
+/* Keep all three columns clear of the animated strip. */
+body.poster-page .paper{padding:24px 32px 20px;gap:14px;grid-template-rows:100px 90px minmax(0,1fr) 308px 62px}
+body.poster-page .masthead h1{font-size:41px}
+body.poster-page .column p,body.poster-page .column li{line-height:1.4}
+body.poster-page .threat-feature svg{height:205px}
+body.poster-page .results-column .small-charts .mini svg{height:125px}
+body.poster-page .ribbon-window{height:270px}
+body.poster-page .event-case .ribbon-card{height:260px;min-height:260px;gap:6px;padding:10px 14px}
+body.poster-page .ribbon-card .post-excerpt{min-height:52px;-webkit-line-clamp:3}
+body.poster-page #fit-toggle{display:inline-block}
+body.poster-page .toolbar nav>a:first-child{display:none}
