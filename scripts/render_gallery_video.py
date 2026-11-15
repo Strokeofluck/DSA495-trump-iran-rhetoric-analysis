@@ -2,6 +2,7 @@
 import asyncio, json, math, subprocess
 from pathlib import Path
 from PIL import Image
+import imageio_ffmpeg
 from playwright.async_api import async_playwright
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/"video-export"
@@ -33,7 +34,7 @@ async def main():
  base.paste("#f7f9fb",(x,y,x+w,y+h));base.save(OUT/"background.png")
  duration=math.ceil(cycle*fps)/fps
  filt=f"[1:v]crop={w}:{image.height}:x='mod(n*{speed}/{fps},{image.width})':y=0[strip];[0:v][strip]overlay={x}:{y+6}:shortest=1,format=yuv420p[out]"
- cmd=["ffmpeg","-y","-loop","1","-framerate",str(fps),"-i",str(OUT/"background.png"),"-loop","1","-framerate",str(fps),"-i",str(OUT/"strip-double.png"),"-filter_complex",filt,"-map","[out]","-t",str(duration),"-an","-c:v","libx264","-preset","fast","-crf","16","-threads","2","-movflags","+faststart",str(OUT/"Trump_Iran_Animated_Poster.mp4")]
+ cmd=[imageio_ffmpeg.get_ffmpeg_exe(),"-y","-loop","1","-framerate",str(fps),"-i",str(OUT/"background.png"),"-loop","1","-framerate",str(fps),"-i",str(OUT/"strip-double.png"),"-filter_complex",filt,"-map","[out]","-t",str(duration),"-an","-c:v","libx264","-preset","fast","-crf","16","-threads","2","-movflags","+faststart",str(OUT/"Trump_Iran_Animated_Poster.mp4")]
  subprocess.run(cmd,check=True)
  for name in ["strip.png","strip-double.png","background.png"]:(OUT/name).unlink()
  meta.update({"video_width":3600,"video_height":3000,"fps":fps,"duration_seconds":duration,"loop_cards":meta["cards"],"note":"Silent video; one complete cycle of the existing February 27–March 1 strip. Repeat playback in the display player."})
