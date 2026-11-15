@@ -5,12 +5,11 @@
   const stage=document.querySelector('.poster-stage'),fit=document.getElementById('fit-toggle');
   let fitMode=true;
   function resize(){
-    if(innerWidth<1000){paper.style.transform='';stage.style.width='';stage.style.height='';return}
-    const scale=fitMode?Math.min(1,(innerWidth-40)/1800):1;
-    paper.style.transform=`scale(${scale})`;
-    stage.style.width=`${1800*scale}px`;stage.style.height=`${paper.offsetHeight*scale}px`;
+    const scale=fitMode?Math.min((innerWidth-32)/1800,(innerHeight-76)/1500):1;
+    paper.style.transform=`scale(${Math.max(.05,scale)})`;
+    stage.style.width=`${1800*Math.max(.05,scale)}px`;stage.style.height=`${1500*Math.max(.05,scale)}px`;
   }
-  fit.addEventListener('click',()=>{fitMode=!fitMode;fit.textContent=fitMode?'Read at full size':'Fit poster to width';fit.setAttribute('aria-pressed',String(fitMode));resize()});
+  fit.addEventListener('click',()=>{fitMode=!fitMode;fit.textContent=fitMode?'Read at full size':'Fit whole poster';fit.setAttribute('aria-pressed',String(fitMode));resize()});
   window.addEventListener('resize',resize);
   new ResizeObserver(resize).observe(paper);
   document.fonts.ready.then(resize);resize();
