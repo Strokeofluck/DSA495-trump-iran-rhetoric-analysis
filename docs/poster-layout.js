@@ -144,7 +144,7 @@ if(new URLSearchParams(location.search).get('thumbnail')==='1'){
  .thumbnail-preview .poster-stage{margin:0!important;width:100vw!important;height:100vh!important}
  .thumbnail-preview .paper{width:1100px!important;height:650px!important;min-height:650px!important;padding:14px 20px!important;display:flex!important;flex-direction:column;gap:8px!important;border:0;transform:scale(var(--thumb-scale))!important;transform-origin:top left}
  .thumbnail-preview .poster-grid{display:block!important;flex:1;min-height:0}
- .thumbnail-preview .results-column{padding:0!important;border:0!important;margin:0!important}
+ .thumbnail-preview .results-column>:not(.threat-feature){display:none!important}.thumbnail-preview .results-column{padding:0!important;border:0!important;margin:0!important}
  .thumbnail-preview .threat-feature{padding:0!important;margin:0!important;border:0!important}
  .thumbnail-preview .threat-feature svg{height:265px!important;width:100%}
  .thumbnail-preview .threat-feature .trend-reading{font-size:16px!important;margin:4px 0!important}
