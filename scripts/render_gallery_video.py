@@ -19,7 +19,7 @@ async def main():
   assert all(c["scroll"]<=c["height"]+2 for c in meta["columns"]),meta
   width=math.ceil(meta["group"])
   await page.set_viewport_size({"width":max(1800,width+100),"height":1500})
-  await page.add_style_tag(content=""".paper{overflow:visible!important}.ribbon-window{overflow:visible!important}.ribbon-group{flex-shrink:0!important}""")
+  await page.add_style_tag(content="""html,body.poster-page{overflow:visible!important;width:auto!important;height:auto!important}.paper{overflow:visible!important}.ribbon-window{overflow:visible!important}.ribbon-group{flex-shrink:0!important}""")
   await page.locator(".ribbon-group").first.screenshot(path=str(OUT/"strip.png"))
   await browser.close()
  image=Image.open(OUT/"strip.png").convert("RGB")
@@ -36,6 +36,7 @@ async def main():
  filt=f"[1:v]crop={w}:{image.height}:x='mod(n*{speed}/{fps},{image.width})':y=0[strip];[0:v][strip]overlay={x}:{y+6}:shortest=1,format=yuv420p[out]"
  cmd=[imageio_ffmpeg.get_ffmpeg_exe(),"-y","-loop","1","-framerate",str(fps),"-i",str(OUT/"background.png"),"-loop","1","-framerate",str(fps),"-i",str(OUT/"strip-double.png"),"-filter_complex",filt,"-map","[out]","-t",str(duration),"-an","-c:v","libx264","-preset","fast","-crf","16","-threads","2","-movflags","+faststart",str(OUT/"Trump_Iran_Animated_Poster.mp4")]
  subprocess.run(cmd,check=True)
+ subprocess.run([imageio_ffmpeg.get_ffmpeg_exe(),"-y","-ss",str(duration/2),"-i",str(OUT/"Trump_Iran_Animated_Poster.mp4"),"-frames:v","1",str(OUT/"video-midpoint.png")],check=True)
  for name in ["strip.png","strip-double.png","background.png"]:(OUT/name).unlink()
  meta.update({"video_width":3600,"video_height":3000,"fps":fps,"duration_seconds":duration,"loop_cards":meta["cards"],"note":"Silent video; one complete cycle of the existing February 27–March 1 strip. Repeat playback in the display player."})
  (OUT/"render-checks.json").write_text(json.dumps(meta,indent=2))
