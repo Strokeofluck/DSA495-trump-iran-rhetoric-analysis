@@ -8,8 +8,8 @@ ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'video-export'
 OUT.mkdir(exist_ok=True)
 FF=imageio_ffmpeg.get_ffmpeg_exe()
-FPS=12
-SPEED=168
+FPS=30
+SPEED=60
 async def main():
  async with async_playwright() as p:
   browser=await p.chromium.launch(headless=True)
