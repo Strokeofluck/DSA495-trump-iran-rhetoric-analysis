@@ -29,13 +29,13 @@ async def main():
   # Each strip contains ten new cards plus enough following cards to fill the viewport.
   for start in range(0,meta['cards'],10):
    count=min(10,meta['cards']-start)
-   await page.evaluate('''({start,count})=>{document.getElementById('video-strip')?.remove();const cards=[...document.querySelector('.ribbon-group').children],g=document.createElement('div');g.id='video-strip';g.className='ribbon-group';g.style.cssText='position:absolute;left:0;top:0;width:max-content;display:flex;flex-shrink:0;background:#f7f9fb';for(let j=0;j<count+4;j++)g.append(cards[(start+j)%cards.length].cloneNode(true));document.body.append(g)}''',{'start':start,'count':count})
+   await page.evaluate('''({start,count})=>{document.getElementById('video-strip')?.remove();const cards=[...document.querySelector('.ribbon-group').children],g=document.createElement('div');g.id='video-strip';g.className='ribbon-group event-case';g.style.cssText='position:absolute;left:0;top:0;width:max-content;display:flex;flex-shrink:0;background:#f7f9fb';for(let j=0;j<count+4;j++)g.append(cards[(start+j)%cards.length].cloneNode(true));document.body.append(g)}''',{'start':start,'count':count})
    strip=OUT/f'strip-{start:03d}.png'
    await page.locator('#video-strip').screenshot(path=str(strip))
    frames=round(count*meta['stride']*2/SPEED*FPS)
    duration=frames/FPS
-   filt=f"[1:v]crop={w}:ih:x='n*{SPEED}/{FPS}':y=0[strip];[0:v][strip]overlay={x}:{y+6}:shortest=1,format=yuv420p[out]"
-   cmd=[FF,'-y','-loglevel','error','-loop','1','-framerate',str(FPS),'-i',str(OUT/'background.png'),'-loop','1','-framerate',str(FPS),'-i',str(strip),'-filter_complex',filt,'-map','[out]','-frames:v',str(frames),'-an','-c:v','libx264','-preset','ultrafast','-crf','18','-threads','2',str(OUT/f'part-{start:03d}.mp4')]
+   filt=f"[0:v]loop=loop=-1:size=1:start=0,setpts=N/({FPS}*TB)[bg];[1:v]loop=loop=-1:size=1:start=0,setpts=N/({FPS}*TB),crop={w}:ih:x='n*{SPEED}/{FPS}':y=0[strip];[bg][strip]overlay={x}:{y+6}:shortest=1,format=yuv420p[out]"
+   cmd=[FF,'-y','-loglevel','error','-framerate',str(FPS),'-i',str(OUT/'background.png'),'-framerate',str(FPS),'-i',str(strip),'-filter_complex',filt,'-map','[out]','-frames:v',str(frames),'-an','-c:v','libx264','-preset','ultrafast','-crf','18','-threads','2',str(OUT/f'part-{start:03d}.mp4')]
    subprocess.run(cmd,check=True)
    strip.unlink()
    print(f'Encoded posts {start+1}-{start+count} of {meta["cards"]}',flush=True)
