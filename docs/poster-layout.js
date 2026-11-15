@@ -148,9 +148,9 @@ if(new URLSearchParams(location.search).get('thumbnail')==='1'){
  .thumbnail-preview .threat-feature{padding:0!important;margin:0!important;border:0!important}
  .thumbnail-preview .threat-feature svg{height:215px!important;width:100%}
  .thumbnail-preview .threat-feature .trend-reading{font-size:16px!important;margin:4px 0!important}
- .thumbnail-preview .post-ribbon{height:267px!important;padding-top:7px!important;flex-shrink:0}
- .thumbnail-preview .ribbon-window{height:260px!important}
- .thumbnail-preview .ribbon-card{height:250px!important;min-height:250px!important}
+ .thumbnail-preview .post-ribbon{height:277px!important;padding-top:7px!important;flex-shrink:0}
+ .thumbnail-preview .ribbon-window{height:270px!important}
+ .thumbnail-preview .ribbon-card{height:260px!important;min-height:260px!important}
  `;document.head.append(style);
  const fit=()=>document.body.style.setProperty('--thumb-scale',Math.min(innerWidth/1100,innerHeight/600));
  addEventListener('resize',fit);fit();
