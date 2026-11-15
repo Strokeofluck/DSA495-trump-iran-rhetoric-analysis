@@ -1,5 +1,5 @@
 """Export every matched post, using bounded strips to avoid image-width limits."""
-import asyncio, json, math, subprocess
+import asyncio, json, math, subprocess, os
 from pathlib import Path
 from PIL import Image
 import imageio_ffmpeg
@@ -27,7 +27,9 @@ async def main():
   await page.set_viewport_size({'width':9000,'height':1500})
   await page.add_style_tag(content='html,body.poster-page{overflow:visible!important;width:auto!important;height:auto!important}')
   # Each strip contains ten new cards plus enough following cards to fill the viewport.
-  for start in range(0,meta['cards'],10):
+  batch=os.environ.get('BATCH_START')
+  starts=range(0,meta['cards'],10) if batch is None else [int(batch)]
+  for start in starts:
    count=min(10,meta['cards']-start)
    await page.evaluate('''({start,count})=>{document.getElementById('video-strip')?.remove();const cards=[...document.querySelector('.ribbon-group').children],g=document.createElement('div');g.id='video-strip';g.className='ribbon-group event-case';g.style.cssText='position:absolute;left:0;top:0;width:max-content;display:flex;flex-shrink:0;background:#f7f9fb';for(let j=0;j<count+4;j++)g.append(cards[(start+j)%cards.length].cloneNode(true));document.body.append(g)}''',{'start':start,'count':count})
    strip=OUT/f'strip-{start:03d}.png'
@@ -40,6 +42,11 @@ async def main():
    strip.unlink()
    print(f'Encoded posts {start+1}-{start+count} of {meta["cards"]}',flush=True)
   await browser.close()
+ if batch is not None:
+  start=int(batch)
+  meta.update({'batch_start':start,'included_post_ids':meta['post_ids'][start:start+10],'fps':FPS,'speed_pixels_per_second':SPEED})
+  (OUT/f'render-checks-{start:03d}.json').write_text(json.dumps(meta,indent=2))
+  return
  parts=sorted(OUT.glob('part-*.mp4'))
  listing=OUT/'parts.txt';listing.write_text(''.join(f"file '{p.name}'\n" for p in parts))
  video=OUT/'Trump_Iran_Animated_Poster_All_130_Posts.mp4'
