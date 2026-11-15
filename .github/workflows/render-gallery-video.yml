@@ -1,0 +1,25 @@
+name: Render animated gallery poster
+on:
+  push:
+    paths:
+      - 'scripts/render_gallery_video.py'
+      - '.github/workflows/render-gallery-video.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install playwright pillow
+      - run: python -m playwright install --with-deps chromium
+      - run: python scripts/render_gallery_video.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: animated-gallery-poster
+          path: video-export/
