@@ -146,6 +146,7 @@ button:disabled{opacity:.45;cursor:default}
 .victory-focus>.severity-caption{font-size:12px;margin-top:18px}
 @media screen and (max-width:850px){.victory-feature-layout{grid-template-columns:1fr;gap:18px}.victory-intro{font-size:15px}.victory-reading{padding:18px}.victory-focus h2{font-size:25px}}
 @media screen and (max-width:480px){.victory-feature-chart .severity-small figcaption{font-size:15px}.victory-feature-chart .severity-small svg text{font-size:25px}.victory-feature-chart .severity-small svg .featured-point-label{font-size:20px}.victory-metrics strong{font-size:36px}}
+body.poster-page .evaluation p{font-size:15.5px;line-height:1.35}
 </style><style>/* Landscape poster; only loaded on the poster, preserving supporting pages. */
 *{box-sizing:border-box}html{color-scheme:light}body.poster-page{margin:0;background:#edf0f2;color:#343a40;font:15px/1.45 var(--portfolio-font)}
 a{color:#2761e3;text-underline-offset:3px}button{font:inherit;cursor:pointer}button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:3px solid #2780e3;outline-offset:3px}.skip{position:absolute;top:-80px}.skip:focus{top:8px;left:8px;z-index:10;background:white;padding:10px}
@@ -439,7 +440,7 @@ if(new URLSearchParams(location.search).get('thumbnail')==='1'){
  .thumbnail-preview .poster-stage{margin:0!important;width:100vw!important;height:100vh!important}
  .thumbnail-preview .paper{width:1100px!important;height:650px!important;min-height:650px!important;padding:14px 20px!important;display:flex!important;flex-direction:column;gap:8px!important;border:0;transform:scale(var(--thumb-scale))!important;transform-origin:top left}
  .thumbnail-preview .poster-grid{display:block!important;flex:1;min-height:0}
- .thumbnail-preview .results-column{padding:0!important;border:0!important;margin:0!important}
+ .thumbnail-preview .results-column>:not(.threat-feature){display:none!important}.thumbnail-preview .results-column{padding:0!important;border:0!important;margin:0!important}
  .thumbnail-preview .threat-feature{padding:0!important;margin:0!important;border:0!important}
  .thumbnail-preview .threat-feature svg{height:265px!important;width:100%}
  .thumbnail-preview .threat-feature .trend-reading{font-size:16px!important;margin:4px 0!important}
