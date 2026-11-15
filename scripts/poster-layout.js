@@ -81,7 +81,24 @@
     if(hidden)group.querySelectorAll('a,button').forEach(e=>e.tabIndex=-1);
     return group;
   }
-  const group=loop();track.append(group,loop(true));
+  // Show every unique matched post once, in chronological order.
+  const uniquePosts=new Map();
+  data.event_context.events.forEach(e=>Object.values(e.windows).forEach(posts=>posts.forEach(p=>uniquePosts.set(p.truth_id,p))));
+  const allPosts=[...uniquePosts.values()].sort((a,b)=>a.created_at_et.localeCompare(b.created_at_et));
+  function allPostGroup(hidden=false){
+    const group=el('div','ribbon-group');if(hidden)group.setAttribute('aria-hidden','true');
+    allPosts.forEach((post,index)=>{const item=card(post);item.dataset.truthId=post.truth_id;
+      item.prepend(el('p','ribbon-day',`Post ${index+1} of ${allPosts.length} · ${post.post_date_et}`));
+      group.append(item);
+    });
+    if(hidden)group.querySelectorAll('a,button').forEach(e=>e.tabIndex=-1);
+    return group;
+  }
+  loop(); // Retain the three printed excerpts for the opening case.
+  const group=allPostGroup();track.append(group,allPostGroup(true));
+  document.getElementById('ribbon-title').textContent='All '+allPosts.length+' matched posts';
+  document.querySelector('.ribbon-window').setAttribute('aria-label','All '+allPosts.length+' unique matched posts, in chronological order. Hover or focus to pause.');
+  document.querySelector('.case-note').textContent='All '+allPosts.length+' matched posts, in date order. Hover or focus to pause; select Read full post for the complete text. Posts are matched by date and Iran-related text, not verified responses to individual incidents.';
   function speed(){track.style.setProperty('--ribbon-duration',`${group.offsetWidth/42}s`)}
   new ResizeObserver(speed).observe(group);speed();
 
