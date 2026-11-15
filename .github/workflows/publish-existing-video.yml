@@ -1,0 +1,25 @@
+name: Publish complete poster video
+on:
+  push:
+    paths:
+      - '.github/workflows/publish-existing-video.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          github-token: ${{ github.token }}
+          run-id: 43767143253
+          name: animated-gallery-poster
+          path: video-export
+      - name: Publish downloadable video
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release view gallery-video-130-posts >/dev/null 2>&1 || gh release create gallery-video-130-posts --title "Animated research poster — all 130 matched posts" --notes "High-resolution poster video containing all 130 unique matched posts in chronological order, plus the poster PNG and export checks."
+          gh release upload gallery-video-130-posts video-export/Trump_Iran_Animated_Poster_All_130_Posts.mp4 video-export/Trump_Iran_Poster_3600x3000.png video-export/render-checks.json --clobber
