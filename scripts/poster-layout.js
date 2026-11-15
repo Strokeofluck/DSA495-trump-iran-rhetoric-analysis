@@ -99,7 +99,7 @@
   document.getElementById('ribbon-title').textContent='All '+allPosts.length+' matched posts';
   document.querySelector('.ribbon-window').setAttribute('aria-label','All '+allPosts.length+' unique matched posts, in chronological order. Hover or focus to pause.');
   document.querySelector('.case-note').textContent='All '+allPosts.length+' matched posts, in date order. Hover or focus to pause; select Read full post for the complete text. Posts are matched by date and Iran-related text, not verified responses to individual incidents.';
-  function speed(){track.style.setProperty('--ribbon-duration',`${group.offsetWidth/42}s`)}
+  function speed(){track.style.setProperty('--ribbon-duration',`${group.offsetWidth/30}s`)}
   new ResizeObserver(speed).observe(group);speed();
 
 
@@ -139,19 +139,19 @@ if(new URLSearchParams(location.search).get('portfolio')==='1'){
 if(new URLSearchParams(location.search).get('thumbnail')==='1'){
  document.body.classList.add('thumbnail-preview');
  const style=document.createElement('style');style.textContent=`
- .thumbnail-preview .toolbar,.thumbnail-preview .skip,.thumbnail-preview .masthead,.thumbnail-preview .headline-row,.thumbnail-preview .poster-footer,.thumbnail-preview .methods-column,.thumbnail-preview .evaluation,.thumbnail-preview .results-column>.section-title,.thumbnail-preview .results-column>.small-charts,.thumbnail-preview .results-column>p,.thumbnail-preview .ribbon-bottom,.thumbnail-preview .trend-detail,.thumbnail-preview .threat-feature>.coverage-inline{display:none!important}
+ .thumbnail-preview .toolbar,.thumbnail-preview .skip,.thumbnail-preview .masthead,.thumbnail-preview .headline-row,.thumbnail-preview .poster-footer,.thumbnail-preview .methods-column,.thumbnail-preview .evaluation,.thumbnail-preview .results-column>.section-title,.thumbnail-preview .results-column>.small-charts,.thumbnail-preview .results-column>p,.thumbnail-preview .ribbon-bottom,.thumbnail-preview .trend-detail,.thumbnail-preview .threat-feature>.coverage-inline,.thumbnail-preview .threat-feature .severity-caption{display:none!important}
  body.thumbnail-preview, .thumbnail-preview main{margin:0!important;padding:0!important;overflow:hidden;background:#fff}
  .thumbnail-preview .poster-stage{margin:0!important;width:100vw!important;height:100vh!important}
- .thumbnail-preview .paper{width:1100px!important;height:650px!important;min-height:650px!important;padding:14px 20px!important;display:flex!important;flex-direction:column;gap:8px!important;border:0;transform:scale(var(--thumb-scale))!important;transform-origin:top left}
- .thumbnail-preview .poster-grid{display:block!important;flex:1;min-height:0}
+ .thumbnail-preview .paper{width:1100px!important;height:600px!important;min-height:600px!important;padding:14px 20px!important;display:flex!important;flex-direction:column;gap:8px!important;border:0;transform:scale(var(--thumb-scale))!important;transform-origin:top left}
+ .thumbnail-preview .poster-grid{display:block!important;flex:0 0 auto;min-height:0}
  .thumbnail-preview .results-column>:not(.threat-feature){display:none!important}.thumbnail-preview .results-column{padding:0!important;border:0!important;margin:0!important}
  .thumbnail-preview .threat-feature{padding:0!important;margin:0!important;border:0!important}
- .thumbnail-preview .threat-feature svg{height:265px!important;width:100%}
+ .thumbnail-preview .threat-feature svg{height:215px!important;width:100%}
  .thumbnail-preview .threat-feature .trend-reading{font-size:16px!important;margin:4px 0!important}
  .thumbnail-preview .post-ribbon{height:267px!important;padding-top:7px!important;flex-shrink:0}
  .thumbnail-preview .ribbon-window{height:260px!important}
  .thumbnail-preview .ribbon-card{height:250px!important;min-height:250px!important}
  `;document.head.append(style);
- const fit=()=>document.body.style.setProperty('--thumb-scale',innerWidth/1100);
+ const fit=()=>document.body.style.setProperty('--thumb-scale',Math.min(innerWidth/1100,innerHeight/600));
  addEventListener('resize',fit);fit();
 }
