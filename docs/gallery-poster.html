@@ -450,6 +450,21 @@ if(new URLSearchParams(location.search).get('thumbnail')==='1'){
  `;document.head.append(style);
  const fit=()=>document.body.style.setProperty('--thumb-scale',Math.min(innerWidth/1100,innerHeight/600));
  addEventListener('resize',fit);fit();
+ const track=document.getElementById('ribbon-track');
+ const motion=matchMedia('(hover: hover) and (prefers-reduced-motion: no-preference)');
+ const sync=()=>{
+   let hovered=false;
+   try { hovered=Boolean(window.frameElement?.parentElement?.matches(':hover')); }
+   catch { /* Keep cross-origin thumbnails static. */ }
+   track.style.animationPlayState=motion.matches && hovered ? 'running' : 'paused';
+ };
+ try {
+   const thumbnail=window.frameElement?.parentElement;
+   thumbnail?.addEventListener('mouseenter',sync);
+   thumbnail?.addEventListener('mouseleave',sync);
+ } catch { /* The host may be cross-origin. */ }
+ motion.addEventListener('change',sync);
+ sync();
 }
 </script><style>
 body.poster-page .column.evaluation p{font-size:15px!important;line-height:1.35!important}
